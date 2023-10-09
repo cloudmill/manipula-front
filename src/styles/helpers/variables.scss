@@ -1,0 +1,43 @@
+// fonts
+$fs: 16px;
+
+$ff-primary: Rubik;
+
+// colors
+:root {
+  --green-border: #e6eee2;
+  --green: #65897c;
+  --green2: #f0f6ec;
+  --green-dark: #32691a;
+  --green-text: #14362a;
+  --green-bg: #c2e3b4;
+  --red: #e94c4d;
+  --red-active: #d73839;
+  --grey-bg: #f5eeea;
+  --brown: #9c5a40;
+  --yellow: #ffd066;
+  --yellow-active: #f4b932;
+}
+
+// grid columns
+$col-count-m: 4;
+$col-count-t: 8;
+$col-count-d: 12;
+
+$col-pad-m: rem(20px);
+$col-pad-d: rem(40px);
+
+$col-gap-m: rem(12px);
+$col-gap-d: rem(20px);
+
+$col-width-m: '((100vw - (#{$col-pad-m} * 2) - (#{$col-gap-m} * #{$col-count-m - 1})) / #{$col-count-m})';
+$col-width-t: '((100vw - (#{$col-pad-m} * 2) - (#{$col-gap-m} * #{$col-count-t - 1})) / #{$col-count-t})';
+$col-width-d: '((100vw - (#{$col-pad-d} * 2) - (#{$col-gap-d} * #{$col-count-d - 1})) / #{$col-count-d})';
+
+$col-part-m: '(#{$col-width-m} + #{$col-gap-m})';
+$col-part-t: '(#{$col-width-t} + #{$col-gap-m})';
+$col-part-d: '(#{$col-width-d} + #{$col-gap-d})';
+
+// transitions
+$transition: 0.3s;
+$transition-func: cubic-bezier(0.65, 0, 0.35, 1);

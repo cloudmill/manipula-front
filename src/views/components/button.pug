@@ -1,0 +1,18 @@
+mixin button
+  button.button&attributes(attributes)
+    block
+
+mixin button-link
+  a.button(href, class=attributes.class)
+    block
+
+mixin button-green-border
+  button.button.button--green-border(class=attributes.class)
+    block
+
+mixin slider-controls(slider_id, mod)
+  .slider-controls(class=mod)
+    button.slider-controls__item(data-prev=slider_id)
+      +control-left
+    button.slider-controls__item(data-next=slider_id)
+      +control-right

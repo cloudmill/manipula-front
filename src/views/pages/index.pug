@@ -1,0 +1,104 @@
+extends ../app
+
+block header
+block footer
+
+//- block grid-test
+
+block content
+  .container
+    ul.index-list
+      -
+        const routes = [
+          {
+            "href": "main",
+            "title": "Главная"
+          },
+          {
+            "href": "catalog",
+            "title": "[Каталог] Список категории"
+          },
+          {
+            "href": "category",
+            "title": "[Каталог] Категория"
+          },
+          {
+            "href": "product",
+            "title": "Карточка"
+          },
+          {
+            "href": "cart",
+            "title": "Чекаут / корзина"
+          },
+          {
+            "href": "about",
+            "title": "Об Экоферме"
+          },
+          {
+            "href": "clients1",
+            "title": "[Клиентам] Как сделать заказ"
+          },
+          {
+            "href": "clients2",
+            "title": "[Клиентам] Условия доставки"
+          },
+          {
+            "href": "clients3",
+            "title": "[Клиентам] Условия оплаты"
+          },
+          {
+            "href": "clients4",
+            "title": "[Клиентам] Возврат продукции"
+          },
+          {
+            "href": "partners",
+            "title": "Партнерам"
+          },
+          {
+            "href": "loyalty",
+            "title": "Программа лояльности"
+          },
+          {
+            "href": "orders",
+            "title": "[ЛК] Заказы"
+          },
+          {
+            "href": "lk-loyalty",
+            "title": "[ЛК] Программа лояльности"
+          },
+          {
+            "href": "profile",
+            "title": "[ЛК] Профиль"
+          },
+          {
+            "href": "referal",
+            "title": "[ЛК] Реферальная программа"
+          },
+          {
+            "href": "actions",
+            "title": "Акции"
+          },
+          {
+            "href": "recipes",
+            "title": "Рецепты"
+          },
+          {
+            "href": "faq",
+            "title": "Вопрос-ответ"
+          },
+          {
+            "href": "contacts",
+            "title": "Контакты"
+          },
+          {
+            "href": "search",
+            "title": "Поиск"
+          },
+          {
+            "href": "404",
+            "title": "404"
+          }
+        ]
+      each route in routes
+        li
+          a(href=route.href) #{ route.title }

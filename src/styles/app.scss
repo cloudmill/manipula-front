@@ -1,0 +1,54 @@
+/*
+  BEM (global)
+
+  helpers
+
+    variables
+    mixins (use variables)
+
+  layout
+    index (for order)
+
+    normalize (npm)
+    reset (npm)
+
+    my-reset (use helpers)
+    
+    base (use helpers)
+  
+  libs
+    index (for order)
+    
+    swiper (npm)
+    select2 (npm)
+    ...
+  
+  content
+    index (for order)
+
+    utils
+      ...
+    components (use helpers)
+      ...
+    pages (use helpers)
+      ...
+*/
+
+@use 'sass:math';
+@use 'sass:map';
+@use 'sass:string';
+
+@function rem($px) {
+  $result: calc($px / $fs);
+  @return unquote('#{$result}rem');
+}
+
+@import './helpers/_index.scss';
+
+@import './fonts.scss';
+
+@import './layout/_index.scss';
+
+@import './libs/_index.scss';
+
+@import './content/_index.scss';

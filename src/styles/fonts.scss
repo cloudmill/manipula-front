@@ -1,0 +1,29 @@
+@function font-url($filename-without-extension) {
+  @return url('../assets/fonts/#{$filename-without-extension}.woff');
+}
+
+$files: (
+  ('Rubik-Light', 300),
+  ('Rubik-Regular', 400),
+  ('Rubik-Medium', 500),
+  ('Rubik-SemiBold', 600),
+  ('Rubik-Bold', 700),
+  ('Rubik-ExtraBold', 800),
+  ('Rubik-Black', 900)
+);
+
+@each $filename, $font-weight in $files {
+  @font-face {
+    font-family: $ff-primary;
+    src: font-url($filename) format('woff');
+    font-weight: $font-weight;
+    font-display: swap;
+  }
+}
+
+@font-face {
+  font-family: Bitter;
+  src: url('../assets/fonts/Bitter-ExtraBold.woff') format('woff');
+  font-weight: 800;
+  font-display: swap;
+}

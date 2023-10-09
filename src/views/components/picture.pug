@@ -1,0 +1,78 @@
+mixin picture
+  picture(class=attributes.class)
+    if attributes.mob && attributes.tablet
+      source(
+        srcset=`assets/images/${attributes.src}-mob.avif`,
+        type='image/avif',
+        media='(max-width: 767px)'
+      )
+      source(
+        srcset=`assets/images/${attributes.src}-mob.webp`,
+        type='image/webp',
+        media='(max-width: 767px)'
+      )
+      source(
+        srcset=`assets/images/${attributes.src}-mob.jpg`,
+        type='image/jpeg',
+        media='(max-width: 767px)'
+      )
+      source(
+        srcset=`assets/images/${attributes.src}-tablet.avif`,
+        type='image/avif',
+        media='(min-width: 768px) and (max-width: 1023px)'
+      )
+      source(
+        srcset=`assets/images/${attributes.src}-tablet.webp`,
+        type='image/webp',
+        media='(min-width: 768px) and (max-width: 1023px)'
+      )
+      source(
+        srcset=`assets/images/${attributes.src}-tablet.jpg`,
+        type='image/jpeg',
+        media='(min-width: 768px) and (max-width: 1023px)'
+      )
+
+    if attributes.tablet && !attributes.mob
+      source(
+        srcset=`assets/images/${attributes.src}-tablet.avif`,
+        type='image/avif',
+        media='(max-width: 1023px)'
+      )
+      source(
+        srcset=`assets/images/${attributes.src}-tablet.webp`,
+        type='image/webp',
+        media='(max-width: 1023px)'
+      )
+      source(
+        srcset=`assets/images/${attributes.src}-tablet.jpg`,
+        type='image/jpeg',
+        media='(max-width: 1023px)'
+      )
+
+    if attributes.mob && !attributes.tablet
+      source(
+        srcset=`assets/images/${attributes.src}-mob.avif`,
+        type='image/avif',
+        media='(max-width: 1023px)'
+      )
+      source(
+        srcset=`assets/images/${attributes.src}-mob.webp`,
+        type='image/webp',
+        media='(max-width: 1023px)'
+      )
+      source(
+        srcset=`assets/images/${attributes.src}-mob.jpg`,
+        type='image/jpeg',
+        media='(max-width: 1023px)'
+      )
+
+    if attributes.avif
+      source(srcset=`assets/images/${attributes.src}.avif`, type='image/avif')
+
+    source(srcset=`assets/images/${attributes.src}.webp`, type='image/webp')
+
+    img(
+      src=`assets/images/${attributes.src}.jpg`,
+      alt,
+      loading=`${attributes.loading === undefined ? 'eager' : 'lazy'}`
+    )

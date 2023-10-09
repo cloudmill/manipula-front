@@ -1,0 +1,38 @@
+.only-desktop {
+  @media #{media('<')} {
+    display: none !important;
+  }
+}
+
+.only-mobile {
+  @media #{media('>')} {
+    display: none !important;
+  }
+}
+
+.only-tablet {
+  @media #{media('<', m)} {
+    display: none !important;
+  }
+  @media #{media('>')} {
+    display: none !important;
+  }
+}
+
+.disable-container {
+  margin: 0 (-$col-pad-d);
+  padding: 0 $col-pad-d;
+  @media #{media('<')} {
+    margin: 0 (-$col-pad-m);
+    padding: 0 $col-pad-m;
+  }
+}
+
+.display-none {
+  display: none;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}

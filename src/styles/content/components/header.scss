@@ -1,0 +1,441 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #fff;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(24px);
+    padding: rem(24px) 0;
+
+    @media #{media('<')} {
+      flex-direction: column-reverse;
+      padding: rem(12px) 0 0;
+      gap: rem(8px);
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+
+    padding-left: $col-pad-d;
+    padding-right: $col-pad-d;
+
+    @media #{media('<')} {
+      padding-left: $col-pad-m;
+      padding-right: $col-pad-m;
+      border-bottom: 1px solid var(--green-border);
+    }
+
+    &:nth-child(1) {
+      @media #{media('<')} {
+        justify-content: center;
+        padding-bottom: rem(8px);
+      }
+      @media #{media('<', m)} {
+        justify-content: flex-start;
+        overflow-x: scroll;
+        @include scrollbar-hidden;
+      }
+    }
+    &:nth-child(2) {
+      @media #{media('<')} {
+        justify-content: space-between;
+        padding-bottom: rem(12px);
+      }
+    }
+  }
+
+  &__nav1 {
+    display: flex;
+    align-items: center;
+    gap: rem(24px);
+    margin-left: rem(166px);
+
+    @media #{media('<')} {
+      gap: rem(8px);
+      margin-left: unset;
+    }
+
+    &-item {
+      @include fsl(20px, 100%);
+      color: var(--green-text);
+      letter-spacing: -0.2px;
+      white-space: nowrap;
+
+      display: flex;
+      align-items: center;
+      gap: rem(4px);
+
+      transition: $transition;
+
+      @media #{media('<')} {
+        @include fsl(13px);
+        letter-spacing: -0.13px;
+      }
+
+      &:not(.red):hover {
+        color: var(--red);
+      }
+
+      &.red {
+        color: var(--red);
+        svg {
+          width: rem(26px);
+          height: rem(26px);
+
+          @media #{media('<')} {
+            width: rem(16px);
+            height: rem(16px);
+          }
+
+          .action-fill {
+            transition: $transition;
+          }
+        }
+
+        &:hover {
+          color: var(--green-text);
+
+          svg .action-fill {
+            fill: var(--green-text);
+          }
+        }
+      }
+    }
+  }
+  &__nav2 {
+    display: flex;
+    align-items: center;
+    gap: rem(24px);
+    margin-left: rem(176px);
+
+    @media #{media('<')} {
+      gap: rem(8px);
+      margin-left: rem(8px);
+    }
+
+    &-item {
+      @include fsl(16px, 100%);
+      color: var(--green-text);
+      letter-spacing: -0.16px;
+      white-space: nowrap;
+
+      display: flex;
+      align-items: center;
+      gap: rem(1px);
+
+      transition: $transition;
+
+      @media #{media('<')} {
+        @include fsl(13px);
+        letter-spacing: -0.13px;
+      }
+
+      &:hover {
+        color: var(--red);
+        svg path {
+          fill: var(--red);
+        }
+      }
+
+      &.drop {
+        svg {
+          width: rem(20px);
+          height: rem(20px);
+
+          path {
+            transition: $transition;
+          }
+        }
+      }
+    }
+  }
+
+  &__contacts {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: rem(371px);
+
+    a {
+      @include fsl(20px, 100%);
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      color: var(--green-text);
+
+      transition: $transition;
+
+      &:hover {
+        color: var(--red);
+      }
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex: none;
+    img {
+      @media #{media('>')} {
+        height: rem(63px);
+      }
+
+      @media #{media('<')} {
+        width: rem(101px);
+      }
+    }
+  }
+
+  &__catalog {
+    display: flex;
+    align-items: center;
+    gap: rem(24px);
+    padding: rem(20px) rem(24px);
+
+    border-radius: rem(20px);
+    border-color: var(--red);
+    background-color: var(--red);
+
+    @include fsl(20px, 100%);
+    letter-spacing: -0.2px;
+    color: #fff;
+
+    margin-left: rem(130px);
+
+    transition: $transition;
+
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+    }
+
+    &:hover {
+      background-color: var(--red-active);
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+
+    width: rem(1028px);
+    height: rem(64px);
+
+    border-radius: rem(20px);
+    border: 2px solid var(--green-border);
+
+    transition: $transition;
+
+    @media #{media('<')} {
+      width: rem(40px);
+      height: rem(40px);
+      border-radius: rem(8px);
+      justify-content: center;
+    }
+    @media #{media('>')} {
+      padding: rem(8px) rem(8px) rem(8px) rem(24px);
+      margin-left: rem(20px);
+    }
+
+    cursor: text;
+
+    &:has(input:focus) {
+      background: var(--green2);
+
+      .header__search-button,
+      .header__search-reset {
+        opacity: 1;
+        cursor: pointer;
+      }
+
+      .header__search-ico path {
+        stroke: var(--green-text);
+      }
+    }
+
+    input {
+      border: none;
+      background: transparent;
+      height: 100%;
+      width: 100%;
+      margin-left: rem(24px);
+
+      &::-webkit-search-cancel-button {
+        display: none;
+      }
+    }
+
+    &-ico {
+      width: rem(24px);
+      height: rem(24px);
+
+      flex: none;
+
+      @media #{media('<')} {
+        width: rem(16px);
+        height: rem(16px);
+      }
+
+      path {
+        transition: $transition;
+      }
+    }
+
+    &-reset {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-right: rem(20px);
+      flex: none;
+
+      opacity: 0;
+      cursor: text;
+      transition: $transition;
+
+      svg {
+        width: rem(24px);
+        height: rem(24px);
+        flex: none;
+      }
+    }
+    &-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include fsl(16px, 100%);
+      letter-spacing: -0.16px;
+
+      height: 100%;
+      padding: rem(10px) rem(24px);
+      border-radius: rem(16px);
+      background: var(--yellow);
+
+      margin-left: auto;
+      flex: none;
+      opacity: 0;
+      cursor: text;
+      transition: $transition;
+    }
+  }
+
+  &__profile {
+    margin-left: auto;
+    width: rem(64px);
+    height: rem(64px);
+    border-radius: rem(20px);
+    border: 2px solid var(--green-border);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+    }
+  }
+
+  &__cart {
+    margin-left: rem(8px);
+    width: rem(155px);
+    height: rem(64px);
+    border-radius: rem(20px);
+    background: var(--green2);
+    border-color: var(--green2);
+  }
+}
+
+.location-container {
+  width: rem(200px);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: rem(4px);
+
+  padding: rem(8px) rem(18px);
+  border-radius: rem(20px);
+  border: 2px solid var(--green-border);
+
+  @include fsl(16px, 100%);
+  letter-spacing: -0.16px;
+  color: var(--green);
+
+  transition: $transition;
+
+  svg {
+    width: rem(20px);
+    height: rem(20px);
+
+    path {
+      transition: $transition;
+    }
+  }
+
+  &:hover {
+    border-color: var(--green-dark);
+    color: var(--green-dark);
+
+    svg path {
+      fill: var(--green-dark);
+    }
+  }
+}
+
+.burger {
+  width: rem(40px);
+  height: rem(40px);
+  border-radius: rem(8px);
+  background: var(--green2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: rem(20px);
+    height: rem(20px);
+  }
+}
+
+#tippy-1 {
+  .tippy-box {
+    width: rem(200px);
+    border-radius: rem(20px);
+    border: 2px solid var(--green-border);
+    background: #fff;
+    box-shadow: 0px 12px 24px 0px rgba(44, 73, 45, 0.16);
+  }
+
+  .tippy-content {
+    padding: 0;
+  }
+
+  .cities-drop {
+    display: flex;
+    flex-direction: column;
+    // gap: rem(12px);
+    @include fsl(16px, 100%);
+    letter-spacing: -0.16px;
+    color: var(--green-text);
+    padding: rem(14px) 0;
+
+    div {
+      padding: rem(6px) rem(20px);
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        background: var(--green2);
+      }
+    }
+  }
+}

@@ -1,0 +1,176 @@
+import Swiper from 'swiper'
+import {
+  Navigation,
+  Pagination,
+  Autoplay,
+  Parallax,
+  Thumbs,
+} from 'swiper/modules'
+import { SwiperOptions } from 'swiper/types/swiper-options'
+
+export function swiperInit() {
+  const sliders = document.querySelectorAll('[data-slider-id]')
+
+  if (sliders.length > 0) {
+    sliders.forEach((slider) => {
+      const slider_id = slider.getAttribute('data-slider-id')
+
+      let slider_options: SwiperOptions = {
+        navigation: {
+          prevEl: `[data-prev=${slider_id}]`,
+          nextEl: `[data-next=${slider_id}]`,
+        },
+      }
+
+      switch (slider_id) {
+        case 'main':
+          slider_options = {
+            ...slider_options,
+
+            modules: [Navigation, Pagination, Parallax],
+
+            loop: true,
+            autoHeight: true,
+            parallax: true,
+            speed: 500,
+
+            pagination: {
+              el: `[data-swiper-pagination=${slider_id}]`,
+              type: 'bullets',
+            },
+            breakpoints: {
+              [1024]: {
+                speed: 1500,
+              },
+            },
+          }
+
+          break
+
+        case 'products':
+          slider_options = {
+            ...slider_options,
+
+            modules: [Navigation],
+
+            slidesPerView: 'auto',
+            spaceBetween: 12,
+
+            breakpoints: {
+              [1024]: {
+                slidesPerView: 6,
+                spaceBetween: 20,
+              },
+            },
+          }
+          break
+
+        case 'recipes':
+          slider_options = {
+            ...slider_options,
+
+            modules: [Navigation],
+
+            slidesPerView: 'auto',
+            spaceBetween: 12,
+
+            breakpoints: {
+              [1024]: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+            },
+          }
+        case 'review':
+          slider_options = {
+            ...slider_options,
+
+            modules: [Navigation],
+
+            slidesPerView: 'auto',
+            spaceBetween: 12,
+
+            breakpoints: {
+              [1024]: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+            },
+          }
+          break
+
+        default:
+          break
+      }
+
+      const slider_el = new Swiper(
+        `[data-slider-id="${slider_id}"]`,
+        slider_options
+      )
+
+      if (
+        slider_id === 'main' &&
+        window.matchMedia('(min-width: 1024px)').matches
+      ) {
+        const controlPrev = document.querySelector('[data-prev=main]')
+        const controlNext = document.querySelector('[data-next=main]')
+
+        function getSlideBg(selector: string) {
+          return document
+            .querySelector(`.main-slider-slide.swiper-slide-${selector}`)
+            ?.querySelector('[data-for-parallax]')
+        }
+
+        // controlPrev?.addEventListener('click', () => {
+        //   getSlideBg('active')?.setAttribute('data-swiper-parallax', '')
+        //   getSlideBg('prev')?.setAttribute('data-swiper-parallax', '-30%')
+
+        //   slider_el.slidePrev()
+        // })
+
+        // controlNext?.addEventListener('click', () => {
+        //   getSlideBg('active')?.setAttribute('data-swiper-parallax', '30%')
+        //   getSlideBg('next')?.setAttribute('data-swiper-parallax', '')
+
+        //   slider_el.slideNext()
+        // })
+      }
+    })
+  }
+
+  const productThumbs = new Swiper('[data-slider-id="product-thumbs"]', {
+    slidesPerView: 'auto',
+    spaceBetween: 4,
+  })
+
+  const productImg = new Swiper('[data-slider-id="product-img"]', {
+    modules: [Navigation, Thumbs],
+
+    navigation: {
+      prevEl: `[data-prev="product-img]`,
+      nextEl: `[data-next="product-img"]`,
+    },
+
+    thumbs: {
+      swiper: productThumbs,
+    },
+  })
+
+  const aboutThumbs = new Swiper('[data-slider-id="about-thumbs"]', {
+    slidesPerView: 'auto',
+    spaceBetween: 4,
+  })
+
+  const aboutImg = new Swiper('[data-slider-id="about"]', {
+    modules: [Navigation, Thumbs],
+
+    navigation: {
+      prevEl: `[data-prev="about"]`,
+      nextEl: `[data-next="about"]`,
+    },
+
+    thumbs: {
+      swiper: aboutThumbs,
+    },
+  })
+}

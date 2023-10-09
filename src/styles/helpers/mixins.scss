@@ -1,0 +1,140 @@
+@mixin f-main($font-weight: 400) {
+  font-weight: $font-weight;
+  font-family: $ff-primary;
+}
+
+@mixin fsl($font-size, $line-height: null) {
+  $fz-result: calc($font-size / $fs);
+  font-size: unquote('#{$fz-result}rem');
+  @if $line-height {
+    line-height: calc($line-height / 100%);
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::placeholder {
+    @content;
+  }
+}
+
+@mixin scrollbar-hidden() {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin styled-scrollbar() {
+  scrollbar-width: rem(6px);
+
+  &::-webkit-scrollbar {
+    width: rem(6px);
+    background-color: var(--green2);
+  }
+  &::-webkit-scrollbar-track {
+    background-color: var(--green2);
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--green-dark);
+    border-radius: rem(10px);
+  }
+}
+
+@mixin cropText($lineCount) {
+  display: -moz-box;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: $lineCount;
+  line-clamp: $lineCount;
+}
+
+@function getVw($px, $width) {
+  @return calc($px / $width * 1vw);
+}
+
+@function getStatic($px, $width) {
+  $percent: $width / 19.2px;
+  @return $px * $percent;
+}
+
+$breakpoints: (
+  xxl: 1920px,
+  xl: 1680px,
+  ll: 1440px,
+  l: 1366px,
+  // d: 1280px,
+  d: 1024px,
+  t: 1024px,
+  m: 768px,
+  s: 576px,
+  xs: 375px,
+  xxs: 320px,
+);
+@function breakpoint($variant: d) {
+  @return map.get($breakpoints, $variant);
+}
+@function media($direction: '>', $variant: d) {
+  @if $direction == '>' {
+    @return '(min-width: #{breakpoint($variant)})';
+  } @else if $direction == '<' {
+    @return '(max-width: #{breakpoint($variant) - 1px})';
+  } @else if $direction == '<=' {
+    @return '(max-width: #{breakpoint($variant)})';
+  }
+}
+
+// columns
+@function column($count, $padding, $gap) {
+  @return '((100vw - (#{$padding} * 2) - (#{$gap} * (#{$count} - 1))) / #{$count})';
+}
+
+$column: column($col-count-d, $col-pad-d, $col-gap-d);
+$column-small: column($col-count-m, $col-pad-m, $col-gap-m);
+
+@function cols($count: 1, $col: $column, $gap: $col-gap-d) {
+  @return calc(((#{$col} * #{$count}) + (#{$gap} * (#{$count} - 1))));
+}
+@function cols-g($count: 1, $col: $column, $gap: $col-gap-d) {
+  @return calc(((#{$col} * #{$count}) + (#{$gap} * #{$count})));
+}
+@function cols-mob($count: 1) {
+  @return cols($count, $column-small, $col-gap-m);
+}
+@function cols-mob-g($count: 1) {
+  @return cols-g($count, $column-small, $col-gap-m);
+}
+
+// без calc - для встраивания в другой calc
+@function cols-nc($count: 1, $col: $column, $gap: $col-gap-d) {
+  @return '((#{$col} * #{$count}) + (#{$gap} * (#{$count} - 1)))';
+}
+@function cols-g-nc($count: 1, $col: $column, $gap: $col-gap-d) {
+  @return '((#{$col} * #{$count}) + (#{$gap} * #{$count}))';
+}
+@function cols-mob-nc($count: 1) {
+  @return cols($count, $column-small, $col-gap-m);
+}
+@function cols-mob-g-nc($count: 1) {
+  @return cols-g($count, $column-small, $col-gap-m);
+}

@@ -1,0 +1,168 @@
+extends ../app
+
+block variables
+  - preloader = true
+
+include ../components/cards/product-card
+include ../components/cards/recipe-card
+
+block content
+  -
+    const categories = [
+      {ttl: 'Мясо птицы'}, 
+      {ttl: 'Овощи, фрукты, <br/> ягоды, зелень'}, 
+      {ttl: 'Мясо'}, 
+      {ttl: 'Рыба и морепродукты'}, 
+      {ttl: 'Мясо кролика <br/> и нутрии'}, 
+      {ttl: 'Молочные продукты'}, 
+      {ttl: 'Яйцо'}, 
+      {ttl: 'Бакалея <br/> и консерванты'}, 
+      {ttl: 'Копчения мясные' },
+      {ttl: 'Праздничные <br/> блюда'}
+      ]
+
+
+  .container
+    section.main-slider.first-section
+      div(data-aos='fade-up')
+        .swiper.main-slider__container(data-slider-id='main')
+          .swiper-wrapper
+            .swiper-slide.main-slider-slide
+              .main-slider-slide__bg-container
+                +picture.main-slider-slide__bg(
+                  src='main-slide-1',
+                  avif,
+                  tablet
+                )
+              .main-slider-slide__content
+                .h1.main-slider-slide__title.bitter-heading Бесплатная&nbsp; #[br.only-desktop] доставка&nbsp; #[br.only-desktop] от 5 000₽
+                +button-link
+                  | Подробнее
+
+            .swiper-slide.main-slider-slide
+              .main-slider-slide__bg-container
+                +picture.main-slider-slide__bg(src='main-slide-2', avif, mob)
+              .main-slider-slide__content
+                .h1.main-slider-slide__title.bitter-heading Яйца к Пасхе
+                .main-slider-slide__text Куриные, цесариные, перепелиные
+                +button-link
+                  | Подробнее
+
+            .swiper-slide.main-slider-slide
+              .main-slider-slide__bg-container
+                +picture.main-slider-slide__bg(src='main-slide-3', avif, mob)
+              .main-slider-slide__content
+                .h1.main-slider-slide__title.bitter-heading Пасхальные #[br] блюда
+                +button-link
+                  | Подробнее
+
+        .main-slider__content
+          +slider-controls('main', 'only-desktop')
+
+          .main-slider-pagination.swiper-pagination(
+            data-swiper-pagination='main'
+          )
+
+    section.main-section(data-aos='fade-up')
+      .main-section__top
+        .main-section__title-ico
+          img(src='assets/images/svg/actions.svg', alt='')
+          h2.h2.bitter-heading Товары по акции
+        +slider-controls('products', 'only-desktop')
+
+      .products-slider.disable-container
+        .swiper(data-slider-id='products')
+          .swiper-wrapper
+            - for (i=0;i<4;i++)
+              .swiper-slide
+                +card('product-1', 'Судак охлаждённый', true)
+              .swiper-slide
+                +card('product-2', 'Морковь нового урожая с ботвой', true)
+
+    section.main-section(data-aos='fade-up')
+      .main-section__top
+        .main-section__title-ico
+          img(src='assets/images/svg/recommend.svg', alt='')
+          h2.h2.bitter-heading Рекомендуем
+        +slider-controls('products', 'only-desktop')
+
+      .products-slider.disable-container
+        .swiper(data-slider-id='products')
+          .swiper-wrapper
+            - for (i=0;i<4;i++)
+              .swiper-slide
+                +card('product-1', 'Судак охлаждённый', false)
+              .swiper-slide
+                +card('product-2', 'Морковь нового урожая с ботвой', true)
+
+    section.categories-section.main-section(data-aos='fade-up')
+      each el, i in categories
+        a.categories-section__cell(href='')
+          +picture.categories-section__bg(
+            src=`main-category-${i}`,
+            avif,
+            loading='lazy'
+          )
+          .categories-section__title
+            | !{ el.ttl }
+
+  section.chick(data-aos='fade-up', data-chick-section)
+    picture.chick__img.only-desktop(data-chick-parallax)
+      source(srcset='assets/images/chick.avif', type='image/avif')
+      source(srcset='assets/images/chick.webp', type='image/webp')
+      img(src='assets/images/chick.png', alt='')
+
+    h2.h1.h1--chick.bitter-heading.chick__title Деревенская еда #[br] #[span с фермы Евгения Рошаля] #[br] и Краснодарских ферм
+
+    .chick-list
+      .chick-list__item
+        .chick-list__item-ico
+          .chick-list__item-ico-1(data-lottie-1)
+        .chick-list__item-text Каждую неделю&nbsp; #[br.only-mobile] привозим #[br.only-desktop] свежие&nbsp; #[br.only-mobile] продукты с ферм
+      .chick-list__item
+        .chick-list__item-ico
+          .chick-list__item-ico-2(data-lottie-2)
+        .chick-list__item-text #[span 6 дней в неделю] #[br] доставляем по Москве #[br] и Московской области
+
+    .chick-cards(data-aos='fade-up')
+      .chick-cards__item(data-chick-card-1)
+        .chick-cards__item-hat(data-lottie-3)
+        .chick-cards__item-top
+          +picture.chick-cards__item-img(src='chick-card-1', avif, true)
+          .chick-cards__item-grass(data-lottie-5)
+
+        .chick-cards__item-bottom
+          .h3.bitter-heading Выращиваем с 2012 года
+          .chick-cards__item-text Производим экологически чистую продукцию, которую едим сами #[br.only-desktop] и предлагаем всем нашим друзьям и близким
+          +button.button--red
+            | Больше о нас
+
+      .chick-cards__item(data-chick-card-2)
+        .chick-cards__item-hat(data-lottie-4)
+        .chick-cards__item-top
+          +picture.chick-cards__item-img(src='chick-card-2', avif, true)
+          .chick-cards__item-grass(data-lottie-6)
+        .chick-cards__item-bottom
+          .h3.bitter-heading Не изменяем традициям #[br] и качеству
+          .chick-cards__item-text У нас все свое — корм, трава, вода и даже солнце
+          +button.button--red
+            | Покупателям
+
+  .container
+    section.partners-section.main-section(data-aos='fade-up')
+      +picture.partners-section__bg(
+        src='partners-bg',
+        loading='lazy',
+        avif,
+        tablet,
+        mob
+      )
+      .partners-section__content
+        .h1.h1--small.bitter-heading Станьте нашим #[br] партнером
+        .partners-section__text Мы работаем с множеством фермеров&nbsp; #[br.only-mobile] и нашу продукцию #[br.only-desktop] можно найти&nbsp; #[br.only-mobile] практически на всех рынках Москвы #[br] и популярных маркетплейсах России
+        +button.button--red
+          | Присоединиться к нам
+
+    include ../components/recipes-section
+
+    include ../components/subscribe-section

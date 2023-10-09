@@ -1,0 +1,68 @@
+.bitter-heading {
+  font-family: Bitter;
+  font-weight: 800;
+}
+
+.h1 {
+  @include fsl(84px, 100%);
+  @media #{media('<')} {
+    @include fsl(40px);
+  }
+  @media #{media('<', m)} {
+    @include fsl(28px);
+  }
+
+  &--small {
+    @media #{media('<')} {
+      @include fsl(28px);
+    }
+  }
+  &--chick {
+    @media #{media('<', m)} {
+      @include fsl(26px);
+    }
+  }
+}
+
+.h2 {
+  @include fsl(60px, 110%);
+  @media #{media('<')} {
+    @include fsl(20px);
+  }
+
+  &--big {
+    @media #{media('<')} {
+      @include fsl(24px);
+    }
+  }
+  &--big {
+    @media #{media('<')} {
+      @include fsl(28px);
+    }
+  }
+}
+
+.h3 {
+  @include fsl(48px, 110%);
+  @media #{media('<')} {
+    @include fsl(20px, 130%);
+  }
+
+  &--small {
+    @media #{media('>')} {
+      @include fsl(40px);
+    }
+  }
+}
+
+.h4 {
+  @include fsl(28px, 110%);
+  @media #{media('<')} {
+    @include fsl(20px);
+  }
+  &--small {
+    @media #{media('<')} {
+      @include fsl(18px);
+    }
+  }
+}
