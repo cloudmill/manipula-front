@@ -165,7 +165,7 @@ module.exports = (env) => {
           { from: 'assets/images', to: 'assets/images' },
           // { from: 'assets/fonts', to: 'assets/fonts' },
           { from: 'assets/videos', to: 'assets/videos' },
-          { from: 'assets/animations', to: 'assets/animations' },
+          // { from: 'assets/animations', to: 'assets/animations' },
         ],
       }),
 

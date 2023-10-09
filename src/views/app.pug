@@ -35,20 +35,20 @@ html(lang='ru')
     title= TITLE
 
   body.body
-    if preloader
-      include ./components/preloader
+    //- if preloader
+    //-   include ./components/preloader
 
     block mobile-bar
 
     .wrapper
       block header
-        +header
+        //- +header
 
       main.main
         block content
 
       block footer
-        +footer
+        //- +footer
 
       block grid-test
         //- +grid-test
