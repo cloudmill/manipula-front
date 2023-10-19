@@ -1,10 +1,11 @@
 -
-  const TITLE = 'ЭкоФерма'
+  const TITLE = 'Манипула'
 
 
 block variables
   -
     var preloaser = false
+    var index = false
 
 include ./components/svg
 
@@ -42,10 +43,14 @@ html(lang='ru')
 
     .wrapper
       block header
-        //- +header
+        +header
 
-      main.main
-        block content
+      if !index
+        main.main
+          block content
+      else
+        main.main.bg-white
+          block content
 
       block footer
         //- +footer

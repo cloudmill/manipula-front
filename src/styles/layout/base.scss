@@ -95,8 +95,9 @@ body {
   overflow-x: hidden;
 
   @include f-main();
-  color: var(--green-text);
+  // color: var(--green-text);
   @include fsl(16px, 130%);
+  background: var(--main-bg);
 }
 
 .container {
