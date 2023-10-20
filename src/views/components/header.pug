@@ -6,33 +6,15 @@ mixin header
   header.header
     .header__container
       .header__row
-        .location-container
-          button.location.only-desktop(data-cities-drop)
-            +location-arrow
-            span(data-cities-drop-inner) Краснодар
-
         ul.header__nav1
           each el, i in nav1
             if i === 0
               li
                 a.header__nav1-item.red(href='')
-                  +action
                   span #{ el }
             else
               li
                 a.header__nav1-item(href='')
-                  span #{ el }
-
-        ul.header__nav2
-          each el, i in nav2
-            if i === 0
-              li
-                button.header__nav2-item.drop
-                  span #{ el }
-                  +drop-arrow.only-desktop
-            else
-              li
-                a.header__nav2-item(href='')
                   span #{ el }
 
         .header__contacts.only-desktop
@@ -42,17 +24,17 @@ mixin header
 
       .header__row
         button.burger.only-mobile
-          +burger
+          //- +burger
 
         a.header__logo(href='')
           img(src='assets/images/svg/logo.svg', alt='logo')
 
         button.header__catalog.only-desktop(data-catalog-button)
-          +catalog
+          //- +catalog
           span Каталог
 
         label.header__search.only-desktop
-          +search.header__search-ico
+          //- +search.header__search-ico
           input.only-desktop(
             type='search',
             name='search',
@@ -60,24 +42,14 @@ mixin header
             data-search
           )
           button.header__search-reset(data-search-reset)
-            +search-cross
+            //- +search-cross
           button.header__search-button Найти
 
-        button.header__search.only-mobile
-          +search
+        //- button.header__search.only-mobile
+        //-   +search
 
-        button.header__profile.only-desktop
-          +profile
+        //- button.header__profile.only-desktop
+        //-   +profile
 
-        button.header__cart.only-desktop
-          +cart
-
-    #city-drop.display-none
-      .cities-drop
-        div(data-cities-drop-item, onclick='cityChoose("Краснодар")') Краснодар
-        div(data-cities-drop-item, onclick='cityChoose("Москва")') Москва
-        div(data-cities-drop-item, onclick='cityChoose("Санкт-Петербург")') Санкт-Петербург
-        div(data-cities-drop-item, onclick='cityChoose("Новосибирск")') Новосибирск
-        div(data-cities-drop-item, onclick='cityChoose("Омск")') Омск
-
-    //- include ../components/modals/catalog-menu
+        //- button.header__cart.only-desktop
+        //-   +cart
