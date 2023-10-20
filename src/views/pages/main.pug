@@ -4,4 +4,26 @@ block variables
   //- - preloader = true
 
 block content
-  | main
+  .container
+    .first-screen
+      a.first-screen-slider(href)
+        img.first-screen-slider__bg(
+          src='assets/images/first-screen-0.jpg',
+          alt=''
+        )
+        .first-screen-slider__content
+          .first-screen-slider__title Перчатки «Дэтрион»
+          .first-screen-slider__text Перчатки Дэтрион рекомендованы для защиты рук от механических (истирание, порезы, проколы) и ударных воздействий, от пониженных температур
+
+      - for (i=0;i<4;i++)
+        a.first-screen-cell(href)
+          img.first-screen-cell__bg(
+            src='assets/images/first-screen-1.jpg',
+            alt=''
+          )
+          .first-screen-cell__title О компании
+
+    .first-bottom
+      .first-bottom__title Манипула Специалист — первый российский производитель профессиональных высококачественных СИЗ рук
+
+    section

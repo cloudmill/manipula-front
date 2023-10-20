@@ -1,0 +1,73 @@
+.first-screen {
+  display: grid;
+  grid-template-columns: repeat(4, cols(3));
+  grid-template-rows: repeat(2, rem(360px));
+  gap: $col-gap-d;
+
+  &-slider {
+    position: relative;
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+
+    border-radius: rem(8px);
+    overflow: hidden;
+
+    &__content {
+      position: relative;
+      padding: rem(37px) rem(32px) 0;
+    }
+
+    &__title {
+      position: relative;
+      @include fsl(56px, 100%);
+      font-weight: 400;
+      letter-spacing: -2.24px;
+    }
+
+    &__text {
+      margin-top: rem(24px);
+      width: rem(624px);
+      @include fsl(20px, 140%);
+      font-weight: 400;
+      letter-spacing: -0.2px;
+    }
+
+    &__bg {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+    }
+  }
+
+  &-cell {
+    position: relative;
+    padding: rem(32px);
+    border-radius: rem(8px);
+    overflow: hidden;
+    background: #e3e3e3;
+
+    &__title {
+      position: relative;
+      @include fsl(28px, 100%);
+      font-weight: 400;
+      letter-spacing: -0.56px;
+    }
+
+    &__bg {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+    }
+  }
+}
+
+.first-bottom {
+  margin: rem(120px) 0;
+
+  &__title {
+    @include fsl(56px, 100%);
+    font-weight: 400;
+    letter-spacing: -2.24px;
+    width: cols(8);
+  }
+}

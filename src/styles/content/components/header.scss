@@ -8,12 +8,12 @@
     display: flex;
     flex-direction: column;
     gap: rem(24px);
-    padding: rem(24px) 0;
+    padding: rem(20px) 0;
 
     @media #{media('<')} {
-      flex-direction: column-reverse;
-      padding: rem(12px) 0 0;
-      gap: rem(8px);
+      // flex-direction: column-reverse;
+      // padding: rem(12px) 0 0;
+      // gap: rem(8px);
     }
   }
 
@@ -24,13 +24,16 @@
     padding-left: $col-pad-d;
     padding-right: $col-pad-d;
 
-    @media #{media('<')} {
-      padding-left: $col-pad-m;
-      padding-right: $col-pad-m;
-      border-bottom: 1px solid var(--green-border);
-    }
+    // @media #{media('<')} {
+    //   padding-left: $col-pad-m;
+    //   padding-right: $col-pad-m;
+    //   border-bottom: 1px solid var(--green-border);
+    // }
 
     &:nth-child(1) {
+      padding-bottom: rem(17px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
       @media #{media('<')} {
         justify-content: center;
         padding-bottom: rem(8px);
@@ -52,18 +55,17 @@
   &__nav1 {
     display: flex;
     align-items: center;
-    gap: rem(24px);
-    margin-left: rem(166px);
+    gap: rem(48px);
 
-    @media #{media('<')} {
-      gap: rem(8px);
-      margin-left: unset;
-    }
+    // @media #{media('<')} {
+    //   gap: rem(8px);
+    //   margin-left: unset;
+    // }
 
     &-item {
-      @include fsl(20px, 100%);
-      color: var(--green-text);
-      letter-spacing: -0.2px;
+      @include fsl(18px, 100%);
+      font-weight: 400;
+      letter-spacing: -0.36px;
       white-space: nowrap;
 
       display: flex;
@@ -72,38 +74,13 @@
 
       transition: $transition;
 
-      @media #{media('<')} {
-        @include fsl(13px);
-        letter-spacing: -0.13px;
-      }
+      // @media #{media('<')} {
+      //   @include fsl(13px);
+      //   letter-spacing: -0.13px;
+      // }
 
       &:not(.red):hover {
         color: var(--red);
-      }
-
-      &.red {
-        color: var(--red);
-        svg {
-          width: rem(26px);
-          height: rem(26px);
-
-          @media #{media('<')} {
-            width: rem(16px);
-            height: rem(16px);
-          }
-
-          .action-fill {
-            transition: $transition;
-          }
-        }
-
-        &:hover {
-          color: var(--green-text);
-
-          svg .action-fill {
-            fill: var(--green-text);
-          }
-        }
       }
     }
   }

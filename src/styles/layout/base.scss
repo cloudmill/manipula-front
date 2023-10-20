@@ -95,7 +95,7 @@ body {
   overflow-x: hidden;
 
   @include f-main();
-  // color: var(--green-text);
+  color: var(--white);
   @include fsl(16px, 130%);
   background: var(--main-bg);
 }
