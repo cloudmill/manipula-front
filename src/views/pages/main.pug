@@ -26,4 +26,28 @@ block content
     .first-bottom
       .first-bottom__title Манипула Специалист — первый российский производитель профессиональных высококачественных СИЗ рук
 
-    section
+  section.solutions
+    .container
+      h2.h2.main-title Отраслевые решения
+      .solutions-list
+        -
+          const list = [
+            'Нефть <br/> и нефтепереработка',
+            'Газовая <br/> промышленность',
+            'Электроэнергетика',
+            'Атомная энергетика',
+            'Пищевая <br/> промышленность',
+            'Химическая <br/> промышленность'
+          ]
+        each el, index in list
+          .solutions-item
+            img.solutions-item__bg(
+              src=`assets/images/solutions-${index}.png`,
+              alt=''
+            )
+            .solutions-item__ttl!= el
+
+  .container
+    section.news
+      .news-top
+        h2.h2 Последние новости

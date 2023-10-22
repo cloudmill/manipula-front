@@ -1,8 +1,3 @@
-.bitter-heading {
-  font-family: Bitter;
-  font-weight: 800;
-}
-
 .h1 {
   @include fsl(84px, 100%);
   @media #{media('<')} {
@@ -11,34 +6,13 @@
   @media #{media('<', m)} {
     @include fsl(28px);
   }
-
-  &--small {
-    @media #{media('<')} {
-      @include fsl(28px);
-    }
-  }
-  &--chick {
-    @media #{media('<', m)} {
-      @include fsl(26px);
-    }
-  }
 }
 
 .h2 {
-  @include fsl(60px, 110%);
+  @include fsl(56px, 100%);
+  letter-spacing: -2.24px;
   @media #{media('<')} {
-    @include fsl(20px);
-  }
-
-  &--big {
-    @media #{media('<')} {
-      @include fsl(24px);
-    }
-  }
-  &--big {
-    @media #{media('<')} {
-      @include fsl(28px);
-    }
+    @include fsl(20px, 120%);
   }
 }
 
