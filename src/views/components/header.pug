@@ -1,21 +1,14 @@
 mixin header
   -
-    const nav1 = ['О компании', 'Технологии', 'Библиотека защиты', 'Новости', 'Контакты', 'Где купить']
-    const nav2 = ['Клиентам', 'Об Экоферме', 'Партнерам']
+    const nav = ['О компании', 'Технологии', 'Библиотека защиты', 'Новости', 'Контакты', 'Где купить']
 
   header.header
     .header__container
       .header__row
-        ul.header__nav1
-          each el, i in nav1
-            if i === 0
-              li
-                a.header__nav1-item.red(href='')
-                  span #{ el }
-            else
-              li
-                a.header__nav1-item(href='')
-                  span #{ el }
+        ul.header__nav
+          each el, i in nav
+            li
+              a.header__nav-item(href='') #{ el }
 
         .header__contacts.only-desktop
           a(href='tel:89123456789') 8 912 345-67-89
@@ -23,33 +16,38 @@ mixin header
           a(href='mailto:order@roshal.eco') order@roshal.eco
 
       .header__row
-        button.burger.only-mobile
-          //- +burger
-
         a.header__logo(href='')
           img(src='assets/images/svg/logo.svg', alt='logo')
 
-        button.header__catalog.only-desktop(data-catalog-button)
-          //- +catalog
-          span Каталог
+        button.header__catalog(data-catalog-button)
+          span Каталог СИЗ рук
+          +double-arrow-down
 
-        label.header__search.only-desktop
-          //- +search.header__search-ico
-          input.only-desktop(
-            type='search',
-            name='search',
-            placeholder='Поиск товаров',
-            data-search
-          )
-          button.header__search-reset(data-search-reset)
+        button.header__selection.only-desktop
+          span Подобрать защитное решение
+          +double-arrow-right
+
+        label.header__search
+          .header__search-ico
+            +search
+          .header__search-input.only-desktop
+            input.only-desktop(
+              type='search',
+              name='search',
+              placeholder='Введите запрос',
+              data-search
+            )
+          //- button.header__search-reset(data-search-reset)
             //- +search-cross
-          button.header__search-button Найти
+          //- button.header__search-button Найти
 
         //- button.header__search.only-mobile
         //-   +search
 
-        //- button.header__profile.only-desktop
-        //-   +profile
+        button.header__profile.only-desktop
+          span Личный кабинет дистрибьютора
+          .header__profile-ico
+            +profile
 
-        //- button.header__cart.only-desktop
-        //-   +cart
+        button.burger.only-mobile
+          +burger
