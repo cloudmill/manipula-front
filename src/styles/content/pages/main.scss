@@ -4,6 +4,12 @@
   grid-template-rows: repeat(2, rem(360px));
   gap: $col-gap-d;
 
+  @media #{media('<')} {
+    grid-template-columns: repeat(2, cols-mob(2));
+    grid-template-rows: rem(506px) repeat(2, rem(120px));
+    gap: $col-gap-m;
+  }
+
   &-slider {
     position: relative;
     grid-column: 1 / 3;
@@ -12,9 +18,17 @@
     border-radius: rem(8px);
     overflow: hidden;
 
+    @media #{media('<')} {
+      grid-row: 1 / 2;
+    }
+
     &__content {
       position: relative;
       padding: rem(37px) rem(32px) 0;
+
+      @media #{media('<')} {
+        padding: rem(20px);
+      }
     }
 
     &__title {
@@ -22,14 +36,25 @@
       @include fsl(56px, 100%);
       font-weight: 400;
       letter-spacing: -2.24px;
+
+      @media #{media('<')} {
+        @include fsl(20px, 120%);
+        letter-spacing: -0.8px;
+      }
     }
 
     &__text {
       margin-top: rem(24px);
       width: rem(624px);
       @include fsl(20px, 140%);
-      font-weight: 400;
       letter-spacing: -0.2px;
+
+      @media #{media('<')} {
+        width: auto;
+        margin-top: rem(12px);
+        @include fsl(14px, 140%);
+        letter-spacing: -0.14px;
+      }
     }
 
     &__bg {
@@ -48,11 +73,20 @@
     overflow: hidden;
     background: #e3e3e3;
 
+    @media #{media('<')} {
+      padding: rem(20px);
+      border-radius: rem(4px);
+    }
+
     &__title {
       position: relative;
       @include fsl(28px, 100%);
-      font-weight: 400;
       letter-spacing: -0.56px;
+
+      @media #{media('<')} {
+        @include fsl(16px, 100%);
+        letter-spacing: -0.32px;
+      }
     }
 
     &__bg {
@@ -72,11 +106,21 @@
   flex-direction: column;
   gap: rem(60px);
 
+  @media #{media('<')} {
+    margin: rem(48px) 0;
+    gap: rem(20px);
+  }
+
   &__title {
     @include fsl(56px, 100%);
-    font-weight: 400;
     letter-spacing: -2.24px;
     width: cols(8);
+
+    @media #{media('<')} {
+      width: auto;
+      @include fsl(20px, 120%);
+      letter-spacing: -0.4px;
+    }
   }
 
   &__text {
@@ -87,6 +131,14 @@
 
     @include fsl(20px, 140%);
     letter-spacing: -0.2px;
+
+    @media #{media('<')} {
+      grid-template-columns: 100%;
+      gap: rem(16px);
+      padding: 0;
+      @include fsl(14px, 140%);
+      letter-spacing: -0.14px;
+    }
   }
 
   &__col {
@@ -98,22 +150,41 @@
       @include fsl(20px, 100%);
       color: var(--red);
       text-transform: uppercase;
+
+      @media #{media('<')} {
+        @include fsl(14px);
+      }
     }
   }
 }
 
 .main-title {
   margin-bottom: rem(60px);
+  @media #{media('<')} {
+    margin-bottom: rem(20px);
+  }
 }
 
 .solutions {
   padding: rem(60px) 0;
   background: var(--main-bg2);
 
+  @media #{media('<')} {
+    padding: rem(20px) 0;
+  }
+
   &-list {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: rem(20px);
+
+    @media #{media('<')} {
+      display: flex;
+      gap: rem(12px);
+      overflow-x: scroll;
+
+      @include scrollbar-hidden;
+    }
   }
 
   &-item {
@@ -121,6 +192,12 @@
     height: rem(420px);
     border-radius: rem(6px);
     overflow: hidden;
+
+    @media #{media('<')} {
+      width: rem(186px);
+      height: rem(286px);
+      flex: none;
+    }
 
     &__ttl {
       position: absolute;
@@ -130,6 +207,15 @@
 
       @include fsl(24px, 100%);
       letter-spacing: -0.48px;
+
+      @media #{media('<')} {
+        top: rem(16px);
+        left: rem(16px);
+        right: rem(16px);
+
+        @include fsl(16px, 120%);
+        letter-spacing: -0.32px;
+      }
     }
 
     &__bg {
@@ -142,6 +228,10 @@
 
 .news {
   padding: rem(125px) 0 rem(120px);
+
+  @media #{media('<')} {
+    padding: rem(48px) 0 rem(58px);
+  }
 
   &-top {
     display: flex;
@@ -157,11 +247,27 @@
   gap: $col-gap-d;
 
   margin-top: rem(60px);
+
+  @media #{media('<')} {
+    margin-top: rem(20px);
+    display: flex;
+    gap: $col-gap-m;
+    overflow-x: scroll;
+
+    @include scrollbar-hidden;
+  }
 }
 
 .news-item {
-  &:first-child {
-    grid-column: 1 / 3;
+  @media #{media('>')} {
+    &:first-child {
+      grid-column: 1 / 3;
+    }
+  }
+
+  @media #{media('<')} {
+    width: cols-mob(3);
+    flex: none;
   }
 
   &__img {
@@ -179,6 +285,12 @@
     display: flex;
     align-items: center;
     gap: rem(24px);
+
+    @media #{media('<')} {
+      margin-top: rem(16px);
+      @include fsl(10px);
+      gap: rem(8px);
+    }
   }
 
   &__tag span {
@@ -189,5 +301,11 @@
     @include fsl(22px, 120%);
     letter-spacing: -0.44px;
     margin-top: rem(12px);
+
+    @media #{media('<')} {
+      @include fsl(16px);
+      letter-spacing: -0.32px;
+      margin-top: rem(8px);
+    }
   }
 }

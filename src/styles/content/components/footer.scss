@@ -16,25 +16,32 @@
     padding-bottom: rem(80px);
     border-bottom: 2px solid var(--green-border);
 
+    @media #{media('<')} {
+      grid-template-columns: 100%;
+      padding-bottom: rem(48px);
+    }
+
     &-col1 {
       padding-top: rem(62px);
 
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      gap: rem(15px);
 
-      @media #{media('>')} {
-        gap: rem(15px);
+      @media #{media('<')} {
+        padding-top: rem(26px);
+        gap: rem(8px);
       }
 
       a {
         @include fsl(20px, 120%);
         letter-spacing: -0.2px;
 
-        // @media #{media('<')} {
-        //   @include fsl(15px);
-        //   letter-spacing: -0.15px;
-        // }
+        @media #{media('<')} {
+          @include fsl(14px);
+          letter-spacing: -0.14px;
+        }
 
         transition: $transition;
 
@@ -92,17 +99,36 @@
   &__tel {
     @include fsl(48px, 120%);
     letter-spacing: -1.92px;
+
+    @media #{media('<')} {
+      @include fsl(28px);
+      letter-spacing: -1.12px;
+    }
   }
   &__mail {
     @include fsl(24px, 120%);
     letter-spacing: -0.24px;
+
+    @media #{media('<')} {
+      @include fsl(16px);
+      letter-spacing: -0.16px;
+      margin-top: rem(2px);
+    }
   }
   &__address {
     margin-top: rem(36px);
+    @media #{media('<')} {
+      margin-top: rem(16px);
+    }
 
     &-txt {
       @include fsl(16px, 120%);
       letter-spacing: -0.16px;
+
+      @media #{media('<')} {
+        @include fsl(13px);
+        letter-spacing: -0.13px;
+      }
     }
     &-btn {
       margin-top: rem(8px);
@@ -114,6 +140,11 @@
       display: flex;
       align-items: center;
       gap: rem(4px);
+
+      @media #{media('<')} {
+        @include fsl(13px);
+        letter-spacing: -0.13px;
+      }
 
       svg {
         width: rem(16px);
@@ -129,49 +160,14 @@
     grid-template-columns: cols(3) 1fr;
     gap: $col-gap-d;
 
-    // @media #{media('<')} {
-    //   grid-template-columns: repeat(2, cols-mob(1));
-    // }
-    // @media #{media('<', m)} {
-    //   grid-template-columns: repeat(2, cols-mob(2));
-    //   gap: $col-gap-m;
-    // }
+    @media #{media('<')} {
+      display: flex;
+      padding-top: rem(48px);
+    }
 
     &-col {
       display: flex;
       flex-direction: column;
-      // align-items: flex-start;
-
-      // span {
-      //   @include fsl(16px, 140%);
-      //   color: var(--green);
-      //   letter-spacing: -0.16px;
-      //   margin-bottom: rem(8px);
-
-      //   @media #{media('<')} {
-      //     @include fsl(13px);
-      //     letter-spacing: -0.13px;
-      //     margin-bottom: rem(4px);
-      //   }
-      // }
-      // a {
-      //   @include fsl(20px, 140%);
-      //   letter-spacing: -0.2px;
-      //   transition: $transition;
-
-      //   @media #{media('<')} {
-      //     @include fsl(15px);
-      //     letter-spacing: -0.15px;
-      //   }
-
-      //   &:not(:last-child) {
-      //     margin-bottom: rem(4px);
-      //   }
-
-      //   &:hover {
-      //     color: var(--red);
-      //   }
-      // }
     }
   }
 
@@ -179,6 +175,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: none;
 
     width: rem(48px);
     height: rem(48px);
@@ -188,9 +185,19 @@
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(3px);
 
+    @media #{media('<')} {
+      width: rem(44px);
+      height: rem(44px);
+    }
+
     svg {
       width: rem(24px);
       height: rem(24px);
+
+      @media #{media('<')} {
+        width: rem(20px);
+        height: rem(20px);
+      }
 
       path {
         transition: $transition;
@@ -204,15 +211,28 @@
     gap: cols-g(1);
     padding-bottom: rem(48px);
 
-    &-col {
+    @media #{media('<')} {
+      grid-template-columns: 1fr 1fr;
+      gap: $col-gap-m;
     }
+
     &-img {
       height: rem(60px);
       margin-bottom: rem(16px);
+
+      @media #{media('<')} {
+        height: rem(56px);
+        margin-bottom: rem(8px);
+      }
     }
     &-txt {
       @include fsl(12px, 140%);
       letter-spacing: -0.12px;
+
+      @media #{media('<')} {
+        @include fsl(10px);
+        letter-spacing: -0.1px;
+      }
     }
   }
 
@@ -221,6 +241,11 @@
     justify-content: start;
     grid-template-columns: cols(3) 1fr cols(3);
     gap: $col-gap-d;
+
+    @media #{media('<')} {
+      grid-template-columns: 100%;
+      gap: $col-gap-m;
+    }
   }
 
   &__policy {
