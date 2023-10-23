@@ -64,11 +64,37 @@
 .first-bottom {
   margin: rem(120px) 0;
 
+  display: flex;
+  flex-direction: column;
+  gap: rem(60px);
+
   &__title {
     @include fsl(56px, 100%);
     font-weight: 400;
     letter-spacing: -2.24px;
     width: cols(8);
+  }
+
+  &__text {
+    display: grid;
+    grid-template-columns: repeat(2, rem(465px));
+    gap: rem(125px);
+    padding: 0 cols-g(2);
+
+    @include fsl(20px, 140%);
+    letter-spacing: -0.2px;
+  }
+
+  &__col {
+    display: flex;
+    gap: rem(12px);
+
+    &::before {
+      content: '[';
+      @include fsl(20px, 100%);
+      color: var(--red);
+      text-transform: uppercase;
+    }
   }
 }
 
