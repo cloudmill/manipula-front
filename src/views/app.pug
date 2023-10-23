@@ -45,12 +45,8 @@ html(lang='ru')
       block header
         +header
 
-      if !index
-        main.main
-          block content
-      else
-        main.main.bg-white
-          block content
+      main.main
+        block content
 
       block footer
         +footer

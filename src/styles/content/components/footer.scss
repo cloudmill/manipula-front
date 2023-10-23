@@ -9,23 +9,12 @@
   // }
 
   &__main {
-    padding-bottom: rem(64px);
-    border-bottom: 2px solid var(--green-border);
-
     display: grid;
     grid-template-columns: repeat(2, cols(3)) 1fr;
     gap: $col-gap-d;
 
-    // @media #{media('<')} {
-    //   padding-bottom: rem(32px);
-    //   grid-template-columns: cols-mob(2) cols-mob(1) cols-mob(1);
-    //   gap: $col-gap-m;
-    // }
-    // @media #{media('<', m)} {
-    //   grid-template-columns: cols-mob(2) cols-mob(2);
-    //   row-gap: rem(32px);
-    //   column-gap: $col-gap-m;
-    // }
+    padding-bottom: rem(80px);
+    border-bottom: 2px solid var(--green-border);
 
     &-col1 {
       padding-top: rem(62px);
@@ -133,36 +122,6 @@
     }
   }
 
-  &__bottom {
-    padding-top: rem(64px);
-
-    display: grid;
-    grid-template-columns: repeat(3, cols(4));
-    gap: $col-gap-d;
-
-    @media #{media('<')} {
-      padding-top: rem(32px);
-      grid-template-columns: cols-mob(3) cols-mob(1);
-      column-gap: $col-gap-m;
-      row-gap: rem(32px);
-    }
-    @media #{media('<')} {
-      grid-template-columns: cols-mob(4);
-    }
-
-    &-title {
-      font-family: Bitter;
-      @include fsl(32px, 100%);
-      font-weight: 800;
-      margin-bottom: rem(32px);
-
-      @media #{media('<')} {
-        @include fsl(24px);
-        margin-bottom: rem(20px);
-      }
-    }
-  }
-
   &__contacts {
     padding-top: rem(62px);
 
@@ -239,6 +198,24 @@
     }
   }
 
+  &__middle {
+    display: grid;
+    grid-template-columns: repeat(4, cols-g(2));
+    gap: cols-g(1);
+    padding-bottom: rem(48px);
+
+    &-col {
+    }
+    &-img {
+      height: rem(60px);
+      margin-bottom: rem(16px);
+    }
+    &-txt {
+      @include fsl(12px, 140%);
+      letter-spacing: -0.12px;
+    }
+  }
+
   &__corp {
     display: grid;
     justify-content: start;
@@ -248,19 +225,18 @@
 
   &__policy {
     width: fit-content;
-    @include fsl(14px, 140%);
+    @include fsl(14px);
     letter-spacing: -0.14px;
 
     @media #{media('<')} {
       @include fsl(13px);
       letter-spacing: -0.13px;
-      max-width: rem(335px);
     }
   }
 
   &__rights {
-    @include fsl(14px, 140%);
-    color: var(--green);
+    @include fsl(14px);
+    color: var(--blue-txt);
     letter-spacing: -0.14px;
 
     @media #{media('<')} {
@@ -270,9 +246,9 @@
   }
 
   &__author {
-    margin-top: auto;
-    @include fsl(14px, 140%);
+    @include fsl(14px);
     letter-spacing: -0.14px;
+    color: var(--blue-txt);
 
     @media #{media('<')} {
       @include fsl(13px);
@@ -280,8 +256,8 @@
     }
 
     a {
-      color: var(--red);
-      font-weight: 500;
+      color: #fff;
+      font-weight: 600;
     }
   }
 }

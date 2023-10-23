@@ -27,22 +27,17 @@ mixin footer
           a.footer__social(href)
             +vk
 
-      .footer__bottom
-        div
-          //- .footer__contacts
-          //-   .footer__contacts-col
-          //-     span По телефону
-          //-     a(href='tel:84997559790') 8 499 755-97-90
-          //-   .footer__contacts-col
-          //-     span По электронной почте
-          //-     a(href='mailto:zakaz@gurmanych.ru') zakaz@gurmanych.ru
-          //-     a(href='mailto:gurmanych@bk.ru ') gurmanych@bk.ru
+      .footer__middle
+        -
+          const cols = ['Ассоциация разработчиков, изготовителей и поставщиков средств индивидуальной защиты', 'Лицензионный партнер по программе СИЗ рук из материала DuPont™ Kevlar® на территории РФ', 'Лицензионный партнер по программе СИЗ рукиз материала Dyneema® Diamond Technology на территории РФ', 'Лицензионный партнер по программе СИЗ рук из материала Thermolite® на территории ЕАС']
 
-        //- .footer__social
-        //-   each el, i in socials
-        //-     a.footer__social-item(href)
-        //-       //- +socials(i)
-        //-       span #{ el }
+        each el, i in cols
+          .footer__middle-col
+            img.footer__middle-img(
+              src=`assets/images/footer-mid-${i}.png`,
+              alt=''
+            )
+            .footer__middle-txt!= el
 
       .footer__corp
         .footer__rights © 2008-2023 ООО «Манипула Специалист»
