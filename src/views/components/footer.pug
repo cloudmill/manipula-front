@@ -1,56 +1,50 @@
 mixin footer
   -
-    const col1 = ['Мясо птицы', 'Овощи, фрукты, ягоды, зелень', 'Мясо', 'Рыба и морепродукты', 'Мясо кролика и нутрии', 'Молочные продукты', 'Яйцо']
-    const col2 = ['Бакалея и консерванты', 'Копчения мясные', 'Праздничные блюда']
-    const col3 = ['Как сделать заказ', 'Условия доставки', 'Условия оплаты', 'Возврат продукции']
-    const col4 = ['О нас', 'Партнерам', 'Вопрос-ответ']
-    const socials = ['Вконтакте', 'Яндекс.Дзен', 'Телеграм']
+    const col1 = ['О компании', 'Технологии', 'Библиотека защиты', 'Новости', 'Контакты', 'Где купить']
 
-  footer.footer(data-aos='fade-up')
+  footer.footer
     .container
       .footer__main
-        .footer__main-col1-container
-          .footer__main-col1
-            each el, i in col1
-              a(href='')
-                +footer-list1(i)
-                span #{ el } 
-          .footer__main-col1
-            each el, i in col2
-              a(href='')
-                +footer-list2(i)
-                span #{ el } 
+        a.header__logo(href='')
+          img(src='assets/images/svg/logo.svg', alt='logo')
+        //- .footer__main-col1-container
+        .footer__main-col1
+          each el, i in col1
+            a(href='')
+              //- +footer-list1(i)
+              span #{ el } 
+        .footer__contacts
+          .footer__contacts-col
+            a.footer__tel(href='tel:+74950330331') +7 495 033-033-1
+            a.footer__mail(href='mailto:info@manipulas.ru') info@manipulas.ru
 
-        .footer__main-col2-container
-          .footer__main-col2
-            each el in col3
-              a(href='') #{ el } 
-          a.footer__action(href='')
-            +action
-            span Акции
+            .footer__address
+              .footer__address-txt 121471, Москва, ул. Рябиновая, 26/2, БЦ «West Plaza»
+              button.footer__address-btn
+                +map
+                span На карте
 
-        .footer__main-col2
-          each el in col4
-            a(href='') #{ el }
+          a.footer__social(href)
+            +vk
+
       .footer__bottom
         div
-          .footer__bottom-title Сделать заказ
-          .footer__contacts
-            .footer__contacts-col
-              span По телефону
-              a(href='tel:84997559790') 8 499 755-97-90
-            .footer__contacts-col
-              span По электронной почте
-              a(href='mailto:zakaz@gurmanych.ru') zakaz@gurmanych.ru
-              a(href='mailto:gurmanych@bk.ru ') gurmanych@bk.ru
+          //- .footer__contacts
+          //-   .footer__contacts-col
+          //-     span По телефону
+          //-     a(href='tel:84997559790') 8 499 755-97-90
+          //-   .footer__contacts-col
+          //-     span По электронной почте
+          //-     a(href='mailto:zakaz@gurmanych.ru') zakaz@gurmanych.ru
+          //-     a(href='mailto:gurmanych@bk.ru ') gurmanych@bk.ru
 
-        .footer__social
-          each el, i in socials
-            a.footer__social-item(href)
-              +socials(i)
-              span #{ el }
+        //- .footer__social
+        //-   each el, i in socials
+        //-     a.footer__social-item(href)
+        //-       //- +socials(i)
+        //-       span #{ el }
 
-        .footer__corp
-          a.footer__policy(href='') Политика в отношении обработки персональных данных
-          .footer__rights © 2012-2023 Экоферма Рошаля
-          .footer__author Сделано в #[a(href) CloudMill]
+      .footer__corp
+        .footer__rights © 2008-2023 ООО «Манипула Специалист»
+        a.footer__policy(href='') Политика конфиденциальности
+        .footer__author Сделано в #[a(href) Клаудмил]
