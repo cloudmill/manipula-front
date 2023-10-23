@@ -56,3 +56,15 @@ block content
     section.news
       .news-top
         h2.h2 Последние новости
+
+      .news-list
+        - for (i=0;i<3;i++)
+          a.news-item(href)
+            img.news-item__img(src='assets/images/news-0.jpg', alt='')
+            .news-item__info
+              .news-item__date 6 марта 2023
+              .news-item__tag
+                span [
+                | &nbsp;Новости компании&nbsp;
+                span ]
+            .news-item__title Выставка KIOSH-2023 в Казахстане 24-26 мая
