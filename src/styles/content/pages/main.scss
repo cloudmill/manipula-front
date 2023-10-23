@@ -8,6 +8,8 @@
     grid-template-columns: repeat(2, cols-mob(2));
     grid-template-rows: rem(506px) repeat(2, rem(120px));
     gap: $col-gap-m;
+
+    margin-top: rem(12px);
   }
 
   &-slider {
