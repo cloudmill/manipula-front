@@ -27,11 +27,11 @@ mixin header
           span Подобрать защитное решение
           +double-arrow-right
 
-        label.search
+        label.search.only-desktop
           .search__ico
             +search
-          .search__input.only-desktop
-            input.only-desktop(
+          .search__input
+            input(
               type='search',
               name='search',
               placeholder='Введите запрос',
@@ -41,8 +41,8 @@ mixin header
             //- +search-cross
           //- button.header__search-button Найти
 
-        //- button.header__search.only-mobile
-        //-   +search
+        button.header__search.only-mobile
+          +search
 
         button.header__profile.only-desktop
           span Личный кабинет дистрибьютора
