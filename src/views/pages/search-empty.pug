@@ -1,0 +1,27 @@
+extends ../app
+
+block variables
+  //- - preloader = true
+
+include ../components/breadcrumbs
+include ../components/cards/product-card
+
+block content
+  .container
+    +breadcrumbs(page='Результаты поиска')
+    h1.h1 Результаты поиска
+
+    .search-form
+      label.search
+        .search__ico
+          +search
+        .search__input
+          input(
+            type='search',
+            name='search',
+            value='121324343',
+            placeholder='Введите запрос',
+            data-search
+          )
+
+      .search-counter По запросу #[span «121324343»] найдено товаров: 0

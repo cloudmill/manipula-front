@@ -1,0 +1,29 @@
+extends ../app
+
+block variables
+  //- - preloader = true
+
+include ../components/breadcrumbs
+
+block content
+  .container
+    +breadcrumbs(page='Новости')
+    h1.h1 Новости
+
+    .news-filters
+      .news-filters__item.active Все
+      button.news-filters__item Новости компании
+      button.news-filters__item Отраслевые новости
+      button.news-filters__item Конференции
+
+    .news-table
+      - for (i=0;i<12;i++)
+        a.news-item(href)
+          img.news-item__img(src='assets/images/news-0.jpg', alt='')
+          .news-item__info
+            .news-item__date 6 марта 2023
+            .news-item__tag
+              span [
+              | &nbsp;Новости компании&nbsp;
+              span ]
+          .news-item__title Выставка KIOSH-2023 в Казахстане 24-26 мая

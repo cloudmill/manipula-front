@@ -258,15 +258,14 @@
 
     @include scrollbar-hidden;
   }
-}
-
-.news-item {
   @media #{media('>')} {
-    &:first-child {
+    .news-item:first-child {
       grid-column: 1 / 3;
     }
   }
+}
 
+.news-item {
   @media #{media('<')} {
     width: cols-mob(3);
     flex: none;
