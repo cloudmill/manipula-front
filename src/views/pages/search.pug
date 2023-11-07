@@ -1,0 +1,36 @@
+extends ../app
+
+block variables
+  //- - preloader = true
+
+include ../components/breadcrumbs
+include ../components/cards/product-card
+
+block content
+  .container
+    +breadcrumbs(page='Результаты поиска')
+    h1.h1 Результаты поиска
+
+    .search-form
+      label.search
+        .search__ico
+          +search
+        .search__input.only-desktop
+          input.only-desktop(
+            type='search',
+            name='search',
+            placeholder='Введите запрос',
+            data-search
+          )
+
+      .search-counter По запросу #[span «перчатки»] найдено товаров: 12
+
+  .search-result
+    .search-result__table
+      - for (i=0;i<8;i++)
+        +card
+
+    button.more-button
+      span Показать еще
+      .more-button__ico
+        +arrow-down

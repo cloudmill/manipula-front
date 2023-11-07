@@ -1,10 +1,10 @@
 .h1 {
-  @include fsl(84px, 100%);
+  @include fsl(74px, 90%);
+  letter-spacing: -2.96px;
+
   @media #{media('<')} {
-    @include fsl(40px);
-  }
-  @media #{media('<', m)} {
-    @include fsl(28px);
+    @include fsl(20px, 120%);
+    letter-spacing: -0.8px;
   }
 }
 
@@ -14,30 +14,5 @@
   @media #{media('<')} {
     @include fsl(20px, 120%);
     letter-spacing: -0.4px;
-  }
-}
-
-.h3 {
-  @include fsl(48px, 110%);
-  @media #{media('<')} {
-    @include fsl(20px, 130%);
-  }
-
-  &--small {
-    @media #{media('>')} {
-      @include fsl(40px);
-    }
-  }
-}
-
-.h4 {
-  @include fsl(28px, 110%);
-  @media #{media('<')} {
-    @include fsl(20px);
-  }
-  &--small {
-    @media #{media('<')} {
-      @include fsl(18px);
-    }
   }
 }

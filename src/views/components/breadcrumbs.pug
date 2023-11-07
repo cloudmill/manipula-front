@@ -1,5 +1,5 @@
 mixin breadcrumbs
-  .breadcrumbs(class=attributes.class, data-aos='fade-up')
+  .breadcrumbs(class=attributes.class)
     ul.breadcrumbs__list
       li.breadcrumbs__item
         a.breadcrumbs__link(href='#') 
@@ -11,4 +11,6 @@ mixin breadcrumbs
               | #{ item }
       li.breadcrumbs__item
         .breadcrumbs__text
-          | #{ attributes.page }
+          span.red [
+          span #{ attributes.page }
+          span.red ]

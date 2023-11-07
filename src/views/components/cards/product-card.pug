@@ -1,0 +1,20 @@
+mixin card
+  .card
+    .card__top
+      img(src='assets/images/product-0.jpeg', alt='')
+    .card__info
+      .card__category Перчатки
+      .card__title Микропол MG-162 (ex. TPU-13)
+
+      -
+        const items = [
+          { title: 'Основа', value: 'Интерлок' },
+          { title: 'Покрытие', value: 'Нитрил' },
+          { title: 'Длина', value: '250-270 мм' },
+          { title: 'Размеры', value: '8, 9, 10' },
+          { title: 'Упаковка', value: '12/120 пар' },
+        ]
+      each el in items
+        .card-row
+          .card-row__title= el.title
+          .card-row__value= el.value
