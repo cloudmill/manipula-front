@@ -190,44 +190,8 @@
 }
 
 .more-button {
-  display: flex;
-  align-items: center;
   margin: rem(60px) auto 0;
-  padding-left: rem(32px);
-
-  border-radius: rem(6px);
-  background: var(--blue);
-
-  @include fsl(18px);
-  letter-spacing: -0.36px;
-  color: #fff;
-
   @media #{media('<')} {
     margin: rem(24px) auto 0;
-    padding-left: rem(12px);
-    @include fsl(12px);
-    letter-spacing: -0.24px;
-  }
-
-  &__ico {
-    display: flex;
-    padding: rem(20px);
-    margin-left: rem(20px);
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-
-    @media #{media('<')} {
-      padding: rem(14px) rem(12px);
-      margin-left: rem(12px);
-    }
-
-    svg {
-      width: rem(20px);
-      height: rem(20px);
-
-      @media #{media('<')} {
-        width: rem(16px);
-        height: rem(16px);
-      }
-    }
   }
 }

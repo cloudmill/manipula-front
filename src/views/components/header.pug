@@ -19,13 +19,17 @@ mixin header
         a.header__logo(href='')
           img(src='assets/images/svg/logo.svg', alt='logo')
 
-        button.header__catalog(data-catalog-button)
+        button.button.button--red.header__catalog.only-desktop(
+          data-catalog-button
+        )
           span Каталог СИЗ рук
-          +double-arrow-down
+          .button__ico
+            +double-arrow-down
 
-        button.header__selection.only-desktop
+        button.button.button--blue.only-desktop
           span Подобрать защитное решение
-          +double-arrow-right
+          .button__ico
+            +double-arrow-right
 
         label.search.only-desktop
           .search__ico

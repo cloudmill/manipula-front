@@ -1,0 +1,23 @@
+extends ../app
+
+block variables
+  //- - preloader = true
+
+include ../components/breadcrumbs
+include ../components/cards/news-card
+
+block content
+  .error-page
+    h1.error-page__title 404
+    .error-page__text Страница не найдена...
+
+    .error-page__links
+      a.button.button--blue(href)
+        span Главная
+        .button__ico
+          +double-arrow-right
+
+      a.button.button--blue(href)
+        span Каталог СИЗ рук
+        .button__ico
+          +double-arrow-right
