@@ -1,0 +1,16 @@
+extends ../app
+
+block variables
+  //- - preloader = true
+
+include ../components/breadcrumbs
+
+block content
+  .container
+    +breadcrumbs(items=['личный кабинет'], page='POS-материалы')
+    h1.h1 POS-материалы
+
+    .lk-body
+      .lk-sidebar yo
+
+      .lk-main main

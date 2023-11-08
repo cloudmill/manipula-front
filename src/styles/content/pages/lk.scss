@@ -1,0 +1,7 @@
+.lk-body {
+  margin-top: rem(60px);
+
+  display: grid;
+  grid-template-columns: cols(3) 1fr;
+  gap: calc(cols-g-nc(1) + #{$col-gap-d});
+}
