@@ -1,0 +1,26 @@
+extends ../app
+
+block variables
+  //- - preloader = true
+
+include ../components/breadcrumbs
+include ../components/cards/news-card
+
+block content
+  .container
+    +breadcrumbs(page='Библиотека защиты')
+    h1.h1 Библиотека защиты
+
+    .news-filters
+      .news-filters__item.active Все
+      button.news-filters__item Инструкции
+      button.news-filters__item Регламенты
+      button.news-filters__item Перчатки
+
+    .news-table
+      - for (i=0;i<10;i++)
+        +news-card(
+          img='library-0',
+          tag='Перчатки',
+          title='Инструкции по использованию, уходу и утилизации СИЗ рук'
+        )

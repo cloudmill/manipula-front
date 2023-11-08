@@ -1,0 +1,41 @@
+.news-item {
+  @media #{media('<')} {
+    width: cols-mob(3);
+    flex: none;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+    border-radius: rem(8px);
+    overflow: hidden;
+  }
+
+  &__info {
+    margin-top: rem(20px);
+    @include fsl(14px);
+    text-transform: uppercase;
+
+    display: flex;
+    align-items: center;
+    gap: rem(24px);
+
+    @media #{media('<')} {
+      margin-top: rem(16px);
+      @include fsl(10px);
+      gap: rem(8px);
+    }
+  }
+
+  &__title {
+    @include fsl(22px, 120%);
+    letter-spacing: -0.44px;
+    margin-top: rem(12px);
+
+    @media #{media('<')} {
+      @include fsl(16px);
+      letter-spacing: -0.32px;
+      margin-top: rem(8px);
+    }
+  }
+}

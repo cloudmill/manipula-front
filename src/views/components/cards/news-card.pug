@@ -1,0 +1,13 @@
+mixin news-card
+  .news-item
+    img.news-item__img(src=`assets/images/${attributes.img}.jpg`, alt='')
+    .news-item__info
+      if attributes.date
+        .news-item__date= attributes.date
+      .news-item__tag
+        span.red [
+        | &nbsp;
+        span= attributes.tag
+        | &nbsp;
+        span.red ]
+    .news-item__title= attributes.title
