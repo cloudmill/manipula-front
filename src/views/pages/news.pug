@@ -11,11 +11,11 @@ block content
     +breadcrumbs(page='Новости')
     h1.h1 Новости
 
-    .news-filters
-      .news-filters__item.active Все
-      button.news-filters__item Новости компании
-      button.news-filters__item Отраслевые новости
-      button.news-filters__item Конференции
+    .tabs.news-filters
+      .tabs__item.active Все
+      button.tabs__item Новости компании
+      button.tabs__item Отраслевые новости
+      button.tabs__item Конференции
 
     .news-table
       - for (i=0;i<12;i++)

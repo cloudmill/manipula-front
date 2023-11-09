@@ -4,6 +4,7 @@ block variables
   //- - preloader = true
 
 include ../components/breadcrumbs
+include ../components/cards/document-card
 
 block content
   .container
@@ -13,4 +14,20 @@ block content
     .lk-body
       include ../components/lk-sidebar
 
-      .lk-main main
+      .lk-main
+        h2.lk-main-title Материалы для оформления сайта
+
+        .documents-list
+          +document
+          +document
+          +document
+
+        h2.lk-main-title Рекламные материалы
+
+        .tabs.mb24
+          .tabs__item.active Каталоги
+          button.tabs__item Стенды
+          button.tabs__item Флаеры
+
+        .documents-list
+          +document

@@ -132,3 +132,19 @@
     height: rem(24px);
   }
 }
+
+.lk-main {
+  border-radius: rem(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: rem(40px);
+
+  &-title {
+    @include fsl(28px);
+    letter-spacing: -0.56px;
+    margin-bottom: rem(24px);
+  }
+}
+
+.mb24 {
+  margin-bottom: rem(24px);
+}

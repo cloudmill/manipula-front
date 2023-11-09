@@ -1,0 +1,35 @@
+.document {
+  display: flex;
+  gap: rem(20px);
+
+  padding: rem(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: rem(6px);
+
+  svg {
+    width: rem(36px);
+    height: rem(41px);
+    flex-shrink: 0;
+  }
+
+  &__title {
+    @include fsl(18px);
+    letter-spacing: -0.36px;
+  }
+
+  &__size {
+    margin-top: rem(4px);
+    @include fsl(14px);
+    letter-spacing: -0.28px;
+  }
+}
+
+.documents-list {
+  display: flex;
+  flex-direction: column;
+  gap: rem(4px);
+
+  &:not(:last-child) {
+    margin-bottom: rem(64px);
+  }
+}
