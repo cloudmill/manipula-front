@@ -62,8 +62,8 @@
     color: var(--green);
     transition: $transition;
 
-    // &:hover {
-    //   color: color(blue);
-    // }
+    &:hover {
+      color: var(--red);
+    }
   }
 }
