@@ -1,0 +1,14 @@
+extends ../app
+
+include ../components/breadcrumbs
+include ../components/cards/document-card
+
+block content
+  .container
+    +breadcrumbs(items=['личный кабинет'], page='Профиль')
+    h1.h1 Профиль
+
+    .lk-body
+      include ../components/lk-sidebar
+
+      .lk-main

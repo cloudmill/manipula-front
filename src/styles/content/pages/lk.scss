@@ -4,6 +4,13 @@
   display: grid;
   grid-template-columns: cols(3) 1fr;
   gap: calc(#{cols-g-nc(1)} + #{$col-gap-d});
+
+  @media #{media('<')} {
+    grid-template-columns: 100%;
+    gap: rem(24px);
+
+    margin: rem(16px) 0 rem(48px);
+  }
 }
 
 .lk-sidebar-container {
@@ -134,17 +141,68 @@
 }
 
 .lk-main {
+  width: cols(7);
+  height: fit-content;
   border-radius: rem(6px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding: rem(40px);
+
+  @media #{media('<')} {
+    width: 100%;
+  }
+
+  &.txt-inner {
+    padding-right: rem(80px);
+  }
 
   &-title {
     @include fsl(28px);
     letter-spacing: -0.56px;
     margin-bottom: rem(24px);
   }
+
+  &__subtitle {
+    @include fsl(22px, 120%);
+    letter-spacing: -0.44px;
+    margin: rem(36px) 0 rem(27px);
+  }
+
+  &__txt {
+    @include fsl(20px, 140%);
+    letter-spacing: -0.2px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12px);
+
+    @include fsl(20px, 140%);
+    letter-spacing: -0.2px;
+  }
 }
 
 .mb24 {
   margin-bottom: rem(24px);
+}
+
+.list-decimal {
+  counter-reset: list;
+
+  li {
+    display: flex;
+    gap: rem(12px);
+
+    &::before {
+      counter-increment: list;
+      content: counter(list);
+
+      width: rem(20px);
+      flex-shrink: 0;
+
+      @include fsl(16px, 160%);
+      letter-spacing: -0.16px;
+      color: var(--red);
+    }
+  }
 }
