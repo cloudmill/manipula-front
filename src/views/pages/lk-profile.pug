@@ -2,6 +2,7 @@ extends ../app
 
 include ../components/breadcrumbs
 include ../components/cards/document-card
+include ../components/lk-sidebar
 
 block content
   .container
@@ -9,6 +10,6 @@ block content
     h1.h1 Профиль
 
     .lk-body
-      include ../components/lk-sidebar
+      +sidebar(active=1)
 
       .lk-main

@@ -170,6 +170,10 @@
   &__txt {
     @include fsl(20px, 140%);
     letter-spacing: -0.2px;
+
+    &:not(:last-child) {
+      margin-bottom: rem(20px);
+    }
   }
 
   &__list {

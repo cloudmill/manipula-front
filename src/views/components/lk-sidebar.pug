@@ -1,28 +1,28 @@
-.lk-sidebar-container
-  .lk-sidebar
-    .lk-sidebar-block.lk-sidebar-contacts
-      .lk-sidebar-block__subtitle Ваш персональный менеджер
-      .lk-sidebar-block__title Игорь Давидов
+mixin sidebar
+  .lk-sidebar-container
+    .lk-sidebar
+      .lk-sidebar-block.lk-sidebar-contacts
+        .lk-sidebar-block__subtitle Ваш персональный менеджер
+        .lk-sidebar-block__title Игорь Давидов
 
-      ul.list-red-dot
-        li
-          a(href='tel:+79811579290') +7 981 157 9290
-        li
-          a(href='mailto:id@manipulas.ru') id@manipulas.ru
+        ul.list-red-dot
+          li
+            a(href='tel:+79811579290') +7 981 157 9290
+          li
+            a(href='mailto:id@manipulas.ru') id@manipulas.ru
 
-    .lk-sidebar-block
-      nav.lk-sidebar-nav
-        ul
-          li.active Программа лояльности
-          li
-            a(href='') Профиль
-          li
-            a(href='') Дистрибьюторское соглашение
-          li
-            a(href='') Программа маркетинговой поддержки
-          li
-            a(href='') POS-материалы
+      .lk-sidebar-block
+        nav.lk-sidebar-nav
+          ul
+            -
+              const items = ['Программа лояльности', 'Профиль', 'Дистрибьюторское соглашение', 'Программа маркетинговой поддержки', 'POS-материалы']
+            each item, index in items
+              if index === attributes.active
+                li.active= item
+              else
+                li
+                  a(href='')= item
 
-      button.lk-exit
-        +exit
-        span Выйти
+        button.lk-exit
+          +exit
+          span Выйти

@@ -1,0 +1,18 @@
+extends ../app
+
+include ../components/breadcrumbs
+include ../components/cards/document-card
+include ../components/lk-sidebar
+
+block content
+  .container
+    +breadcrumbs(
+      items=['личный кабинет'],
+      page='Дистрибьюторское соглашение'
+    )
+    h1.h1 Дистрибьюторское соглашение
+
+    .lk-body
+      +sidebar(active=2)
+
+      .lk-main

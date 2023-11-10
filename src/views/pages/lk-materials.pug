@@ -1,10 +1,8 @@
 extends ../app
 
-block variables
-  //- - preloader = true
-
 include ../components/breadcrumbs
 include ../components/cards/document-card
+include ../components/lk-sidebar
 
 block content
   .container
@@ -12,7 +10,7 @@ block content
     h1.h1 POS-материалы
 
     .lk-body
-      include ../components/lk-sidebar
+      +sidebar(active=4)
 
       .lk-main
         h2.lk-main-title Материалы для оформления сайта

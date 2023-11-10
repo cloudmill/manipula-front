@@ -1,0 +1,21 @@
+extends ../app
+
+include ../components/breadcrumbs
+include ../components/cards/document-card
+include ../components/lk-sidebar
+
+block content
+  .container
+    +breadcrumbs(items=['личный кабинет'], page='Программа лояльности')
+    h1.h1 Программа лояльности
+
+    .lk-body
+      +sidebar(active=0)
+
+      .lk-main
+        p.lk-main__txt Дистрибьюторское соглашение и Приложения к нему регулируют коммерческое взаимодействие между Производителем продукции и Дистрибьютором, определяет критерии последнего, права и обязанности сторон, устанавливает систему цен, скидок и юридическую ответственность.
+        p.lk-main__txt Для вашего удобства в этом разделе мы разместили шаблоны и формы документов, с которыми можно самостоятельно ознакомиться в любое время и скачать при необходимости.
+        .documents-list
+          +document
+          +document
+          +document
