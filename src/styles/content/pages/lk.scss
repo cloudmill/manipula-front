@@ -149,22 +149,38 @@
 
   @media #{media('<')} {
     width: 100%;
+    padding: rem(20px);
+    border-radius: rem(4px);
   }
 
   &.txt-inner {
-    padding-right: rem(80px);
+    @media #{media('>')} {
+      padding-right: rem(80px);
+    }
   }
 
   &-title {
     @include fsl(28px);
     letter-spacing: -0.56px;
     margin-bottom: rem(24px);
+
+    @media #{media('<')} {
+      @include fsl(20px, 120%);
+      letter-spacing: -0.4px;
+      margin-bottom: rem(16px);
+    }
   }
 
   &__subtitle {
     @include fsl(22px, 120%);
     letter-spacing: -0.44px;
     margin: rem(36px) 0 rem(27px);
+
+    @media #{media('<')} {
+      @include fsl(14px, 140%);
+      letter-spacing: -0.14px;
+      margin: rem(12px) 0 rem(16px);
+    }
   }
 
   &__txt {
@@ -173,6 +189,15 @@
 
     &:not(:last-child) {
       margin-bottom: rem(20px);
+    }
+
+    @media #{media('<')} {
+      @include fsl(14px);
+      letter-spacing: -0.14px;
+
+      &:not(:last-child) {
+        margin-bottom: rem(12px);
+      }
     }
   }
 
@@ -183,11 +208,19 @@
 
     @include fsl(20px, 140%);
     letter-spacing: -0.2px;
+
+    @media #{media('<')} {
+      @include fsl(14px, 140%);
+      letter-spacing: -0.14px;
+    }
   }
 }
 
 .mb24 {
   margin-bottom: rem(24px);
+  @media #{media('<')} {
+    margin-bottom: rem(16px);
+  }
 }
 
 .list-decimal {
@@ -196,6 +229,10 @@
   li {
     display: flex;
     gap: rem(12px);
+
+    @media #{media('<')} {
+      gap: rem(4px);
+    }
 
     &::before {
       counter-increment: list;
@@ -207,6 +244,91 @@
       @include fsl(16px, 160%);
       letter-spacing: -0.16px;
       color: var(--red);
+
+      @media #{media('<')} {
+        @include fsl(14px, 140%);
+        letter-spacing: -0.14px;
+      }
+    }
+  }
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: calc(#{cols(3)} - #{rem(40px)}) 1fr;
+  column-gap: $col-gap-d;
+  row-gap: rem(36px);
+
+  @media #{media('<')} {
+    grid-template-columns: 100%;
+    gap: rem(16px);
+  }
+
+  &__item {
+    @media #{media('<')} {
+      &:nth-child(2),
+      &:nth-child(4),
+      &:nth-child(6) {
+        order: 1;
+      }
+    }
+  }
+
+  &__title {
+    @include fsl(14px, 100%);
+    text-transform: uppercase;
+
+    @media #{media('<')} {
+      @include fsl(10px);
+      color: #848b92;
+    }
+  }
+
+  &__value {
+    margin-top: rem(12px);
+    @include fsl(18px, 100%);
+    letter-spacing: -0.36px;
+
+    @media #{media('<')} {
+      margin-top: rem(8px);
+      @include fsl(16px);
+      letter-spacing: -0.32px;
+    }
+  }
+
+  &__note {
+    margin-top: rem(4px);
+    width: rem(624px);
+
+    display: flex;
+    gap: rem(12px);
+
+    padding: rem(19px) rem(24px);
+
+    background: var(--blue2);
+    border-radius: rem(8px);
+
+    @include fsl(16px, 140%);
+    letter-spacing: -0.16px;
+
+    @media #{media('<')} {
+      width: 100%;
+      margin-top: rem(8px);
+      padding: rem(12px);
+      order: 1;
+
+      @include fsl(14px);
+      letter-spacing: -0.14px;
+    }
+    @media #{media('>')} {
+      grid-column: 1 / 3;
+      align-items: center;
+    }
+
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+      flex-shrink: 0;
     }
   }
 }

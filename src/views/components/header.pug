@@ -11,17 +11,21 @@ mixin header
               a.header__nav-item(href='') #{ el }
 
         .header__contacts.only-desktop
-          a(href='tel:89123456789') 8 912 345-67-89
-          span •
-          a(href='') Написать нам
+          a.header__tel(href='tel:+74950330331') +7 495 033-033-1
+          a.button.button--small(href='')
+            span Мы Вконтакте
+            .button__ico
+              +vk-blue
+          button.button.button--blue.button--small
+            span Написать нам
+            .button__ico
+              +msg
 
       .header__row
         a.header__logo(href='')
           img(src='assets/images/svg/logo.svg', alt='logo')
 
-        button.button.button--red.header__catalog.only-desktop(
-          data-catalog-button
-        )
+        button.button.button--red.header__catalog(data-catalog-button)
           span Каталог СИЗ рук
           .button__ico
             +double-arrow-down

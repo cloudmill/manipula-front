@@ -6,6 +6,11 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: rem(6px);
 
+  @media #{media('<')} {
+    padding: rem(16px);
+    border-radius: rem(4px);
+  }
+
   svg {
     width: rem(36px);
     height: rem(41px);
@@ -15,12 +20,22 @@
   &__title {
     @include fsl(18px);
     letter-spacing: -0.36px;
+
+    @media #{media('<')} {
+      @include fsl(13px);
+      letter-spacing: -0.13px;
+    }
   }
 
   &__size {
     margin-top: rem(4px);
     @include fsl(14px);
     letter-spacing: -0.28px;
+
+    @media #{media('<')} {
+      @include fsl(10px, 140%);
+      letter-spacing: -0.1px;
+    }
   }
 }
 
@@ -31,5 +46,9 @@
 
   &:not(:last-child) {
     margin-bottom: rem(64px);
+
+    @media #{media('<')} {
+      margin-bottom: rem(24px);
+    }
   }
 }

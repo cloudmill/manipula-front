@@ -12,4 +12,39 @@ block content
     .lk-body
       +sidebar(active=1)
 
-      .lk-main
+      .lk-main.profile
+        -
+          const items = [
+            {
+              title: 'Имя',
+              value: 'Игорев Спартак Давидович'
+            },
+            {
+              title: 'Название организации',
+              value: 'ООО «Снабжение»'
+            },
+            {
+              title: 'Почта',
+              value: 'spartak_1991@gmail.com'
+            },
+            {
+              title: 'ИНН',
+              value: '7719456204'
+            },
+            {
+              title: 'Телефон',
+              value: '+7 981 157 9290'
+            },
+            {
+              title: 'Город',
+              value: 'Санкт-Петербург'
+            },
+          ]
+        each el in items
+          .profile__item
+            .profile__title= el.title
+            .profile__value= el.value
+
+        .profile__note
+          +note
+          span Для смены контактных данных, пароля или реквизитов организации, пожалуйста, свяжитесь с вашим персональным менеджером
