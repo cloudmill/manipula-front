@@ -30,16 +30,35 @@
     background: var(--main-bg2);
     overflow: hidden;
 
+    @media #{media('<')} {
+      border-radius: rem(4px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0px rem(8px) 20px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    &__top {
+      margin-bottom: rem(28px);
+    }
+
     &__subtitle {
       @include fsl(14px);
       text-transform: uppercase;
       margin-bottom: rem(8px);
+
+      @media #{media('<')} {
+        @include fsl(10px);
+        color: #848b92;
+      }
     }
 
     &__title {
       @include fsl(28px);
       letter-spacing: -0.56px;
-      margin-bottom: rem(28px);
+
+      @media #{media('<')} {
+        @include fsl(16px);
+        letter-spacing: -0.32px;
+      }
     }
   }
 
@@ -49,6 +68,12 @@
     .list-red-dot {
       gap: rem(4px);
       margin-top: rem(28px);
+
+      li {
+        @include fsl(18px, 140%);
+        letter-spacing: -0.18px;
+        align-items: center;
+      }
     }
   }
 
@@ -87,10 +112,6 @@
   li {
     position: relative;
     display: flex;
-    align-items: center;
-
-    @include fsl(18px, 140%);
-    letter-spacing: -0.18px;
 
     &::before {
       content: '';
@@ -103,6 +124,8 @@
       width: rem(20px);
       height: rem(20px);
       margin-right: rem(12px);
+
+      flex-shrink: 0;
     }
 
     a {
@@ -175,6 +198,10 @@
     @include fsl(22px, 120%);
     letter-spacing: -0.44px;
     margin: rem(36px) 0 rem(27px);
+
+    &:first-child {
+      margin-top: 0;
+    }
 
     @media #{media('<')} {
       @include fsl(14px, 140%);
@@ -330,5 +357,37 @@
       height: rem(24px);
       flex-shrink: 0;
     }
+  }
+}
+
+.loyal-column {
+  display: flex;
+  flex-direction: column;
+  gap: rem(20px);
+  width: cols(7);
+}
+
+.loyal-text {
+  padding: rem(40px) rem(80px) rem(32px) rem(40px);
+  border-radius: rem(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  .list-red-dot {
+    gap: rem(12px);
+
+    li {
+      @include fsl(20px, 140%);
+      letter-spacing: -0.2px;
+
+      &::before {
+        margin-top: rem(2px);
+      }
+    }
+  }
+
+  &__note {
+    margin-top: rem(24px);
+    @include fsl(16px, 140%);
+    letter-spacing: -0.16px;
   }
 }
