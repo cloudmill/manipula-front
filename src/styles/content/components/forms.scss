@@ -11,14 +11,13 @@
   display: block;
   width: 100%;
 
-  @include fsl(20px, 100%);
+  @include fsl(24px, 100%);
   letter-spacing: -0.2px;
   color: var(--green-text);
 
-  padding: rem(34.5px) rem(24px) rem(14.5px) rem(24px);
-  border-radius: rem(20px);
-  border: none;
-  background: var(--green2);
+  padding: rem(48px) rem(36px) rem(24px) rem(36px);
+  border-radius: rem(6px);
+  border: 1px solid var(--grey-border);
 
   @media #{media('<')} {
     @include fsl(15px, 140%);
@@ -30,24 +29,24 @@
 
   &:focus,
   &.active {
-    box-shadow: 0px 0px rem(12px) 0px #dae7d2 inset;
+    border-color: #507e9b;
 
     ~ .form-placeholder {
-      top: rem(15.5px);
-      @include fsl(15px);
-      letter-spacing: -0.15px;
+      top: rem(24px);
+      @include fsl(16px);
+      letter-spacing: -0.32px;
     }
   }
 }
 
 .form-placeholder {
   position: absolute;
-  top: rem(24px);
-  left: rem(24px);
+  top: rem(36px);
+  left: rem(36px);
 
-  @include fsl(20px, 100%);
-  color: var(--green);
-  letter-spacing: -0.2px;
+  @include fsl(24px, 100%);
+  color: #fff;
+  letter-spacing: -0.48px;
   transition: $transition;
 
   @media #{media('<')} {

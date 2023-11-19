@@ -16,6 +16,8 @@ include ./components/button
 
 include ./components/grid-test
 
+include ./components/modals/write-us-modal
+
 doctype html
 
 html(lang='ru')
@@ -55,8 +57,7 @@ html(lang='ru')
         //- +grid-test
 
     .modals
+      +write-us-modal
       block modals
-
-    script(data-insert-script)
 
     block scripts
