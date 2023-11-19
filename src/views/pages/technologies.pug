@@ -1,0 +1,34 @@
+extends ../app
+
+include ../components/breadcrumbs
+include ../components/cards/news-card
+
+block content
+  .container
+    +breadcrumbs(page='Технологии')
+    h1.h1 Технологии
+
+    .tabs.news-filters
+      .tabs__item.active Все
+
+      each el in ['Натуральные материалы', 'Синтетические материалы', 'Натуральные каучуки', 'Синтетические каучуки', 'Полимеры']
+        button.tabs__item= el
+
+    .tech-table
+      -
+        const cards = [
+          'Волокно Thermolite® EcoMade',
+          'Защита INPAX™',
+          'Shelter Micro™',
+          'Многофункциональная ткань ARMORTEX®',
+          'Водонепроницаемая мембрана HIPORA®',
+          '3M™ Thinsulate™',
+          'Хлопок',
+          'Шерсть'
+        ]
+
+      each el, i in cards
+        .tech-card
+          img.tech-card__img(src=`assets/images/tech-${i}.png`, alt='')
+          .tech-card__title= el
+          .tech-card__tag Синтетические материалы
