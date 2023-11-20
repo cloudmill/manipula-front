@@ -21,6 +21,7 @@
 .tech-card {
   display: flex;
   flex-direction: column;
+  gap: rem(10px);
 
   min-height: rem(325px);
   padding: rem(32px) rem(40px) rem(40px);
@@ -38,11 +39,11 @@
     display: flex;
     flex-shrink: 0;
     width: rem(130px);
-    margin-bottom: rem(48px);
+    margin-bottom: rem(38px);
 
     @media #{media('<')} {
       width: rem(65px);
-      margin-bottom: rem(12px);
+      margin-bottom: rem(2px);
     }
   }
 

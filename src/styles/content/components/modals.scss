@@ -9,10 +9,133 @@
   border-radius: rem(8px);
 }
 
-.modal__title {
-  @include fsl(28px);
-  letter-spacing: -0.56px;
-  text-align: center;
+.modal {
+  &__title {
+    @include fsl(28px);
+    letter-spacing: -0.56px;
+    text-align: center;
 
-  margin-bottom: rem(32px);
+    margin-bottom: rem(32px);
+  }
+}
+
+.side-modal.fancybox__content {
+  position: absolute;
+  right: rem(11px);
+  top: rem(12px);
+  bottom: rem(12px);
+
+  width: rem(943px);
+  border-radius: rem(8px);
+  overflow-y: scroll;
+
+  padding: rem(84px) rem(120px);
+
+  @media #{media('<')} {
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    width: calc(100% - #{rem(12px)});
+    padding: rem(24px) rem(48px);
+  }
+
+  .f-button.is-close-btn {
+    position: absolute;
+    top: rem(12px);
+    right: rem(12px);
+
+    width: rem(60px);
+    height: rem(60px);
+    border-radius: rem(8px);
+    border: 1px solid #e3e3e3;
+    background: #f7f7f7;
+
+    color: #222b33;
+
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+    }
+  }
+}
+
+.side-modal {
+  color: #222b33;
+
+  &__title {
+    @include fsl(36px);
+    letter-spacing: -1.44px;
+
+    margin: rem(36px) 0;
+
+    @media #{media('<')} {
+      @include fsl(20px, 120%);
+      letter-spacing: -0.4px;
+
+      margin: rem(24px) 0;
+    }
+  }
+
+  .breadcrumbs__item:not(:first-child)::before {
+    color: #222b33;
+  }
+}
+
+.policy-text {
+  p {
+    @include fsl(20px, 140%);
+    letter-spacing: -0.2px;
+
+    @media #{media('<')} {
+      @include fsl(14px, 140%);
+      letter-spacing: -0.14px;
+    }
+
+    &:not(:first-child) {
+      margin-top: rem(24px);
+
+      @media #{media('<')} {
+        margin-top: rem(12px);
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: rem(36px);
+
+      @media #{media('<')} {
+        margin-bottom: rem(24px);
+      }
+    }
+  }
+
+  ul,
+  ol {
+    display: flex;
+    flex-direction: column;
+    gap: rem(36px);
+
+    list-style: decimal;
+
+    @include fsl(28px);
+    letter-spacing: -0.56px;
+
+    li {
+      color: var(--red);
+
+      span {
+        color: #222b33;
+      }
+
+      & > ul {
+        margin-top: rem(24px);
+      }
+
+      ul {
+        gap: rem(12px);
+
+        @include fsl(20px, 140%);
+        letter-spacing: -0.2px;
+      }
+    }
+  }
 }

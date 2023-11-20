@@ -252,6 +252,7 @@
     width: fit-content;
     @include fsl(14px);
     letter-spacing: -0.14px;
+    color: #fff;
 
     @media #{media('<')} {
       @include fsl(13px);
