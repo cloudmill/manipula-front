@@ -38,7 +38,7 @@
     &:not(:first-child) {
       margin-left: rem(24px);
       @media #{media('<')} {
-        margin-left: rem(4px);
+        margin-left: rem(8px);
       }
 
       &::before {
@@ -48,6 +48,11 @@
         color: #fff;
 
         margin-right: rem(24px);
+
+        @media #{media('<')} {
+          @include fsl(10px);
+          margin-right: rem(8px);
+        }
       }
     }
   }

@@ -119,6 +119,11 @@
     @include fsl(28px);
     letter-spacing: -0.56px;
 
+    @media #{media('<')} {
+      @include fsl(16px);
+      letter-spacing: -0.32px;
+    }
+
     li {
       color: var(--red);
 
@@ -128,6 +133,10 @@
 
       & > ul {
         margin-top: rem(24px);
+
+        @media #{media('<')} {
+          margin-top: rem(12px);
+        }
       }
 
       ul {
@@ -135,6 +144,13 @@
 
         @include fsl(20px, 140%);
         letter-spacing: -0.2px;
+
+        @media #{media('<')} {
+          gap: rem(8px);
+
+          @include fsl(14px);
+          letter-spacing: -0.14px;
+        }
       }
     }
   }
