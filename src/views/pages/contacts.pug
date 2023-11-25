@@ -1,0 +1,56 @@
+extends ../app
+
+include ../components/breadcrumbs
+include ../components/cards/news-card
+
+block content
+  .container.contacts-page
+    +breadcrumbs(page='Контакты')
+
+    .contacts-top
+      h1.h1 Контакты
+      div Мы Вконтакте
+
+    .contacts-map
+      .contacts-map-info.light-blue
+        .contacts-map-info__title Центральный офис
+        .contacts-map-info__text 121471, Москва, ул. Рябиновая, 26/2, БЦ «West Plaza»
+      div
+      .contacts-map-info.dark-blue
+        .contacts-map-info__title Склад
+        .contacts-map-info__text 121471, Москва, ул. Рябиновая, 38Д
+
+    .contacts-cards
+      h2.h2 Региональные представители
+      .contacts-cards-list
+        -
+          const cards = [
+            {
+              title: 'Приволжский и Северо-Западный федеральный округ',
+              name: 'Максим Щеглов'
+            },
+            {
+              title: 'Москва и Московская обл., Центральный, Южный и Северо-Кавказский федеральный округ',
+              name: 'Людмила Бельская'
+            },
+            {
+              title: 'Дальневосточный федеральный округ',
+              name: 'Алексей Гаранин'
+            },
+            {
+              title: 'Уральский федеральный округ',
+              name: 'Александр Беляев'
+            },
+            {
+              title: 'Сибирский федеральный округ',
+              name: 'Андрей Хлыстов'
+            },
+          ]
+
+        each el in cards
+          .contacts-cards-item
+            .contacts-cards__text= el.title
+            .contacts-cards__text= el.name
+
+    .contacts-form
+      h2.h2 Связаться с нами
