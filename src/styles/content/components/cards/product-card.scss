@@ -2,8 +2,21 @@
   border-radius: rem(8px);
   border: 1px solid #e3e3e3;
 
+  cursor: pointer;
+  transition: $transition;
+
   @media #{media('<')} {
     border-radius: rem(6px);
+  }
+
+  &:hover {
+    border-color: transparent;
+    box-shadow: 0px rem(12px) rem(34px) 0px rgba(0, 0, 0, 0.07);
+
+    .card__category,
+    .card__title {
+      color: var(--red);
+    }
   }
 
   &__top {
@@ -44,6 +57,7 @@
     color: var(--main-bg);
 
     margin: rem(8px) 0 rem(19px);
+    transition: $transition;
 
     @media #{media('<')} {
       @include fsl(18px);

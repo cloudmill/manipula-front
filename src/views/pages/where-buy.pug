@@ -1,0 +1,40 @@
+extends ../app
+
+include ../components/breadcrumbs
+
+block content
+  .container
+    +breadcrumbs(page='Где купить')
+    h1.h1 Где купить
+
+    .where-buy-top
+      .tabs.big
+        .tabs__item.active Юридическим лицам и ИП
+        a.tabs__item(href) Физическим лицам
+
+      .tabs
+        .tabs__item.active Россия
+        a.tabs__item(href) Беларусь
+        a.tabs__item(href) Казахстан
+
+    .where-buy-main
+      .dropdown(data-dropdown)
+        button.dropdown-button(data-dropdown-button)
+          span Выбрать город
+          .dropdown-arrow
+            +arrow-down
+        .dropdown-drop(data-dropdown-drop, style='display: none')
+          .dropdown-inner Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem atque exercitationem dolore, ullam voluptate nobis officia numquam neque dolor id voluptates unde nulla et ad obcaecati error reprehenderit tenetur ducimus?
+
+      #map
+
+      .where-buy-list
+        .where-buy-item
+          .where-buy-item__title ПКФ Специалист
+          .where-buy-item__text Красноярск, ул. Затонская, 32 стр.1
+
+block scripts
+  script(
+    src='https://api-maps.yandex.ru/2.1/?apikey=dbf69e3e-9063-4438-8229-4598883ac0dc&lang=ru_RU',
+    type='text/javascript'
+  )

@@ -183,6 +183,10 @@
     gap: $col-gap-d;
 
     @media #{media('<')} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $col-gap-m;
+    }
+    @media #{media('<', m)} {
       grid-template-columns: 100%;
       gap: rem(8px);
     }

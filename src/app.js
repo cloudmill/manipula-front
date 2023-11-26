@@ -6,6 +6,7 @@ import './scripts/forms'
 
 // import { swiperInit } from './scripts/sliders.ts'
 import { fancyboxInit } from './scripts/fancybox.ts'
+import { dropdown } from './scripts/dropdown.js'
 
 window.addEventListener('DOMContentLoaded', () => {
   //   const loader = document.getElementById('loader-main')
@@ -14,6 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //   }
 
   fancyboxInit()
+  dropdown()
 })
 
 // window.addEventListener('load', () => {

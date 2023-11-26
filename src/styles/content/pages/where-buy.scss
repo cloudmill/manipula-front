@@ -1,0 +1,32 @@
+.where-buy-top {
+  margin: rem(60px) 0 rem(40px);
+
+  display: flex;
+  flex-direction: column;
+  gap: rem(20px);
+}
+
+.where-buy-main {
+  height: rem(710px);
+  margin: rem(40px) 0;
+
+  display: grid;
+  grid-template-columns: cols(3) cols(9);
+  grid-template-rows: rem(60px) 1fr;
+  column-gap: $col-gap-d;
+  row-gap: rem(12px);
+}
+
+.where-buy-list {
+  height: 100%;
+  padding: rem(12px);
+  border-radius: rem(8px);
+  background: #263039;
+  overflow-y: auto;
+}
+
+.where-buy-item {
+  padding: rem(20px);
+  border-radius: rem(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}

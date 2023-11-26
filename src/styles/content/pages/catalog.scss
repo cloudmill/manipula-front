@@ -1,0 +1,14 @@
+.catalog-top {
+  margin: rem(60px) 0 rem(40px);
+
+  &__title {
+    @include fsl(28px);
+    letter-spacing: -0.56px;
+  }
+
+  &__drops {
+    display: grid;
+    grid-template-columns: repeat(4, cols(3));
+    gap: $col-gap-d;
+  }
+}

@@ -6,8 +6,6 @@ $(() => {
   // parsley
   $('form').parsley()
   $('form').on('submit', (e) => {
-    console.log('SUBMIT')
-
     e.preventDefault()
     e.target.closest('form').reset()
 
@@ -17,6 +15,9 @@ $(() => {
     ) {
       Fancybox.close()
       Fancybox.show([{ src: `#fancy-modal-success`, type: 'inline' }])
+    }
+    if (e.target.closest('[data-login-form]')) {
+      Fancybox.close()
     }
   })
 
