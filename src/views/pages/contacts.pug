@@ -9,13 +9,16 @@ block content
 
     .contacts-top
       h1.h1 Контакты
-      div Мы Вконтакте
+      a.button.button--small.fit-content(href='')
+        span Мы Вконтакте
+        .button__ico
+          +vk-blue
 
     .contacts-map
       .contacts-map-info.light-blue
         .contacts-map-info__title Центральный офис
         .contacts-map-info__text 121471, Москва, ул. Рябиновая, 26/2, БЦ «West Plaza»
-      div
+      #map
       .contacts-map-info.dark-blue
         .contacts-map-info__title Склад
         .contacts-map-info__text 121471, Москва, ул. Рябиновая, 38Д
@@ -52,5 +55,30 @@ block content
             .contacts-cards__text= el.title
             .contacts-cards__text= el.name
 
-    .contacts-form
+    .contacts-bottom
       h2.h2 Связаться с нами
+      form.contacts-form
+        label.form-label
+          input.form-input(type='text', required, data-input)
+          span.form-placeholder ФИО
+        label.form-label
+          input.form-input(type='tel', required, data-input)
+          span.form-placeholder Телефон
+        label.form-label
+          input.form-input(type='mail', required, data-input)
+          span.form-placeholder E-mail
+        label.form-label
+          input.form-input(type='text', required, data-input)
+          span.form-placeholder Страна, город
+
+        label.form-label
+          textarea.form-input.form-textarea(data-input)
+          span.form-placeholder Сообщение
+
+        .contacts-form__bottom
+          .form-note(data-fancy-button='policy') Нажимая на кнопку «Отправить», вы даете согласие на #[span.red Политику конфиденциальности]
+
+          button.button.button--blue.contacts-form__submit(type='submit')
+            span Отправить
+            .button__ico
+              +double-arrow-right

@@ -6,10 +6,6 @@ import './styles/app.scss'
 
 // import { swiperInit } from './scripts/sliders.ts'
 import { fancyboxInit } from './scripts/fancybox.ts'
-// import { tooltip } from './scripts/tippy'
-// import { dropdown } from './scripts/dropdown'
-// import { tabs } from './scripts/tabs'
-// import { chickAnimation } from './scripts/main-animations'
 
 window.addEventListener('DOMContentLoaded', () => {
   //   const loader = document.getElementById('loader-main')
@@ -18,30 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
   //   }
 
   fancyboxInit()
-  //   tooltip()
-  //   dropdown()
-  //   tabs()
-
-  //   // на главной свайпер за пускается по load
-  //   if (!document.querySelector('[data-slider-id=main]')) {
-  //     swiperInit()
-  //   }
-
-  //   const searchReset = document.querySelector('[data-search-reset]')
-
-  //   if (searchReset) {
-  //     // console.log(searchReset)
-  //     searchReset.addEventListener('click', () => {
-  //       console.log(document.querySelector('[data-search]'))
-  //       document.querySelector('[data-search]').value = ''
-  //     })
-  //   }
-
-  //   const insertScript = document.querySelector('[data-insert-script]')
-  //   if (insertScript) {
-  //     insertScript.innerText =
-  //       "function cityChoose(name) {document.querySelector('[data-cities-drop-inner]').innerText = name}"
-  //   }
 })
 
 // window.addEventListener('load', () => {

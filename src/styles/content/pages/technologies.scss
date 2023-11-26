@@ -28,7 +28,7 @@
 
   border-radius: rem(6px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #263039;
+  background: var(--main-bg2);
 
   @media #{media('<')} {
     min-height: rem(157px);

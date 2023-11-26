@@ -2,9 +2,9 @@
   position: relative;
   display: block;
 
-  &:not(:last-child) {
-    margin-bottom: rem(8px);
-  }
+  // &:not(:last-child) {
+  //   margin-bottom: rem(8px);
+  // }
 }
 
 .form-input {
@@ -17,14 +17,14 @@
 
   padding: rem(48px) rem(36px) rem(24px) rem(36px);
   border-radius: rem(6px);
-  border: 1px solid var(--grey-border);
+  border: 1px solid var(--grey-border2);
+  background: var(--main-bg2);
 
   @media #{media('<')} {
     @include fsl(15px, 140%);
     letter-spacing: -0.15px;
 
     padding: rem(13px) rem(24px);
-    border-radius: rem(16px);
   }
 
   &:focus,
@@ -36,6 +36,11 @@
       @include fsl(16px);
       letter-spacing: -0.32px;
     }
+  }
+
+  &.light {
+    border-color: var(--grey-border);
+    background: transparent;
   }
 }
 
@@ -58,7 +63,7 @@
 }
 
 .form-textarea {
-  height: rem(200px);
+  height: rem(190px);
   resize: none;
 }
 
@@ -148,6 +153,16 @@
     @media #{media('<')} {
       width: 100%;
     }
+  }
+}
+
+.form-note {
+  @include fsl(16px, 140%);
+  cursor: pointer;
+
+  @media #{media('<')} {
+    @include fsl(10px);
+    letter-spacing: -0.1px;
   }
 }
 
