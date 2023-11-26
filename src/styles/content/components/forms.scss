@@ -5,6 +5,16 @@
   // &:not(:last-child) {
   //   margin-bottom: rem(8px);
   // }
+
+  &.light {
+    .form-input {
+      border-color: var(--grey-border);
+      background: transparent;
+    }
+    .form-placeholder {
+      color: var(--main-bg);
+    }
+  }
 }
 
 .form-input {
@@ -38,9 +48,8 @@
     }
   }
 
-  &.light {
-    border-color: var(--grey-border);
-    background: transparent;
+  &.parsley-error {
+    border-color: var(--red) !important;
   }
 }
 

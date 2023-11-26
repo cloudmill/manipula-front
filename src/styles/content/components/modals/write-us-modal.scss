@@ -1,3 +1,22 @@
-.body {
-  // background: red;
+.write-us-form {
+  display: flex;
+  flex-direction: column;
+  gap: rem(8px);
+
+  .form-textarea {
+    height: rem(120px);
+  }
+
+  &__bottom {
+    margin-top: rem(12px);
+
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+  }
+
+  &__submit {
+    height: rem(60px);
+    justify-content: center;
+  }
 }

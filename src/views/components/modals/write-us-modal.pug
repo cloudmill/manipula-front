@@ -2,7 +2,29 @@ mixin write-us-modal
   #fancy-modal-write.modal(style='display: none')
     h2.modal__title Написать нам
 
-    form
-      label.form-label
-        input.form-input(type='text', required, data-input)
-        span.form-placeholder ФИО
+    form.write-us-form(data-write-form)
+      label.form-label.light
+        input.form-input.light(type='text', required, data-input)
+        span.form-placeholder Имя
+      label.form-label.light
+        input.form-input.light(
+          type='tel',
+          required,
+          data-input,
+          data-mask-phone
+        )
+        span.form-placeholder Телефон
+      label.form-label.light
+        input.form-input.light(type='email', required, data-input)
+        span.form-placeholder E-mail
+      label.form-label.light
+        input.form-input.light(type='text', required, data-input)
+        span.form-placeholder Страна, город
+      label.form-label.light
+        textarea.form-input.form-textarea(data-input)
+        span.form-placeholder Сообщение
+
+      .write-us-form__bottom
+        .form-note(data-fancy-button='policy') Нажимая на кнопку «Отправить», вы даете согласие на #[span.red Политику конфиденциальности]
+        button.button.button--blue.write-us-form__submit(type='submit')
+          span Отправить

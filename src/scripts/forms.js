@@ -1,9 +1,24 @@
 import 'parsleyjs'
 import mask from 'inputmask'
+import { Fancybox } from '@fancyapps/ui'
 
 $(() => {
   // parsley
   $('form').parsley()
+  $('form').on('submit', (e) => {
+    console.log('SUBMIT')
+
+    e.preventDefault()
+    e.target.closest('form').reset()
+
+    if (
+      e.target.closest('[data-write-form]') ||
+      e.target.closest('[data-contacts-form]')
+    ) {
+      Fancybox.close()
+      Fancybox.show([{ src: `#fancy-modal-success`, type: 'inline' }])
+    }
+  })
 
   Parsley.addMessages('ru', {
     defaultMessage: 'Некорректное значение',
