@@ -1,6 +1,10 @@
 .catalog-top {
   margin: rem(60px) 0 rem(40px);
 
+  display: flex;
+  flex-direction: column;
+  gap: rem(40px);
+
   &__title {
     @include fsl(28px);
     letter-spacing: -0.56px;
