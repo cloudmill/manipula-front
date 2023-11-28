@@ -1,0 +1,10 @@
+.fancybox__content.catalog-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background: var(--main-bg);
+
+  padding: rem(240px) rem(60px) rem(60px);
+}

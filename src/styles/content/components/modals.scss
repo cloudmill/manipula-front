@@ -1,5 +1,9 @@
 .fancybox__container {
   --fancybox-bg: rgba(16, 21, 23, 0.5) !important;
+
+  &.down {
+    z-index: 99 !important;
+  }
 }
 
 .modal.fancybox__content {
