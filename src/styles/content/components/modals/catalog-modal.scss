@@ -7,4 +7,104 @@
   background: var(--main-bg);
 
   padding: rem(240px) rem(60px) rem(60px);
+
+  color: #fff;
+
+  @media #{media('<')} {
+    padding: rem(90px) rem(12px) rem(12px);
+  }
+}
+
+.catalog-modal {
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, cols(4));
+    gap: $col-gap-d;
+
+    @media #{media('<')} {
+      grid-template-columns: repeat(2, cols-mob(2));
+      column-gap: $col-gap-m;
+      row-gap: rem(20px);
+    }
+    @media #{media('<', m)} {
+      grid-template-columns: 100%;
+      gap: rem(12px);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12px);
+
+    @include fsl(16px, 140%);
+    letter-spacing: -0.16px;
+
+    @media #{media('<')} {
+      @include fsl(12px);
+      letter-spacing: -0.14px;
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: rem(12px);
+    transition: $transition;
+
+    &:hover {
+      color: var(--red);
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      width: rem(20px);
+      height: rem(20px);
+      background-image: url('assets/images/svg/double-red-arrow.svg');
+      flex-shrink: 0;
+    }
+  }
+
+  &__banner {
+    display: block;
+    width: rem(435px);
+    height: rem(192px);
+    border-radius: rem(8px);
+    overflow: hidden;
+
+    background-image: url('assets/images/catalog-modal-banner.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    position: relative;
+
+    @media #{media('>')} {
+      background-image: url('assets/images/catalog-modal-banner.png');
+    }
+    @media #{media('<')} {
+      grid-column: 1 / 3;
+      width: 100%;
+      height: rem(164px);
+      background-image: url('assets/images/catalog-modal-banner-tablet.png');
+    }
+    @media #{media('<', m)} {
+      grid-column: 1 / 2;
+      background-image: url('assets/images/catalog-modal-banner-mobile.png');
+      margin-top: rem(8px);
+    }
+  }
+
+  &__title {
+    position: absolute;
+    top: rem(20px);
+    left: rem(20px);
+    @include fsl(24px);
+    letter-spacing: -0.48px;
+
+    @media #{media('<')} {
+      @include fsl(20px);
+      letter-spacing: -0.4px;
+    }
+  }
 }

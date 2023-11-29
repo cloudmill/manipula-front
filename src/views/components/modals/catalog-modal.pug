@@ -1,2 +1,29 @@
+-
+  const links1 = [
+    'Защита от механических воздействий',
+    'Защита от порезов',
+    'Защита от вибрации',
+    'Защита от ударных воздействий',
+    'Защита от воздействия статического электричества',
+    'Защита от воды и растворов нетоксичных веществ'
+  ]
+  const links2 = [
+    'Защита от химических факторов',
+    'Защита от пониженных температур',
+    'Защита от повышенных температур',
+    'Защита от термических рисков электрической дуги',
+    'Защита от воздействия электрического тока'
+  ]
+
 #fancy-modal-catalog.catalog-modal(style='display: none')
-  | catalog modal
+  .catalog-modal__inner
+    ul.catalog-modal__list
+      each el in links1
+        li
+          a(href='')= el
+    ul.catalog-modal__list
+      each el in links2
+        li
+          a(href='')= el
+    a.catalog-modal__banner(href)
+      .catalog-modal__title Весь каталог
