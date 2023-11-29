@@ -11,6 +11,11 @@
   grid-template-columns: cols(5) 1fr;
   align-items: center;
   gap: $col-gap-d;
+
+  @media #{media('<')} {
+    grid-template-columns: 100%;
+    gap: rem(16px);
+  }
 }
 
 .contacts-map {
@@ -33,8 +38,23 @@
   }
 
   #map {
+    border-radius: rem(8px);
+    @media #{media('>')} {
+      grid-column: 2/3;
+      grid-row: 1/3;
+    }
+    @media #{media('>', m)} and #{media('<')} {
+      grid-column: 1/3;
+      grid-row: 2/3;
+    }
+
     @media #{media('<')} {
       order: 1;
+      border-radius: rem(4px);
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
     }
   }
 }
@@ -83,6 +103,19 @@
       letter-spacing: -0.12px;
     }
   }
+
+  &__list {
+    margin-top: rem(32px);
+    @include fsl(24px, 140%);
+    letter-spacing: -0.24px;
+    gap: rem(4px);
+
+    @media #{media('<')} {
+      margin-top: rem(16px);
+      @include fsl(14px, 140%);
+      letter-spacing: -0.14px;
+    }
+  }
 }
 
 .contacts-cards {
@@ -103,7 +136,7 @@
       grid-template-columns: repeat(2, cols-mob(2));
       gap: $col-gap-m;
     }
-    @media #{media('<')} {
+    @media #{media('<', m)} {
       grid-template-columns: 100%;
     }
   }
@@ -111,7 +144,6 @@
   &-item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 
     min-height: rem(270px);
     padding: rem(24px);
@@ -119,9 +151,26 @@
     background: var(--main-bg2);
 
     @media #{media('<')} {
-      min-height: rem(165px);
+      min-height: auto;
       padding: rem(16px);
       border-radius: rem(4px);
+    }
+
+    &__contacts {
+      margin-top: rem(27px);
+
+      display: flex;
+      flex-direction: column;
+      gap: rem(4px);
+
+      @include fsl(18px, 140%);
+      letter-spacing: -0.18px;
+
+      @media #{media('<')} {
+        margin-top: rem(8px);
+        @include fsl(13px);
+        letter-spacing: -0.13px;
+      }
     }
   }
 
@@ -132,6 +181,17 @@
     @media #{media('<')} {
       @include fsl(16px);
       letter-spacing: -0.32px;
+      margin-bottom: rem(16px);
+    }
+  }
+  &__name {
+    margin-top: auto;
+    @include fsl(22px, 120%);
+    letter-spacing: -0.44px;
+
+    @media #{media('<')} {
+      @include fsl(13px);
+      letter-spacing: -0.13px;
     }
   }
 }

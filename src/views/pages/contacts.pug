@@ -18,7 +18,28 @@ block content
       .contacts-map-info.light-blue
         .contacts-map-info__title Центральный офис
         .contacts-map-info__text 121471, Москва, ул. Рябиновая, 26/2, БЦ «West Plaza»
-      #map
+        ul.contacts-map-info__list.list-red-dot
+          li
+            a(href='tel:+74950330331') +7 495 033-033-1
+          li
+            a(href='mailto:info@manipulas.ru') info@manipulas.ru
+
+      #map(style='position: relative; overflow: hidden')
+        a(
+          href='https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps',
+          style='color: #eee; font-size: 12px; position: absolute; top: 0px'
+        ) Санкт‑Петербург
+        a(
+          href='https://yandex.ru/maps/2/saint-petersburg/?ll=30.302539%2C59.942265&utm_medium=mapframe&utm_source=maps&z=13.78',
+          style='color: #eee; font-size: 12px; position: absolute; top: 14px'
+        ) Яндекс Карты
+        iframe(
+          src='https://yandex.ru/map-widget/v1/?ll=30.302539%2C59.942265&z=13.78',
+          frameborder='1',
+          allowfullscreen,
+          style='position: relative'
+        )
+
       .contacts-map-info.dark-blue
         .contacts-map-info__title Склад
         .contacts-map-info__text 121471, Москва, ул. Рябиновая, 38Д
@@ -53,7 +74,12 @@ block content
         each el in cards
           .contacts-cards-item
             .contacts-cards__text= el.title
-            .contacts-cards__text= el.name
+            .contacts-cards__name= el.name
+            ul.contacts-cards-item__contacts.list-red-dot
+              li
+                a(href='tel:+74950330331,1078') +7 495 033-033-1, #1078
+              li
+                a(href='mailto:mshcheglov@manipulas.ru') mshcheglov@manipulas.ru
 
     .contacts-bottom
       h2.h2 Связаться с нами
