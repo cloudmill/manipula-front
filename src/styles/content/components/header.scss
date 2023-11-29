@@ -340,8 +340,29 @@
   justify-content: center;
   flex: none;
 
+  position: relative;
+  transition: $transition;
+
   svg {
     width: rem(16px);
     height: rem(16px);
+    transition: $transition;
+  }
+
+  .active-ico {
+    opacity: 0;
+    position: absolute;
+  }
+
+  &.active {
+    border-color: var(--blue2);
+    background-color: var(--blue2);
+
+    .default-ico {
+      opacity: 0;
+    }
+    .active-ico {
+      opacity: 1;
+    }
   }
 }

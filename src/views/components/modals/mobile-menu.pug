@@ -1,0 +1,39 @@
+-
+  const links = [
+    'О компании',
+    'Технологии',
+    'Библиотека защиты',
+    'Новости',
+    'Контакты',
+    'Где купить'
+  ]
+
+#fancy-modal-mobile-menu.mobile-menu
+  //- .mobile-menu__inner
+
+  .mobile-menu__top
+    button.button.button--blue
+      span Подобрать защитное решение
+      .button__ico
+        +double-arrow-right
+    button.button(data-fancy-button='login')
+      span Личный кабинет дистрибьютора
+      .button__ico
+        +profile
+
+  ul.mobile-menu__nav
+    each el in links
+      li
+        a(href='')= el
+
+  a.mobile-menu__tel(href='tel:84950330331') 8 495 033-033-1
+
+  .mobile-menu__bottom
+    a.button.button--small(href='')
+      span Мы Вконтакте
+      .button__ico
+        +vk-blue
+    button.button.button--blue.button--small(data-fancy-button='write')
+      span Написать нам
+      .button__ico
+        +msg

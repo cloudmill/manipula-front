@@ -58,5 +58,6 @@ mixin header
           .header__profile-ico
             +profile
 
-        button.burger.only-mobile
-          +burger
+        button.burger.only-mobile(data-fancy-button='mobile-menu')
+          +burger.default-ico
+          +white-cross.active-ico

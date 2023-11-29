@@ -1,0 +1,63 @@
+.fancybox__content.mobile-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background: var(--main-bg);
+
+  padding: rem(240px) rem(60px) rem(60px);
+
+  color: #fff;
+
+  @media #{media('<')} {
+    padding: rem(90px) rem(12px) rem(12px);
+  }
+}
+
+.mobile-menu {
+  &__top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(8px);
+  }
+  &__nav {
+    margin-top: rem(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(12px);
+    @include fsl(14px, 140%);
+    letter-spacing: -0.14px;
+  }
+  &__tel {
+    margin-top: rem(20px);
+    @include fsl(20px, 120%);
+    letter-spacing: -0.4px;
+  }
+  &__bottom {
+    margin-top: rem(16px);
+    display: grid;
+    grid-template-columns: repeat(2, cols-mob(2));
+    gap: $col-gap-m;
+  }
+}
+
+// .catalog-modal {
+//   &__inner {
+//     display: grid;
+//     grid-template-columns: repeat(4, cols(4));
+//     gap: $col-gap-d;
+
+//     @media #{media('<')} {
+//       grid-template-columns: repeat(2, cols-mob(2));
+//       column-gap: $col-gap-m;
+//       row-gap: rem(20px);
+//     }
+//     @media #{media('<', m)} {
+//       grid-template-columns: 100%;
+//       gap: rem(12px);
+//     }
+//   }
+// }
