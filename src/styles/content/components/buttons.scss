@@ -42,6 +42,24 @@
     }
   }
 
+  &.filter {
+    padding-left: 0;
+    padding-right: rem(20px);
+
+    .button__ico {
+      padding: rem(18px);
+      margin-left: 0;
+      margin-right: rem(20px);
+      border-left: none;
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+      svg {
+        width: rem(24px);
+        height: rem(24px);
+      }
+    }
+  }
+
   &--small {
     @include fsl(14px);
     letter-spacing: -0.28px;

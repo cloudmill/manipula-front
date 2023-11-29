@@ -1,5 +1,8 @@
 .dropdown {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: rem(4px);
 
   &:hover {
     .dropdown-button {
@@ -13,6 +16,17 @@
 
     .dropdown-arrow svg {
       transform: rotate(180deg);
+    }
+  }
+
+  &-container {
+    position: relative;
+    height: rem(62px);
+    .dropdown {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
     }
   }
 
@@ -51,8 +65,29 @@
   &-drop {
   }
   &-inner {
+    height: rem(300px);
+    overflow-y: auto;
+    @include styled-scrollbar;
+
     border-radius: rem(6px);
     border: 1px solid var(--grey-border2);
     background: var(--main-bg2);
+  }
+  &-list {
+    @include fsl(18px);
+    letter-spacing: -0.36px;
+
+    li {
+      padding: rem(17px) rem(20px);
+      transition: $transition;
+      cursor: pointer;
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--grey-border2);
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+    }
   }
 }

@@ -4,24 +4,58 @@ include ../components/breadcrumbs
 include ../components/cards/product-card
 
 block content
+  -
+    const filters = [
+      'Механические воздействия',
+      'Порезы',
+      'Вибрации',
+      'Ударные воздействия',
+      'Статическое электричество',
+      'Химические факторы',
+      'Вода и растворы нетоксичных веществ',
+      'Пониженные температуры',
+      'Повышенные температуры',
+      'Электрический ток',
+      //- 'Термические риски электрической дуги'
+    ]
+
   .container
     +breadcrumbs(page='Каталог')
     h1.h1 Каталог
 
-    .catalog-top
+    .catalog-top.only-desktop
       div
         .catalog-top__title Защитные группы
+        .catalog-top__row
+          .catalog-filter-all
+            +filter-all
+            span Все
+
+          each el, i in filters
+            a.button.filter(href='')
+              .button__ico
+                +filters(i)
+              span= el
+
       div
         .catalog-top__title Фильтры
         .catalog-top__drops
           - for (i=0;i<4;i++)
-            .dropdown(data-dropdown)
-              button.dropdown-button(data-dropdown-button)
-                span Отрасли промышленности
-                .dropdown-arrow
-                  +arrow-down
-              .dropdown-drop(data-dropdown-drop, style='display: none')
-                .dropdown-inner Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem atque exercitationem dolore, ullam voluptate nobis officia numquam neque dolor id voluptates unde nulla et ad obcaecati error reprehenderit tenetur ducimus?
+            .dropdown-container
+              .dropdown(data-dropdown)
+                button.dropdown-button(data-dropdown-button)
+                  span Отрасли промышленности
+                  .dropdown-arrow
+                    +arrow-down
+                .dropdown-drop(data-dropdown-drop, style='display: none')
+                  .dropdown-inner
+                    ul.dropdown-list
+                      li Нефть и нефтепереработка
+                      li Газовая промышленность
+                      li Электроэнергетика
+                      li Атомная энергетика
+                      li Пищевая промышленность
+                      li Химическая промышленность
 
   .search-result
     .search-result__table

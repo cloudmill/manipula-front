@@ -11,8 +11,37 @@
   }
 
   &__drops {
+    margin-top: rem(20px);
     display: grid;
     grid-template-columns: repeat(4, cols(3));
     gap: $col-gap-d;
+  }
+
+  &__row {
+    margin-top: rem(20px);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: rem(6px);
+  }
+}
+
+.catalog-filter-all {
+  display: flex;
+  align-items: center;
+  gap: rem(38px);
+
+  @include fsl(18px);
+  letter-spacing: -0.36px;
+  padding: rem(19px) rem(20px) rem(19px) rem(18px);
+
+  background: var(--red);
+  border-color: var(--red);
+  border-radius: rem(6px);
+
+  svg {
+    width: rem(24px);
+    width: rem(24px);
   }
 }

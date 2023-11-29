@@ -39,20 +39,20 @@
 }
 
 @mixin styled-scrollbar() {
-  scrollbar-width: rem(6px);
+  scrollbar-width: rem(4px);
 
   &::-webkit-scrollbar {
-    width: rem(6px);
-    background-color: var(--green2);
+    width: rem(4px);
+    background-color: #3c454d;
   }
   &::-webkit-scrollbar-track {
-    background-color: var(--green2);
+    background-color: #3c454d;
   }
   &::-webkit-scrollbar-button {
     display: none;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: var(--green-dark);
+    background-color: #507e9b;
     border-radius: rem(10px);
   }
 }
