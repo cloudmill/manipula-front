@@ -1,0 +1,83 @@
+//- include ../breadcrumbs
+
+#fancy-modal-product.product-modal(style='display: none')
+  .product-modal-inner
+    .product-top
+      .product-pic-container
+        .swiper.product-slider
+          .swiper-wrapper
+            .swiper-slide
+
+      .product-info
+        +breadcrumbs(items=['каталог'], page='Дэтрион')
+        .product-top__label Перчатки
+        h2.product-top__title Дэтрион MG-162 (ex. TPU-13)
+
+        .product-top__block
+          h3.product-top__subtitle Где купить
+          .product-top__where
+            a.button.button--blue(href, target='_blank')
+              span spets.ru
+              .button__ico
+                +link
+            a.button.button--grey(href)
+              span Дистрибьюторы и партнеры
+              .button__ico
+                +double-arrow-right
+            a.button.button--grey(href)
+              span Маркетплейсы
+              .button__ico
+                +double-arrow-right
+
+        .product-top__block
+          h3.product-top__subtitle Соответствие стандартам
+
+          .product-standart-row
+            a.product-standart-item(href='')
+              img(src='assets/images/product-standart-0.png', alt='')
+            a.product-standart-item(href='')
+              img(src='assets/images/product-standart-1.png', alt='')
+
+          ul.product-standart-list
+            -
+              const list = [
+                'ТР ТС 019/2011',
+                'EN ISO 21420:2020',
+                'ГОСТ 12.4.252-2013',
+                'EN 388:2016',
+                'EN 511:2006',
+                'ГОСТ Р ЕН 1149-5-2008'
+              ]
+            each el in list
+              li
+                a(href='')= el
+
+        .product-top__block
+          h3.product-top__subtitle Эксплуатационные уровни
+
+          -
+            const levels = [
+              {
+                ttl: 'EN 388:2016',
+                num: '4322BP'
+              },
+              {
+                ttl: 'EN 511:2006',
+                num: '4322BP'
+              },
+            ]
+          .product-levels-row
+            .product-levels-item
+              img(src='', alt='')
+
+        .product-top__block
+          h3.product-top__subtitle Защитные свойства
+          .product-top__text Класс риска: 2
+          .product-prop-row
+            - for (i=0;i<3;i++)
+              a.product-prop-item(href)
+                img(src='assets/images/product-prop-0.png', alt='')
+              a.product-prop-item(href)
+                img(src='assets/images/product-prop-1.png', alt='')
+              a.product-prop-item(href)
+                img(src='assets/images/product-prop-2.png', alt='')
