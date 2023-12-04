@@ -127,8 +127,15 @@ export function swiperInit() {
   new Swiper('#product-bottom-slider', {
     modules: [Navigation, Thumbs],
 
-    slidesPerView: 4,
-    spaceBetween: 20,
+    slidesPerView: 'auto',
+    spaceBetween: 8,
+
+    breakpoints: {
+      [1024]: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
+    },
 
     navigation: {
       prevEl: `#product-bottom-prev`,

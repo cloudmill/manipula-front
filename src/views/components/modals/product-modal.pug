@@ -2,6 +2,11 @@
 
 #fancy-modal-product.product-modal(style='display: none')
   .product-modal-inner
+    +breadcrumbs.only-mobile.product-modal-bread(
+      items=['каталог'],
+      page='Дэтрион'
+    )
+
     .product-top
       .product-pic-container
         .product-pic-wrapper
@@ -11,7 +16,7 @@
                 .swiper-slide.product-slider__slide
                   img(src='assets/images/product-1.jpg', alt='')
 
-          .product-slider-controls
+          .product-slider-controls.only-desktop
             button#product-slider-prev.slider-control
               +arrow-left
             button#product-slider-next.slider-control
@@ -25,7 +30,7 @@
                     img(src='assets/images/product-1.jpg', alt='')
 
       .product-info
-        +breadcrumbs(items=['каталог'], page='Дэтрион')
+        +breadcrumbs.only-desktop(items=['каталог'], page='Дэтрион')
         .product-top__label Перчатки
         h2.product-top__title Дэтрион MG-162 (ex. TPU-13)
 
@@ -175,7 +180,7 @@
     .product-bottom
       .product-bottom-title
         h3 Альтернативные модели
-        .product-bottom__controls
+        .product-bottom__controls.only-desktop
           button#product-bottom-prev.slider-control
             +arrow-left
           button#product-bottom-next.slider-control
