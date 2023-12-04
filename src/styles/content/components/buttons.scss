@@ -104,3 +104,22 @@
     // }
   }
 }
+
+.slider-control {
+  width: rem(60px);
+  height: rem(60px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: rem(6px);
+  border: 1px solid #e3e3e3;
+
+  background: #f7f7f7;
+
+  svg {
+    width: rem(20px);
+    height: rem(20px);
+  }
+}

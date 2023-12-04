@@ -4,7 +4,7 @@ import './styles/app.scss'
 // import './scripts/preloader'
 import './scripts/forms'
 
-// import { swiperInit } from './scripts/sliders.ts'
+import { swiperInit } from './scripts/sliders.ts'
 import { fancyboxInit } from './scripts/fancybox.ts'
 import { dropdown } from './scripts/dropdown.js'
 
@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //     document.querySelector('body').style.overflow = 'hidden'
   //   }
 
+  swiperInit()
   fancyboxInit()
   dropdown()
 })

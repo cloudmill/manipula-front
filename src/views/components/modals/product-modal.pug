@@ -4,9 +4,25 @@
   .product-modal-inner
     .product-top
       .product-pic-container
-        .swiper.product-slider
-          .swiper-wrapper
-            .swiper-slide
+        .product-pic-wrapper
+          #product-slider.swiper.product-slider
+            .swiper-wrapper
+              - for (i=0;i<3;i++)
+                .swiper-slide.product-slider__slide
+                  img(src='assets/images/product-1.jpg', alt='')
+
+          .product-slider-controls
+            button#product-slider-prev.slider-control
+              +arrow-left
+            button#product-slider-next.slider-control
+              +arrow-right
+
+          .product-thumbs
+            #product-thumbs.swiper
+              .swiper-wrapper
+                - for (i=0;i<3;i++)
+                  .swiper-slide.product-thumbs__slide
+                    img(src='assets/images/product-1.jpg', alt='')
 
       .product-info
         +breadcrumbs(items=['каталог'], page='Дэтрион')
@@ -54,30 +70,119 @@
 
         .product-top__block
           h3.product-top__subtitle Эксплуатационные уровни
-
-          -
-            const levels = [
-              {
-                ttl: 'EN 388:2016',
-                num: '4322BP'
-              },
-              {
-                ttl: 'EN 511:2006',
-                num: '4322BP'
-              },
-            ]
           .product-levels-row
             .product-levels-item
-              img(src='', alt='')
+              img(src='assets/images/svg/product-level-0.svg', alt='')
+              div
+                .product-levels-txt EN 388:2016
+                .product-levels-txt 4322BP
+            - for (i=0;i<4;i++)
+              .product-levels-item
+                img(src='assets/images/svg/product-level-1.svg', alt='')
+                div
+                  .product-levels-txt EN 511:2006
+                  .product-levels-txt 231
 
         .product-top__block
           h3.product-top__subtitle Защитные свойства
           .product-top__text Класс риска: 2
           .product-prop-row
             - for (i=0;i<3;i++)
-              a.product-prop-item(href)
+              a.product-prop-item(href, target='_blank')
                 img(src='assets/images/product-prop-0.png', alt='')
-              a.product-prop-item(href)
+              a.product-prop-item(href, target='_blank')
                 img(src='assets/images/product-prop-1.png', alt='')
-              a.product-prop-item(href)
+              a.product-prop-item(href, target='_blank')
                 img(src='assets/images/product-prop-2.png', alt='')
+
+        .product-top__block
+          h3.product-top__subtitle Технологии
+          .product-technolgies-row
+            .product-technolgies-item
+              img(src='assets/images/product-techs-0.png', alt='')
+            .product-technolgies-item
+              img(src='assets/images/product-techs-1.png', alt='')
+
+        .product-top__block
+          h3.product-top__subtitle Характеристики
+
+          .characteristics
+            -
+              const chars = [
+                {
+                  title: 'Основа',
+                  value: 'Полиэфир'
+                },
+                {
+                  title: 'Покрытие',
+                  value: 'Полиуретан, термопластичная резина'
+                },
+                {
+                  title: 'Вид покрытия',
+                  value: 'Защитные накладки'
+                },
+                {
+                  title: 'Подкладка',
+                  value: 'Пенополиуретан'
+                },
+                {
+                  title: 'Манжет',
+                  value: 'Трикотажный'
+                },
+                {
+                  title: 'Длина, мм',
+                  value: '250-270'
+                },
+                {
+                  title: 'Размеры',
+                  value: '9, 10, 11'
+                },
+                {
+                  title: 'Упаковка, пар',
+                  value: '1, 5, 50'
+                },
+              ]
+            each el in chars
+              .characteristics__row
+                .characteristics__title= el.title
+                .characteristics__value= el.value
+
+        .product-top__block.product-drops
+          .dropdown.product(data-dropdown)
+            button.dropdown-button.dropdown-button(data-dropdown-button)
+              span Выбрать город
+              .dropdown-arrow
+                +arrow-down
+            .dropdown-drop(data-dropdown-drop, style='display: none')
+              .dropdown-inner Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem atque exercitationem dolore, ullam voluptate nobis officia numquam neque dolor id voluptates unde nulla et ad obcaecati error reprehenderit tenetur ducimus?
+
+        .product-top__block
+          h3.product-top__subtitle Документация
+          .documents-row
+            -
+              const docs = [
+                'Листовка',
+                'Инструкции',
+                'Спецка'
+              ]
+            each el in docs
+              a.documents-item(href)
+                img(src='assets/images/svg/document.svg', alt='')
+                div
+                  .documents-title= el
+                  .documents-size 188 Кб
+
+    .product-bottom
+      .product-bottom-title
+        h3 Альтернативные модели
+        .product-bottom__controls
+          button#product-bottom-prev.slider-control
+            +arrow-left
+          button#product-bottom-next.slider-control
+            +arrow-right
+
+      #product-bottom-slider.swiper
+        .swiper-wrapper
+          - for (i=0;i<6;i++)
+            .swiper-slide
+              +card

@@ -54,48 +54,14 @@ export function swiperInit() {
             modules: [Navigation],
 
             slidesPerView: 'auto',
-            spaceBetween: 12,
+            spaceBetween: 20,
 
-            breakpoints: {
-              [1024]: {
-                slidesPerView: 6,
-                spaceBetween: 20,
-              },
-            },
-          }
-          break
-
-        case 'recipes':
-          slider_options = {
-            ...slider_options,
-
-            modules: [Navigation],
-
-            slidesPerView: 'auto',
-            spaceBetween: 12,
-
-            breakpoints: {
-              [1024]: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-            },
-          }
-        case 'review':
-          slider_options = {
-            ...slider_options,
-
-            modules: [Navigation],
-
-            slidesPerView: 'auto',
-            spaceBetween: 12,
-
-            breakpoints: {
-              [1024]: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-            },
+            // breakpoints: {
+            //   [1024]: {
+            //     slidesPerView: 6,
+            //     spaceBetween: 20,
+            //   },
+            // },
           }
           break
 
@@ -138,17 +104,19 @@ export function swiperInit() {
     })
   }
 
-  const productThumbs = new Swiper('[data-slider-id="product-thumbs"]', {
+  const productThumbs = new Swiper('#product-thumbs', {
     slidesPerView: 'auto',
-    spaceBetween: 4,
+    spaceBetween: 8,
   })
 
-  const productImg = new Swiper('[data-slider-id="product-img"]', {
+  new Swiper('#product-slider', {
     modules: [Navigation, Thumbs],
 
+    loop: true,
+
     navigation: {
-      prevEl: `[data-prev="product-img]`,
-      nextEl: `[data-next="product-img"]`,
+      prevEl: `#product-slider-prev`,
+      nextEl: `#product-slider-next`,
     },
 
     thumbs: {
@@ -156,21 +124,15 @@ export function swiperInit() {
     },
   })
 
-  const aboutThumbs = new Swiper('[data-slider-id="about-thumbs"]', {
-    slidesPerView: 'auto',
-    spaceBetween: 4,
-  })
-
-  const aboutImg = new Swiper('[data-slider-id="about"]', {
+  new Swiper('#product-bottom-slider', {
     modules: [Navigation, Thumbs],
 
-    navigation: {
-      prevEl: `[data-prev="about"]`,
-      nextEl: `[data-next="about"]`,
-    },
+    slidesPerView: 4,
+    spaceBetween: 20,
 
-    thumbs: {
-      swiper: aboutThumbs,
+    navigation: {
+      prevEl: `#product-bottom-prev`,
+      nextEl: `#product-bottom-next`,
     },
   })
 }
