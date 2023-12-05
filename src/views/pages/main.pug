@@ -8,14 +8,20 @@ include ../components/cards/news-card
 block content
   .container
     .first-screen
-      a.first-screen-slider(href)
-        img.first-screen-slider__bg(
-          src='assets/images/first-screen-0.jpg',
-          alt=''
+      .first-screen-slider
+        .swiper(data-slider-id='main')
+          .swiper-wrapper
+            - for (i=0;i<3;i++)
+              .swiper-slide
+                picture.first-screen-slider__bg
+                  //- source
+                  img(src='assets/images/first-screen-0.jpg', alt='')
+                .first-screen-slider__content
+                  .first-screen-slider__title Перчатки «Дэтрион»
+                  .first-screen-slider__text Перчатки Дэтрион рекомендованы для защиты рук от механических (истирание, порезы, проколы) и ударных воздействий, от пониженных температур
+        .first-screen-slider__pagination.swiper-pagination(
+          data-swiper-pagination='main'
         )
-        .first-screen-slider__content
-          .first-screen-slider__title Перчатки «Дэтрион»
-          .first-screen-slider__text Перчатки Дэтрион рекомендованы для защиты рук от механических (истирание, порезы, проколы) и ударных воздействий, от пониженных температур
 
       -
         const first = ['О компании', 'Технологии', 'Где купить', 'Услуги']

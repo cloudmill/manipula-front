@@ -221,3 +221,35 @@
     }
   }
 }
+
+.about-series {
+  margin: rem(120px) 0;
+
+  @media #{media('<')} {
+    margin: rem(48px) 0;
+  }
+
+  &-title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: rem(60px);
+
+    h2 {
+      @include fsl(56px);
+      letter-spacing: -2.24px;
+    }
+  }
+}
+
+.series-card {
+  padding: rem(40px);
+  border-radius: rem(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #263039;
+
+  &__logo {
+    height: rem(100px);
+    margin-bottom: rem(40px);
+  }
+}

@@ -27,21 +27,17 @@ export function swiperInit() {
           slider_options = {
             ...slider_options,
 
-            modules: [Navigation, Pagination, Parallax],
+            modules: [Pagination, Autoplay],
 
             loop: true,
-            autoHeight: true,
-            parallax: true,
-            speed: 500,
+            speed: 1000,
+            // autoplay: {
+            //   delay: 4000,
+            // },
 
             pagination: {
               el: `[data-swiper-pagination=${slider_id}]`,
               type: 'bullets',
-            },
-            breakpoints: {
-              [1024]: {
-                speed: 1500,
-              },
             },
           }
 

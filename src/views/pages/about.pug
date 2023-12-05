@@ -57,3 +57,23 @@ block content
           span Вклад в будущее страны и общества, реализуемый через социальные инициативы компании, поддержку здорового образа жизни и спортивной культуры как внутри коллектива, так и во внешней деятельности
 
     .about-series
+      .about-series-title
+        h2 Используем лучшие защитные #[br] технологии из мировой практики
+
+        .controls.only-desktop
+          button#product-bottom-prev.slider-control.dark
+            +arrow-left
+          button#product-bottom-next.slider-control.dark
+            +arrow-right
+
+      .swiper(data-slider-id='series')
+        .swiper-wrapper
+          - for (i=0;i<4;i++)
+            .swiper-slide
+              .series-card
+                img.series-card__logo(
+                  src='assets/images/series-logo-0.png',
+                  alt=''
+                )
+                .series-card__ttl Dupont™ Kevlar®
+                .series-card__text Параарамидное волокно, устойчивое к порезам, истиранию и тепловому воздействию. Не плавится и не поддерживает горение.
