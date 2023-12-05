@@ -5,6 +5,10 @@
   flex-direction: column;
   gap: rem(40px);
 
+  @media #{media('<')} {
+    margin: rem(24px) 0;
+  }
+
   &__title {
     @include fsl(28px);
     letter-spacing: -0.56px;
@@ -24,6 +28,58 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: rem(6px);
+  }
+
+  &__checks {
+    display: flex;
+    align-items: center;
+    gap: rem(24px);
+    margin-top: rem(24px);
+  }
+
+  &__reset {
+    display: flex;
+    align-items: center;
+    gap: rem(12px);
+
+    @include fsl(18px);
+    letter-spacing: -0.36px;
+    color: #fff;
+
+    margin-left: auto;
+
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+      flex-shrink: 0;
+    }
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, cols-mob(2));
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(12px);
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(4px);
+
+    padding: rem(14px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: rem(4px);
+
+    @include fsl(14px);
+    letter-spacing: -0.14px;
+    color: #fff;
+
+    svg {
+      width: rem(20px);
+      height: rem(20px);
+    }
   }
 }
 

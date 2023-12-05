@@ -23,8 +23,8 @@ block content
     +breadcrumbs(page='Каталог')
     h1.h1 Каталог
 
-    .catalog-top.only-desktop
-      div
+    .catalog-top
+      .only-desktop
         .catalog-top__title Защитные группы
         .catalog-top__row
           .catalog-filter-all
@@ -38,8 +38,8 @@ block content
               span= el
 
       div
-        .catalog-top__title Фильтры
-        .catalog-top__drops
+        .catalog-top__title.only-desktop Фильтры
+        .catalog-top__drops.only-desktop
           - for (i=0;i<4;i++)
             .dropdown-container
               .dropdown(data-dropdown)
@@ -57,6 +57,30 @@ block content
                       li Пищевая промышленность
                       li Химическая промышленность
 
+        .catalog-top__buttons.only-mobile
+          .catalog-top__button
+            span Защитные группы
+            +plus
+          .catalog-top__button
+            span Фильтры
+            +plus
+
+        .catalog-top__checks
+          label.checkbox
+            .checkbox__container
+              input.checkbox__input(type='checkbox', checked, required)
+              +checkbox.checkbox__ico
+            .checkbox__caption Новинки
+          label.checkbox
+            .checkbox__container
+              input.checkbox__input(type='checkbox', required)
+              +checkbox.checkbox__ico
+            .checkbox__caption Произведено в России
+
+          button.catalog-top__reset.only-desktop
+            +reset
+            span Сбросить
+
   .search-result
     .search-result__table
       - for (i=0;i<8;i++)
@@ -69,3 +93,4 @@ block content
 
 block modals
   include ../components/modals/product-modal
+  include ../components/modals/groups-filter-modal

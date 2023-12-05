@@ -92,8 +92,8 @@
     position: relative;
     width: rem(24px);
     height: rem(24px);
-    border-radius: rem(8px);
-    border: 2px solid var(--green-border);
+    border-radius: rem(6px);
+    overflow: hidden;
     flex: none;
 
     display: flex;
@@ -104,10 +104,22 @@
     transition: $transition;
 
     &:has(.checkbox__input:checked) {
-      border-color: var(--yellow);
-      background-color: var(--yellow);
+      border-color: #ea3a39;
+      background-color: #ea3a39;
       .checkbox__ico {
-        opacity: 1;
+        path {
+          opacity: 1;
+        }
+        rect {
+          &:nth-child(1) {
+            fill-opacity: 1;
+            fill: var(--red);
+          }
+          &:nth-child(2) {
+            stroke-opacity: 1;
+            stroke: var(--red);
+          }
+        }
       }
     }
   }
@@ -121,16 +133,20 @@
     width: rem(24px);
     height: rem(24px);
     transition: $transition;
-    opacity: 0;
+    // opacity: 0;
+    path,
+    rect {
+      transition: $transition;
+    }
   }
 
   &__caption {
-    @include fsl(14px, 140%);
-    letter-spacing: -0.14px;
+    @include fsl(18px);
+    letter-spacing: -0.36px;
 
     @media #{media('<')} {
-      @include fsl(11px);
-      letter-spacing: -0.11px;
+      @include fsl(14px);
+      letter-spacing: -0.14px;
     }
 
     a {

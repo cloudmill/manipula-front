@@ -166,3 +166,20 @@ mixin filters(i)
 mixin link
   svg(width="20", height="20", viewBox="0 0 20 20", fill="none", xmlns="http://www.w3.org/2000/svg")
     path(fill-rule="evenodd", clip-rule="evenodd", d="M9.75351 11.4226L15.8309 5.34518V9.16667H17.4976V2.5H10.8309V4.16667H14.6524L8.57499 10.2441L9.75351 11.4226ZM15.8333 15.8333V11.6667H14.1667V15.8333H4.16667V5.83333H8.33333V4.16667H4.16667C3.24619 4.16667 2.5 4.91286 2.5 5.83333V15.8333C2.5 16.7538 3.24619 17.5 4.16667 17.5H14.1667C15.0871 17.5 15.8333 16.7538 15.8333 15.8333Z", fill="white")
+
+mixin checkbox
+  svg(class=attributes.class width="24", height="24", viewBox="0 0 24 24", fill="none", xmlns="http://www.w3.org/2000/svg")
+    rect(width="24", height="24", rx="6", fill="white", fill-opacity="0.04")
+    rect(x="0.5", y="0.5", width="23", height="23", rx="5.5", stroke="white", stroke-opacity="0.1")
+    path(opacity="0.2", d="M7 11.8235L10.4615 15L17 9", stroke="white", stroke-width="1.5")
+
+mixin reset
+  svg(width="24", height="24", viewBox="0 0 24 24", fill="none", xmlns="http://www.w3.org/2000/svg")
+    path(d="M9.11008 5.08002C9.98008 4.82002 10.9401 4.65002 12.0001 4.65002C16.7901 4.65002 20.6701 8.53002 20.6701 13.32C20.6701 18.11 16.7901 21.99 12.0001 21.99C7.21008 21.99 3.33008 18.11 3.33008 13.32C3.33008 11.54 3.87008 9.88002 4.79008 8.50002", stroke="white", stroke-width="1.5", stroke-linecap="square", stroke-linejoin="round")
+    path(d="M7.87012 5.32L10.7601 2", stroke="white", stroke-width="1.5", stroke-linecap="square", stroke-linejoin="round")
+    path(d="M7.87012 5.32001L11.2401 7.78001", stroke="white", stroke-width="1.5", stroke-linecap="square", stroke-linejoin="round")
+
+mixin plus
+  svg(width="21", height="20", viewBox="0 0 21 20", fill="none", xmlns="http://www.w3.org/2000/svg")
+    path(d="M4.01807 10H16.9817", stroke="white", stroke-width="1.5", stroke-linecap="square", stroke-linejoin="round")
+    path(d="M10.5 16.4818V3.51819", stroke="white", stroke-width="1.5", stroke-linecap="square", stroke-linejoin="round")
