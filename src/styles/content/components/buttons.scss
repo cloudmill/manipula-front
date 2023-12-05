@@ -123,6 +123,7 @@
   border: 1px solid #e3e3e3;
 
   background: #f7f7f7;
+  transition: $transition;
 
   &.dark {
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -132,6 +133,15 @@
     svg path {
       fill: #fff;
     }
+  }
+
+  &:hover {
+    border-color: var(--red);
+    background: var(--red);
+  }
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
   }
 
   svg {

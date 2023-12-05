@@ -7,14 +7,31 @@ block content
     .about-top
       picture.about-top__bg
         source(
+          srcset='assets/images/about-top-bg-mob.webp',
+          type='image/webp',
+          media='(max-width: 767px)'
+        )
+        source(
           srcset='assets/images/about-top-bg-mob.jpg',
           type='image/jpeg',
           media='(max-width: 767px)'
+        )
+
+        source(
+          srcset='assets/images/about-top-bg-tablet.webp',
+          type='image/webp',
+          media='(min-width: 768px) and (max-width: 1023px)'
         )
         source(
           srcset='assets/images/about-top-bg-tablet.jpg',
           type='image/jpeg',
           media='(min-width: 768px) and (max-width: 1023px)'
+        )
+
+        source(
+          srcset='assets/images/about-top-bg.webp',
+          type='image/webp',
+          media='(min-width: 1024px)'
         )
         img(src='assets/images/about-top-bg.jpg', alt='')
 
@@ -36,7 +53,13 @@ block content
           - for (i=0;i<3;i++)
             .swiper-slide
               picture
+                source(
+                  srcset='assets/images/about-slide.webp',
+                  type='image/webp',
+                  media='(min-width: 1024px)'
+                )
                 img(src='assets/images/about-slide.jpg', alt='')
+      .swiper-pagination.about-pagination(data-swiper-pagination='about')
 
     .about-cards
       .about-cards__item
@@ -56,20 +79,20 @@ block content
         .about-cards__text
           span Вклад в будущее страны и общества, реализуемый через социальные инициативы компании, поддержку здорового образа жизни и спортивной культуры как внутри коллектива, так и во внешней деятельности
 
-    .about-series
-      .about-series-title
-        h2 Используем лучшие защитные #[br] технологии из мировой практики
+    .about-block
+      .about-block-title
+        h2.about-title Используем лучшие защитные #[br] технологии из мировой практики
 
         .controls.only-desktop
-          button#product-bottom-prev.slider-control.dark
+          button.slider-control.dark(data-prev='series')
             +arrow-left
-          button#product-bottom-next.slider-control.dark
+          button.slider-control.dark(data-next='series')
             +arrow-right
 
-      .swiper(data-slider-id='series')
+      .swiper.slider-drop-container(data-slider-id='series')
         .swiper-wrapper
-          - for (i=0;i<4;i++)
-            .swiper-slide
+          - for (i=0;i<3;i++)
+            .swiper-slide.auto-slide
               .series-card
                 img.series-card__logo(
                   src='assets/images/series-logo-0.png',
@@ -77,3 +100,66 @@ block content
                 )
                 .series-card__ttl Dupont™ Kevlar®
                 .series-card__text Параарамидное волокно, устойчивое к порезам, истиранию и тепловому воздействию. Не плавится и не поддерживает горение.
+            .swiper-slide.auto-slide
+              .series-card
+                img.series-card__logo(
+                  src='assets/images/series-logo-1.png',
+                  alt=''
+                )
+                .series-card__ttl Dyneema® Diamond Technology
+                .series-card__text Параарамидное волокно, устойчивое к порезам, истиранию и тепловому воздействию. Не плавится и не поддерживает горение.
+
+    .about-block
+      .about-block-title
+        h2.about-title Разрабатываем и внедряем #[br] инновационные решения
+
+        .controls.only-desktop
+          button.slider-control.dark(data-prev='solutions')
+            +arrow-left
+          button.slider-control.dark(data-next='solutions')
+            +arrow-right
+
+      .swiper.slider-drop-container(data-slider-id='solutions')
+        .swiper-wrapper
+          - for (i=0;i<2;i++)
+            .swiper-slide.auto-slide
+              .solutions-card
+                .solutions-card__info
+                  .solutions-card__title SlipGrip
+                  .solutions-card__text Матричная технология нанесения ПВХ, увеличивающая механическую прочность, эластичность и обеспечивает надежный сухой захват.
+                picture.solutions-card__img
+                  img(src='assets/images/about-solutions-0.jpg', alt='')
+                img.solutions-card__logo(
+                  src='assets/images/solutions-logo-0.png',
+                  alt=''
+                )
+            .swiper-slide.auto-slide
+              .solutions-card
+                .solutions-card__info
+                  .solutions-card__title Sapphire Technology
+                  .solutions-card__text Антипорезный материал на основе высокомодульного полиэтилена с высокой стойкостью к истиранию и раздиру.
+                picture.solutions-card__img
+                  img(src='assets/images/about-solutions-1.jpg', alt='')
+                img.solutions-card__logo(
+                  src='assets/images/solutions-logo-1.png',
+                  alt=''
+                )
+
+  .container
+    .responsibility
+      h2.about-title Социальная ответственность
+      .responsibility__cols
+        .responsibility__text
+          span Здоровье — основополагающая и естественная жизненная ценность. Мы стремимся защитить ее не только в условиях трудовой деятельности, но и в повседневной жизни, оказывая поддержку спорту — главному на сегодня социальному фактору, способному сплотить, объединить и направить в сторону здорового будущего.
+        .responsibility__text
+          span Мы верим, что вклад в спортивное развитие сегодня — это основа здоровой нации завтра.
+
+      .responsibility__cols
+        div
+          picture.responsibility__img
+            img(src='assets/images/responsibility-0.jpg', alt='')
+          .responsibility__desc Создание футбольной команды
+        div
+          picture.responsibility__img
+            img(src='assets/images/responsibility-1.jpg', alt='')
+          .responsibility__desc Поддержка спортсменам барнаульского клуба каратэ «Амара»

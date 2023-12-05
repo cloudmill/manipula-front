@@ -61,6 +61,30 @@ export function swiperInit() {
           }
           break
 
+        case 'about':
+          slider_options = {
+            ...slider_options,
+
+            modules: [Navigation, Pagination],
+
+            pagination: {
+              el: `[data-swiper-pagination=${slider_id}]`,
+              type: 'bullets',
+            },
+          }
+          break
+
+        case 'series':
+        case 'solutions':
+          slider_options = {
+            ...slider_options,
+
+            modules: [Navigation],
+
+            slidesPerView: 'auto',
+          }
+          break
+
         default:
           break
       }

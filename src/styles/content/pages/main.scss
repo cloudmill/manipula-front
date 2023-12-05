@@ -79,11 +79,6 @@
     }
 
     &__pagination {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 0;
-
       .swiper-pagination-bullet {
         width: rem(197px);
         height: rem(4px);
