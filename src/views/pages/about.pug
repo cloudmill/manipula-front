@@ -145,6 +145,54 @@ block content
                   alt=''
                 )
 
+    .about-block
+      .about-block-title
+        h2.about-title Брендированные серии
+
+        .only-desktop.group-buttons
+          a.button.button--blue(href='')
+            span Каталог
+            .button__ico
+              +double-arrow-right
+
+          .controls
+            button.slider-control.dark(data-prev='brands')
+              +arrow-left
+            button.slider-control.dark(data-next='brands')
+              +arrow-right
+
+      .swiper.slider-drop-container(data-slider-id='brands')
+        .swiper-wrapper
+          - for (i=0;i<2;i++)
+            .swiper-slide.auto-slide
+              .brands-card
+                picture.brands-card__img
+                  source(
+                    srcset='assets/images/about-brands-0.webp',
+                    type='image/webp'
+                  )
+                  img(src='assets/images/about-brands-0.jpg', alt='')
+                .brands-card__content
+                  .brands-card__title Detrion
+                  .brands-card__txt Высокотехнологичная линейка противоударных перчаток с высоким уровнем защиты по нескольким показателям.
+
+            .swiper-slide.auto-slide
+              .brands-card
+                picture.brands-card__img
+                  source(
+                    srcset='assets/images/about-brands-1.webp',
+                    type='image/webp'
+                  )
+                  img(src='assets/images/about-brands-1.jpg', alt='')
+                .brands-card__content
+                  .brands-card__title Арамакс
+                  .brands-card__txt Серия защитных решений от порезов с дополнительной стойкостью к высоким температурам
+
+      a.button.button--blue.only-mobile.brands-catalog-btn(href='')
+        span Каталог
+        .button__ico
+          +double-arrow-right
+
   .container
     .responsibility
       h2.about-title Социальная ответственность
@@ -157,9 +205,17 @@ block content
       .responsibility__cols
         div
           picture.responsibility__img
+            source(
+              srcset='assets/images/responsibility-0.webp',
+              type='image/webp'
+            )
             img(src='assets/images/responsibility-0.jpg', alt='')
           .responsibility__desc Создание футбольной команды
         div
           picture.responsibility__img
+            source(
+              srcset='assets/images/responsibility-1.webp',
+              type='image/webp'
+            )
             img(src='assets/images/responsibility-1.jpg', alt='')
           .responsibility__desc Поддержка спортсменам барнаульского клуба каратэ «Амара»

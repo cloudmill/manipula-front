@@ -509,3 +509,64 @@
     }
   }
 }
+
+.brands-card {
+  position: relative;
+  width: cols(4);
+  border-radius: rem(8px);
+  overflow: hidden;
+
+  display: flex;
+
+  @media #{media('<')} {
+    width: rem(260px);
+    height: rem(340px);
+    border-radius: rem(4px);
+  }
+
+  &__img {
+    display: flex;
+  }
+
+  &__content {
+    position: absolute;
+    inset: rem(40px);
+
+    @media #{media('<')} {
+      inset: rem(20px);
+    }
+  }
+
+  &__title {
+    @include fsl(36px);
+    letter-spacing: -1.44px;
+    margin-bottom: rem(22px);
+
+    @media #{media('<')} {
+      @include fsl(20px, 120%);
+      letter-spacing: -0.4px;
+      margin-bottom: rem(12px);
+    }
+  }
+
+  &__txt {
+    @include fsl(20px, 140%);
+    letter-spacing: -0.2px;
+
+    @media #{media('<')} {
+      @include fsl(14px, 140%);
+      letter-spacing: -0.14px;
+    }
+  }
+}
+
+.brands-catalog-btn {
+  margin-top: rem(20px);
+  width: fit-content;
+}
+
+.group-buttons {
+  display: flex;
+  align-items: center;
+  gap: rem(20px);
+}

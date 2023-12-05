@@ -76,6 +76,7 @@ export function swiperInit() {
 
         case 'series':
         case 'solutions':
+        case 'brands':
           slider_options = {
             ...slider_options,
 
