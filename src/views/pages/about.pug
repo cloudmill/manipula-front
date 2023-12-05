@@ -3,6 +3,57 @@ extends ../app
 include ../components/breadcrumbs
 
 block content
-  .container
-    +breadcrumbs(page='О компании')
-    h1.h1 О компании
+  .container.about-section
+    .about-top
+      picture.about-top__bg
+        source(
+          srcset='assets/images/about-top-bg-mob.jpg',
+          type='image/jpeg',
+          media='(max-width: 767px)'
+        )
+        source(
+          srcset='assets/images/about-top-bg-tablet.jpg',
+          type='image/jpeg',
+          media='(min-width: 768px) and (max-width: 1023px)'
+        )
+        img(src='assets/images/about-top-bg.jpg', alt='')
+
+      .about-top__text
+        +breadcrumbs(page='О компании')
+        h1.h1 О компании
+
+    .about-second
+      .about-big-text Manipula Specialist® сегодня — #[br] лидирующий российский бренд в сфере &nbsp; #[br.only-desktop] высококачественных профессиональных СИЗ рук
+
+      .about-blockquote
+        .about-blockquote__title Основа деятельности
+        .about-blockquote__text
+          span Продвижение и совершенствование культуры потребления качественных средств защиты, отвечающих современным требованиям стандартов безопасности, прозрачной и честной бизнес-культуры и поддержки безопасности и здоровья человека на современных рабочих площадках.
+
+    .about-slider
+      .swiper(data-slider-id='about')
+        .swiper-wrapper
+          - for (i=0;i<3;i++)
+            .swiper-slide
+              picture
+                img(src='assets/images/about-slide.jpg', alt='')
+
+    .about-cards
+      .about-cards__item
+        img.about-cards__ico(src='assets/images/svg/about-card-0.svg', alt='')
+        .about-cards__text
+          span Широкий ассортимент высококачественной продукции, соответствующий всем требованиям ТР ТС 019 / 2011 «О безопасности средств индивидуальной защиты»
+      .about-cards__item
+        img.about-cards__ico(src='assets/images/svg/about-card-1.svg', alt='')
+        .about-cards__text
+          span Постоянное изучение современных условий труда, отслеживание изменений нормативных документов, аудит производственных площадок позволяет обеспечивать наших клиентов первоклассными защитными решениями
+      .about-cards__item
+        img.about-cards__ico(src='assets/images/svg/about-card-2.svg', alt='')
+        .about-cards__text
+          span Прозрачные бизнес-процессы и уважительные отношения с партнерами, обеспечиваемые ориентацией нашей бизнес-модели на современные системы стандарта качества менеджмента
+      .about-cards__item
+        img.about-cards__ico(src='assets/images/svg/about-card-3.svg', alt='')
+        .about-cards__text
+          span Вклад в будущее страны и общества, реализуемый через социальные инициативы компании, поддержку здорового образа жизни и спортивной культуры как внутри коллектива, так и во внешней деятельности
+
+    .about-series

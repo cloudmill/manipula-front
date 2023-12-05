@@ -1,0 +1,223 @@
+.about-section {
+  margin-bottom: rem(120px);
+  @media #{media('<')} {
+    margin-bottom: rem(48px);
+  }
+}
+
+.about-top {
+  position: relative;
+  display: flex;
+  height: rem(520px);
+  border-radius: rem(8px);
+  overflow: hidden;
+
+  @media #{media('<')} {
+    height: rem(350px);
+    border-radius: rem(4px);
+    margin-top: rem(8px);
+  }
+
+  &__text {
+    position: absolute;
+    top: rem(40px);
+    left: rem(40px);
+
+    @media #{media('<')} {
+      top: rem(8px);
+      left: rem(8px);
+    }
+  }
+
+  &__bg {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.about-second {
+  position: relative;
+  z-index: 10;
+  margin-bottom: rem(-130px);
+
+  @media #{media('<')} {
+    display: grid;
+    grid-template-columns: repeat(2, cols-mob(2));
+    gap: $col-gap-m;
+    margin: rem(48px) 0 rem(12px);
+  }
+  @media #{media('<', m)} {
+    grid-template-columns: 100%;
+    gap: rem(20px);
+  }
+}
+
+.about-big-text {
+  margin: rem(120px) 0 rem(60px);
+  @include fsl(56px);
+  letter-spacing: -2.24px;
+
+  @media #{media('<')} {
+    margin: 0;
+    @include fsl(20px, 120%);
+    letter-spacing: -0.4px;
+  }
+}
+
+.about-blockquote {
+  width: rem(586px);
+  padding: rem(40px);
+  border-radius: rem(8px);
+  background: var(--blue);
+  margin-left: cols-g(6);
+
+  @media #{media('<')} {
+    width: 100%;
+    padding: rem(20px);
+    border-radius: rem(4px);
+    margin: 0;
+  }
+
+  &__title {
+    @include fsl(28px);
+    letter-spacing: -0.56px;
+    margin-bottom: rem(24px);
+
+    @media #{media('<')} {
+      @include fsl(16px);
+      letter-spacing: -0.32px;
+      margin-bottom: rem(12px);
+    }
+  }
+
+  &__text {
+    @include fsl(20px, 140%);
+    letter-spacing: -0.2px;
+    display: flex;
+    gap: rem(12px);
+
+    @media #{media('<')} {
+      @include fsl(14px, 140%);
+      letter-spacing: -0.14px;
+      gap: rem(7px);
+    }
+
+    &::before {
+      content: '[';
+      color: var(--red);
+      @include fsl(14px, 140%);
+      margin-top: rem(3px);
+
+      @media #{media('<')} {
+        letter-spacing: -0.14px;
+      }
+    }
+  }
+}
+
+.about-slider {
+  position: relative;
+
+  .swiper {
+    height: rem(720px);
+
+    @media #{media('<')} {
+      height: rem(360px);
+    }
+    @media #{media('<', m)} {
+      height: rem(170px);
+    }
+  }
+
+  .swiper-slide {
+    display: flex !important;
+    border-radius: rem(8px);
+    overflow: hidden;
+
+    @media #{media('<')} {
+      border-radius: rem(4px);
+    }
+
+    picture {
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(4, cols(3));
+  gap: $col-gap-d;
+  margin: rem(120px) 0;
+
+  @media #{media('<')} {
+    grid-template-columns: repeat(2, cols-mob(2));
+    gap: $col-gap-m;
+    margin: rem(48px) 0;
+  }
+  @media #{media('<', m)} {
+    grid-template-columns: 100%;
+  }
+
+  &__item {
+    padding: rem(40px);
+    border-radius: rem(8px);
+
+    @media #{media('<')} {
+      padding: rem(24px);
+      border-radius: rem(4px);
+    }
+
+    &:nth-child(2n + 1) {
+      background: var(--blue2);
+    }
+    &:nth-child(2n + 2) {
+      background: var(--blue);
+    }
+  }
+  &__ico {
+    height: rem(70px);
+    margin-bottom: rem(70px);
+
+    @media #{media('<')} {
+      height: rem(45px);
+      margin-bottom: rem(16px);
+    }
+  }
+  &__text {
+    @include fsl(20px, 140%);
+    letter-spacing: -0.2px;
+    display: flex;
+    gap: rem(12px);
+
+    @media #{media('<')} {
+      @include fsl(14px, 140%);
+      letter-spacing: -0.14px;
+      gap: rem(7px);
+    }
+
+    &::before {
+      content: '[';
+      color: var(--red);
+      @include fsl(14px, 140%);
+      margin-top: rem(3px);
+
+      @media #{media('<')} {
+        letter-spacing: -0.14px;
+      }
+    }
+  }
+}
