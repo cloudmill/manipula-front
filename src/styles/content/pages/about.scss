@@ -570,3 +570,62 @@
   align-items: center;
   gap: rem(20px);
 }
+
+.about-model-cols {
+  display: grid;
+  grid-template-columns: repeat(2, cols(6));
+  gap: $col-gap-d;
+}
+
+.model-drop {
+  &-cols {
+    display: grid;
+    grid-template-columns: cols-g(6) cols(6);
+  }
+
+  &-title {
+    @include fsl(28px);
+    letter-spacing: -0.56px;
+    margin-bottom: rem(24px);
+  }
+
+  &-list {
+    width: rem(740px);
+
+    li {
+      position: relative;
+      display: flex;
+      gap: rem(12px);
+
+      .dropdown {
+        width: 100%;
+        margin-bottom: rem(12px);
+      }
+    }
+  }
+  &-mark {
+    margin-top: rem(28px);
+    width: rem(11px);
+    height: rem(11px);
+    flex-shrink: 0;
+    border-radius: rem(2px);
+    background-color: var(--red);
+
+    &-line {
+      position: absolute;
+
+      left: rem(5px);
+
+      border-left: 1px dashed var(--red);
+
+      &.top {
+        top: rem(2px);
+        height: rem(36px);
+      }
+      &.bottom {
+        top: rem(36px);
+        bottom: rem(1px);
+      }
+    }
+  }
+}

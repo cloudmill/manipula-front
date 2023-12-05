@@ -127,14 +127,19 @@
 }
 
 .first-bottom {
-  margin: rem(120px) 0;
-
   display: flex;
   flex-direction: column;
   gap: rem(60px);
+  padding: rem(120px) $col-pad-d rem(120px) 0;
+  margin-right: -$col-pad-d;
+
+  background-image: url('assets/images/main-pattern.png');
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: rem(650px);
 
   @media #{media('<')} {
-    margin: rem(48px) 0;
+    padding: rem(48px) 0;
     gap: rem(20px);
   }
 

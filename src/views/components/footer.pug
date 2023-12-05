@@ -1,18 +1,29 @@
 mixin footer
   -
     const col1 = ['О компании', 'Технологии', 'Библиотека защиты', 'Новости', 'Контакты', 'Где купить']
+    const col1_1 = ['О компании', 'Технологии', 'Библиотека защиты']
+    const col1_2 = ['Новости', 'Контакты', 'Где купить']
 
   footer.footer
     .container
       .footer__main
         a.header__logo(href='')
           img(src='assets/images/svg/logo.svg', alt='logo')
-        //- .footer__main-col1-container
-        .footer__main-col1
+
+        .footer__main-col1.only-desktop
           each el, i in col1
             a(href='')
-              //- +footer-list1(i)
-              span #{ el } 
+              span #{ el }
+
+        .footer__main-col1.only-mobile
+          each el, i in col1_1
+            a(href='')
+              span #{ el }
+        .footer__main-col1.only-mobile
+          each el, i in col1_2
+            a(href='')
+              span #{ el }
+
         .footer__contacts
           .footer__contacts-col
             a.footer__tel(href='tel:+74950330331') +7 495 033-033-1

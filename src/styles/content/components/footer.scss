@@ -4,9 +4,15 @@
 
   background-color: var(--blue2);
 
-  // @media #{media('<')} {
-  //   padding: rem(40px) 0;
-  // }
+  background-image: url('assets/images/footer-pattern.png');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: rem(200px);
+
+  @media #{media('<')} {
+    background-size: rem(190px);
+    padding: rem(32px) 0;
+  }
 
   &__main {
     display: grid;
@@ -17,7 +23,12 @@
     border-bottom: 2px solid var(--green-border);
 
     @media #{media('<')} {
-      grid-template-columns: 100%;
+      grid-template-columns: repeat(4, cols-mob(1));
+      gap: $col-gap-m;
+      padding-bottom: rem(32px);
+    }
+    @media #{media('<', m)} {
+      grid-template-columns: repeat(2, cols-mob(2));
       padding-bottom: rem(48px);
     }
 
@@ -54,44 +65,13 @@
         }
       }
     }
-  }
 
-  &__action {
-    display: flex;
-    align-items: center;
-    gap: rem(12px);
-
-    @include fsl(32px, 140%);
-    letter-spacing: -0.32px;
-    color: var(--red);
-
-    transition: $transition;
-
-    @media #{media('<')} {
-      gap: rem(4px);
-      @include fsl(15px, 100%);
-      letter-spacing: -0.15px;
-    }
-
-    svg {
-      width: rem(48px);
-      height: rem(48px);
-
-      @media #{media('<')} {
-        width: rem(24px);
-        height: rem(24px);
+    .header__logo {
+      @media #{media('>', m)} and #{media('<')} {
+        grid-column: 1 / 5;
       }
-
-      .action-fill {
-        transition: $transition;
-      }
-    }
-
-    &:hover {
-      color: var(--green-text);
-
-      svg .action-fill {
-        fill: var(--green-text);
+      @media #{media('<', m)} {
+        grid-column: 1 / 3;
       }
     }
   }
@@ -160,9 +140,15 @@
     grid-template-columns: cols(3) 1fr;
     gap: $col-gap-d;
 
-    @media #{media('<')} {
+    @media #{media('>', m)} and #{media('<')} {
       display: flex;
-      padding-top: rem(48px);
+      grid-column: 3 / 5;
+      padding-top: rem(26px);
+    }
+    @media #{media('<', m)} {
+      display: flex;
+      padding-top: rem(32px);
+      grid-column: 1 / 3;
     }
 
     &-col {
@@ -212,8 +198,12 @@
     padding-bottom: rem(48px);
 
     @media #{media('<')} {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, cols-mob(1));
       gap: $col-gap-m;
+      padding-bottom: rem(32px);
+    }
+    @media #{media('<', m)} {
+      grid-template-columns: 1fr 1fr;
     }
 
     &-img {
@@ -242,9 +232,12 @@
     grid-template-columns: cols(3) 1fr cols(3);
     gap: $col-gap-d;
 
-    @media #{media('<')} {
-      grid-template-columns: 100%;
+    @media #{media('>', m)} and #{media('<')} {
+      grid-template-columns: repeat(2, cols-mob(2));
       gap: $col-gap-m;
+    }
+    @media #{media('<', m)} {
+      grid-template-columns: 100%;
     }
   }
 
@@ -254,9 +247,13 @@
     letter-spacing: -0.14px;
     color: #fff;
 
+    @media #{media('>', m)} and #{media('<')} {
+      grid-column: 2/3;
+    }
     @media #{media('<')} {
       @include fsl(13px);
       letter-spacing: -0.13px;
+      color: var(--blue-txt);
     }
   }
 
@@ -265,6 +262,10 @@
     color: var(--blue-txt);
     letter-spacing: -0.14px;
 
+    @media #{media('>', m)} and #{media('<')} {
+      grid-column: 2/3;
+      order: 2;
+    }
     @media #{media('<')} {
       @include fsl(13px);
       letter-spacing: -0.13px;
