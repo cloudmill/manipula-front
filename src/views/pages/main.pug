@@ -56,7 +56,7 @@ block content
             'Химическая <br/> промышленность'
           ]
         each el, index in list
-          .solutions-item
+          a.solutions-item(href)
             img.solutions-item__bg(
               src=`assets/images/solutions-${index}.png`,
               alt=''

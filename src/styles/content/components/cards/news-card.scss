@@ -1,4 +1,5 @@
 .news-item {
+  cursor: pointer;
   @media #{media('<')} {
     width: cols-mob(3);
     flex: none;
