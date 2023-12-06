@@ -31,19 +31,23 @@
 
   cursor: text;
 
-  // &:has(input:focus) {
-  //   background: var(--green2);
+  &:has(input:focus) {
+    border-color: #507e9b;
+    //   background: var(--green2);
 
-  //   .header__search-button,
-  //   .header__search-reset {
-  //     opacity: 1;
-  //     cursor: pointer;
-  //   }
+    //   .header__search-button,
+    //   .header__search-reset {
+    //     opacity: 1;
+    //     cursor: pointer;
+    //   }
 
-  //   .header__search-ico path {
-  //     stroke: var(--green-text);
-  //   }
-  // }
+    //   .header__search-ico path {
+    //     stroke: var(--green-text);
+    //   }
+  }
+  &:hover {
+    border-color: #507e9b;
+  }
 
   &__input {
     width: 100%;
