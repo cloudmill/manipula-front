@@ -31,9 +31,9 @@ export function swiperInit() {
 
             loop: true,
             speed: 1000,
-            // autoplay: {
-            //   delay: 4000,
-            // },
+            autoplay: {
+              delay: 4000,
+            },
 
             pagination: {
               el: `[data-swiper-pagination=${slider_id}]`,
