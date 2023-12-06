@@ -79,6 +79,11 @@
   &__tel {
     @include fsl(48px, 120%);
     letter-spacing: -1.92px;
+    transition: $transition;
+
+    &:hover {
+      color: var(--red);
+    }
 
     @media #{media('<')} {
       @include fsl(28px);
@@ -88,6 +93,11 @@
   &__mail {
     @include fsl(24px, 120%);
     letter-spacing: -0.24px;
+    transition: $transition;
+
+    &:hover {
+      color: var(--red);
+    }
 
     @media #{media('<')} {
       @include fsl(16px);
@@ -171,6 +181,12 @@
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(3px);
 
+    transition: $transition;
+    &:hover {
+      border-color: var(--red);
+      background: var(--red);
+    }
+
     @media #{media('<')} {
       width: rem(44px);
       height: rem(44px);
@@ -246,6 +262,7 @@
     @include fsl(14px);
     letter-spacing: -0.14px;
     color: #fff;
+    transition: $transition;
 
     @media #{media('>', m)} and #{media('<')} {
       grid-column: 2/3;
@@ -254,6 +271,10 @@
       @include fsl(13px);
       letter-spacing: -0.13px;
       color: var(--blue-txt);
+    }
+
+    &:hover {
+      color: var(--red);
     }
   }
 
@@ -285,6 +306,11 @@
     a {
       color: #fff;
       font-weight: 600;
+      transition: $transition;
+
+      &:hover {
+        color: var(--red);
+      }
     }
   }
 }

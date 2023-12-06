@@ -15,12 +15,16 @@
   margin: rem(60px) 0 rem(120px);
 
   @media #{media('<')} {
-    grid-template-columns: 100%;
+    grid-template-columns: repeat(2, cols-mob(2));
     row-gap: rem(24px);
+    column-gap: $col-gap-m;
     margin: rem(16px) 0 rem(48px);
 
     .news-item {
       width: 100%;
     }
+  }
+  @media #{media('<', m)} {
+    grid-template-columns: 100%;
   }
 }

@@ -86,6 +86,22 @@ export function swiperInit() {
           }
           break
 
+        case 'news':
+          slider_options = {
+            ...slider_options,
+
+            modules: [Navigation],
+
+            slidesPerView: 'auto',
+
+            breakpoints: {
+              [1024]: {
+                slidesPerView: 1,
+              },
+            },
+          }
+          break
+
         default:
           break
       }

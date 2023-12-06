@@ -1,0 +1,13 @@
+extends ../app
+
+include ../components/breadcrumbs
+
+block content
+  .container
+    +breadcrumbs(page='Подобрать защитное решение')
+    h1.h1 Подобрать защитное решение
+
+    .solutions-steps
+      .button.filter
+        .button__ico 1
+        span Идентифицированные опасности

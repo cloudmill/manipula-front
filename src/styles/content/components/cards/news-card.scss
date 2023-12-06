@@ -1,7 +1,8 @@
 .news-item {
   cursor: pointer;
   @media #{media('<')} {
-    width: cols-mob(3);
+    // width: cols-mob(3);
+    width: rem(260px);
     flex: none;
   }
 
@@ -32,6 +33,7 @@
     @include fsl(22px, 120%);
     letter-spacing: -0.44px;
     margin-top: rem(12px);
+    @include cropText(2);
 
     @media #{media('<')} {
       @include fsl(16px);

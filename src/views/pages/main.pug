@@ -17,7 +17,7 @@ block content
                   //- source
                   img(src='assets/images/first-screen-0.jpg', alt='')
                 .first-screen-slider__content
-                  .first-screen-slider__title Перчатки «Дэтрион»
+                  h2.first-screen-slider__title Перчатки «Дэтрион»
                   .first-screen-slider__text Перчатки Дэтрион рекомендованы для защиты рук от механических (истирание, порезы, проколы) и ударных воздействий, от пониженных температур
         .first-screen-slider__pagination.swiper-pagination(
           data-swiper-pagination='main'
@@ -35,7 +35,7 @@ block content
           .first-screen-cell__title= el
 
     .first-bottom
-      .first-bottom__title Манипула Специалист — первый российский производитель профессиональных высококачественных СИЗ рук
+      h2.first-bottom__title Манипула Специалист — первый российский производитель профессиональных высококачественных СИЗ рук
       .first-bottom__text
         .first-bottom__col
           span Фундаментальные принципы компании — пропаганда потребления качественных средств защиты, открытый диалог, исключение компромиссов в вопросах здоровья Человека и реализация лучших международных практик.
@@ -67,12 +67,45 @@ block content
     section.news
       .news-top
         h2.h2 Последние новости
+        .controls.only-desktop
+          button.slider-control.dark(data-prev='news')
+            +arrow-left
+          button.slider-control.dark(data-next='news')
+            +arrow-right
 
-      .news-list
-        - for (i=0;i<3;i++)
-          +news-card(
-            img='news-0',
-            date='6 марта 2023',
-            tag='Новости компании',
-            title='Выставка KIOSH-2023 в Казахстане 24-26 мая'
-          )
+      .news-slider
+        .swiper(data-slider-id='news')
+          .swiper-wrapper
+            - for (i=0;i<5;i++)
+              .swiper-slide.news-slide
+                .news-list.only-desktop
+                  +news-card(
+                    img='news-0',
+                    date='6 марта 2023',
+                    tag='Новости компании',
+                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая'
+                  )
+                  +news-card(
+                    img='news-0',
+                    date='6 марта 2023',
+                    tag='Новости компании',
+                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая'
+                  )
+                  +news-card(
+                    img='news-0',
+                    date='6 марта 2023',
+                    tag='Новости компании',
+                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая'
+                  )
+                .only-mobile
+                  +news-card(
+                    img='news-0',
+                    date='6 марта 2023',
+                    tag='Новости компании',
+                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая'
+                  )
+
+        a.button.news-slider__more(href='')
+          span Все новости
+          .button__ico
+            +double-arrow-right

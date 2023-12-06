@@ -38,26 +38,7 @@
   }
   &__bottom {
     margin-top: rem(16px);
-    display: grid;
-    grid-template-columns: repeat(2, cols-mob(2));
+    display: flex;
     gap: $col-gap-m;
   }
 }
-
-// .catalog-modal {
-//   &__inner {
-//     display: grid;
-//     grid-template-columns: repeat(4, cols(4));
-//     gap: $col-gap-d;
-
-//     @media #{media('<')} {
-//       grid-template-columns: repeat(2, cols-mob(2));
-//       column-gap: $col-gap-m;
-//       row-gap: rem(20px);
-//     }
-//     @media #{media('<', m)} {
-//       grid-template-columns: 100%;
-//       gap: rem(12px);
-//     }
-//   }
-// }

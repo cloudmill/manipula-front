@@ -1,0 +1,21 @@
+extends ../app
+
+include ../components/breadcrumbs
+
+block content
+  .container
+    +breadcrumbs(page='Подобрать защитное решение')
+    h1.h1 Подобрать защитное решение
+
+    .solutions-text Наш каталог содержит средства индивидуальной защиты рук для более 5000 профессий. Воспользуйтесь умным поиском или выберите из самых популярных.
+
+    .solutions-ways
+      a.solutions-ways__item(href)
+        .solutions-ways__title Профессии и должности
+        .solutions-ways__arrow
+          +double-arrow-right
+
+      a.solutions-ways__item(href)
+        .solutions-ways__title Идентифицированные опасности
+        .solutions-ways__arrow
+          +double-arrow-right

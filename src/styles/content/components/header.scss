@@ -306,6 +306,17 @@
     letter-spacing: -0.36px;
     color: #fff;
 
+    transition: $transition;
+
+    &:hover {
+      border-color: var(--red);
+      background: var(--red);
+
+      svg path {
+        stroke: #fff;
+      }
+    }
+
     span {
       margin: 0 rem(20px);
       white-space: nowrap;
@@ -323,6 +334,10 @@
       svg {
         width: rem(20px);
         height: rem(20px);
+
+        path: {
+          transition: $transition;
+        }
       }
     }
   }
