@@ -9,7 +9,10 @@ export function tabs() {
       const oldActiveTab = activePanel.querySelector('[data-tab].active')
 
       if (activeTab) {
-        oldActiveTab.classList.remove('active')
+        if (oldActiveTab) {
+          oldActiveTab.classList.remove('active')
+        }
+
         activeTab.classList.add('active')
       }
     })

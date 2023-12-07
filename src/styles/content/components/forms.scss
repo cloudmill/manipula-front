@@ -39,7 +39,7 @@
 
   &:focus,
   &.active {
-    border-color: #507e9b;
+    border-color: var(--blue3);
 
     ~ .form-placeholder {
       top: rem(24px);
@@ -86,6 +86,12 @@
 
   @media #{media('<')} {
     align-items: flex-start;
+  }
+
+  &:hover .checkbox__ico rect:nth-child(2) {
+    transition: stroke-opacity $transition;
+    stroke-opacity: 1;
+    stroke: var(--red);
   }
 
   &__container {

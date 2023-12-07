@@ -32,7 +32,7 @@
   cursor: text;
 
   &:has(input:focus) {
-    border-color: #507e9b;
+    border-color: var(--blue3);
     //   background: var(--green2);
 
     //   .header__search-button,
@@ -46,7 +46,7 @@
     //   }
   }
   &:hover {
-    border-color: #507e9b;
+    border-color: var(--blue3);
   }
 
   &__input {
@@ -165,7 +165,7 @@
   }
 
   span {
-    color: #507e9b;
+    color: var(--blue3);
   }
 }
 

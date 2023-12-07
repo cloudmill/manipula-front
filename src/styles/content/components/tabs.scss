@@ -17,9 +17,18 @@
   &.big {
     gap: rem(36px);
 
+    @media #{media('<')} {
+      gap: rem(12px);
+    }
+
     .tabs__item {
       @include fsl(28px);
       letter-spacing: -0.56px;
+
+      @media #{media('<')} {
+        @include fsl(16px);
+        letter-spacing: -0.32px;
+      }
     }
   }
 

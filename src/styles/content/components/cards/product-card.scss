@@ -43,7 +43,7 @@
 
   &__category {
     @include fsl(15px);
-    color: #507e9b;
+    color: var(--blue3);
     margin-bottom: rem(8px);
 
     @media #{media('<')} {

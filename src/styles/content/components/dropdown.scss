@@ -5,12 +5,12 @@
 
   &:hover {
     .dropdown-button {
-      border-color: #507e9b;
+      border-color: var(--blue3);
     }
   }
   &.active {
     &:not(.select) {
-      border-color: #507e9b;
+      border-color: var(--blue3);
     }
 
     .dropdown-arrow svg {
@@ -24,6 +24,10 @@
       border-radius: rem(6px);
     }
     .dropdown-inner {
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      right: 0;
       border-radius: rem(6px);
       border: 1px solid var(--grey-border2);
       height: rem(300px);
@@ -33,7 +37,7 @@
 
     &.active {
       .dropdown-button {
-        border-color: #507e9b;
+        border-color: var(--blue3);
       }
     }
   }
@@ -100,7 +104,7 @@
   &-drop {
   }
   &-inner {
-    border: 1px solid #507e9b;
+    border: 1px solid var(--blue3);
     border-radius: 0 0 rem(6px) rem(6px);
     border-top: none;
   }

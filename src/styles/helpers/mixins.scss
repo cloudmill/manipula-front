@@ -52,7 +52,7 @@
     display: none;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #507e9b;
+    background-color: var(--blue3);
     border-radius: rem(10px);
   }
 }

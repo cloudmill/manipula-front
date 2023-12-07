@@ -42,16 +42,28 @@
     align-items: center;
     gap: rem(12px);
 
-    @include fsl(18px);
+    @include fsl(18px, 110%);
     letter-spacing: -0.36px;
     color: #fff;
 
     margin-left: auto;
+    transition: $transition;
+
+    &:hover {
+      color: var(--red);
+
+      svg path {
+        stroke: var(--red);
+      }
+    }
 
     svg {
       width: rem(24px);
       height: rem(24px);
       flex-shrink: 0;
+      path {
+        transition: $transition;
+      }
     }
   }
 
