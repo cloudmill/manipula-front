@@ -17,8 +17,23 @@ block content
         a.tabs__item(href) Беларусь
         a.tabs__item(href) Казахстан
 
+    .dropdown.dark.select.only-mobile(data-dropdown)
+      button.dropdown-button.dropdown-button(data-dropdown-button)
+        span Выбрать город
+        .dropdown-arrow
+          +arrow-down
+      .dropdown-drop(data-dropdown-drop, style='display: none')
+        .dropdown-inner
+          ul.dropdown-list
+            li Москва
+            li Краснодар
+
+    .tabs.where-buy-tabs.only-mobile(data-tabs-panel, data-tab-contents)
+      .tabs__item.active(data-tab='1') Список
+      .tabs__item(data-tab='2') На карте
+
     .where-buy-main
-      .dropdown.dark.select(data-dropdown)
+      .dropdown.dark.select.only-desktop(data-dropdown)
         button.dropdown-button.dropdown-button(data-dropdown-button)
           span Выбрать город
           .dropdown-arrow
@@ -26,14 +41,10 @@ block content
         .dropdown-drop(data-dropdown-drop, style='display: none')
           .dropdown-inner
             ul.dropdown-list
-              li Нефть и нефтепереработка
-              li Газовая промышленность
-              li Электроэнергетика
-              li Атомная энергетика
-              li Пищевая промышленность
-              li Химическая промышленность
+              li Москва
+              li Краснодар
 
-      #map
+      #map(data-tab-content='2')
         a(
           href='https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps',
           style='color: #eee; font-size: 12px; position: absolute; top: 0px'
@@ -49,7 +60,7 @@ block content
           style='position: relative'
         )
 
-      .where-buy-list(data-tabs-panel)
+      .where-buy-list.show(data-tabs-panel, data-tab-content='1')
         -
           const cards = [
             {

@@ -30,7 +30,7 @@
       right: 0;
       border-radius: rem(6px);
       border: 1px solid var(--grey-border2);
-      height: rem(300px);
+      max-height: rem(300px);
       overflow-y: auto;
       @include styled-scrollbar;
     }

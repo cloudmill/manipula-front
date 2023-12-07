@@ -15,6 +15,16 @@ export function tabs() {
 
         activeTab.classList.add('active')
       }
+      if (activePanel.hasAttribute('data-tab-contents')) {
+        const activeId = activeTab.getAttribute('data-tab')
+
+        document
+          .querySelectorAll('[data-tab-content]')
+          .forEach((it) => it.classList.remove('show'))
+        document
+          .querySelector(`[data-tab-content="${activeId}"]`)
+          .classList.add('show')
+      }
     })
   })
 }
