@@ -67,6 +67,14 @@
         fill: #fff;
       }
     }
+    &.old-active {
+      border-color: var(--blue);
+      background-color: var(--blue);
+
+      svg path {
+        fill: #fff;
+      }
+    }
 
     .button__ico {
       padding: rem(18px);

@@ -1,0 +1,49 @@
+extends ../app
+
+include ../components/breadcrumbs
+
+block content
+  .container
+    +breadcrumbs(page='Подобрать защитное решение')
+    h1.h1 Подобрать защитное решение
+
+    .solutions-steps
+      -
+        const steps = [
+          'Идентифицированные опасности',
+          'Вид опасности',
+          'Опасные события',
+          'Тип СИЗ рук, обязательных к выдаче'
+        ]
+        const active = 2
+      each el, i in steps
+        if i < active
+          .solutions-steps__item
+            .button.filter.old-active.no-hover
+              .button__ico= i + 1
+              span= el
+        else if i === active
+          .solutions-steps__item
+            .button.filter.active.no-hover
+              .button__ico= i + 1
+              span= el
+        else
+          .solutions-steps__item
+            .button.filter.no-hover
+              .button__ico= i + 1
+              span= el
+
+    .solutions-title
+      .slider-control.dark
+        +arrow-left
+      h3 Груз, инструмент или предмет, перемещаемый или поднимаемый, в том числе на высоту
+
+    .solutions-choice
+      -
+        const cards = [
+          'Удар работника или падение на работника предмета, тяжелого инструмента или груза, упавшего при перемещении или подъеме',
+          'Удар работника или падение на работника предмета, тяжелого инструмента или груза, упавшего при перемещении или подъеме',
+        ]
+      each el in cards
+        .solutions-choice-card
+          span= el

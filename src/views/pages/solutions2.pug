@@ -15,8 +15,14 @@ block content
           'Опасные события',
           'Тип СИЗ рук, обязательных к выдаче'
         ]
+        const active = 0
       each el, i in steps
-        if i === 0
+        if i < active
+          .solutions-steps__item
+            .button.filter.old-active.no-hover
+              .button__ico= i + 1
+              span= el
+        else if i === active
           .solutions-steps__item
             .button.filter.active.no-hover
               .button__ico= i + 1

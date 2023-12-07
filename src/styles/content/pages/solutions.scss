@@ -154,6 +154,10 @@
   gap: rem(4px);
   margin-bottom: rem(48px);
 
+  @media #{media('>', m)} {
+    grid-template-columns: repeat(2, cols-mob(2));
+    gap: $col-gap-m;
+  }
   @media #{media('>')} {
     grid-template-columns: repeat(3, cols(4));
 
