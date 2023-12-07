@@ -14,7 +14,7 @@
   transition: $transition;
   flex: none;
 
-  &:hover {
+  &:not(.no-hover):hover {
     border-color: var(--red);
     background-color: var(--red);
 
@@ -58,6 +58,15 @@
   &.filter {
     padding-left: 0;
     padding-right: rem(20px);
+
+    &.active {
+      border-color: var(--red);
+      background-color: var(--red);
+
+      svg path {
+        fill: #fff;
+      }
+    }
 
     .button__ico {
       padding: rem(18px);
@@ -131,12 +140,19 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 
   border-radius: rem(6px);
   border: 1px solid #e3e3e3;
 
   background: #f7f7f7;
   transition: $transition;
+
+  @media #{media('<')} {
+    width: rem(40px);
+    height: rem(40px);
+    border-radius: rem(6px);
+  }
 
   &.dark {
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -160,5 +176,9 @@
   svg {
     width: rem(20px);
     height: rem(20px);
+    @media #{media('<')} {
+      width: rem(16px);
+      height: rem(16px);
+    }
   }
 }

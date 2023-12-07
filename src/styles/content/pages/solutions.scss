@@ -100,4 +100,99 @@
   align-items: center;
   justify-content: flex-start;
   gap: rem(6px);
+
+  @media #{media('<')} {
+    margin: rem(24px) (-$col-pad-m);
+    padding: 0 $col-pad-m;
+
+    gap: rem(4px);
+    overflow-x: auto;
+    @include scrollbar-hidden;
+  }
+
+  &__item {
+    display: flex;
+    @media #{media('>')} {
+      align-items: center;
+      gap: rem(6px);
+
+      &:not(:first-child)::before {
+        content: '';
+        width: rem(20px);
+        height: rem(20px);
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_166_30911)'%3E%3Cpath d='M7.80343 3.91687L7 4.7203L12.2802 9.99997L7 15.2802L7.80343 16.0836L13.8871 9.99997L7.80343 3.91687Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_166_30911'%3E%3Crect width='20' height='20' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.solutions-title {
+  display: flex;
+  align-items: center;
+  gap: rem(33px);
+  margin: rem(40px) 0;
+
+  @media #{media('<')} {
+    gap: rem(12px);
+    margin: rem(20px) 0;
+  }
+
+  h3 {
+    @include fsl(36px);
+    letter-spacing: -1.44px;
+
+    @media #{media('<')} {
+      @include fsl(16px);
+      letter-spacing: -0.32px;
+    }
+  }
+}
+
+.solutions-choice {
+  display: grid;
+  gap: rem(4px);
+  margin-bottom: rem(48px);
+
+  @media #{media('>')} {
+    grid-template-columns: repeat(3, cols(4));
+
+    gap: rem(20px);
+    margin-bottom: rem(120px);
+  }
+
+  &-card {
+    display: flex;
+    align-items: center;
+    gap: rem(24px);
+
+    @include fsl(18px, 130%);
+    letter-spacing: -0.36px;
+
+    padding: rem(24px);
+    border-radius: rem(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    cursor: pointer;
+    transition: $transition;
+
+    @media #{media('<')} {
+      @include fsl(15px);
+      letter-spacing: -0.15px;
+
+      gap: rem(16px);
+      padding: rem(16px);
+      border-radius: rem(4px);
+    }
+
+    &:hover {
+      border-color: var(--red);
+    }
+
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+      flex-shrink: 0;
+    }
+  }
 }
