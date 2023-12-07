@@ -203,9 +203,16 @@
 
 .solutions-result {
   margin-top: rem(80px);
+  @media #{media('<')} {
+    margin-top: rem(24px);
+  }
 
   &__top {
     margin-bottom: rem(40px);
+
+    @media #{media('<')} {
+      margin-bottom: rem(16px);
+    }
   }
 
   &__title {
@@ -213,6 +220,13 @@
     letter-spacing: -1.44px;
     color: var(--main-bg);
     margin-bottom: rem(24px);
+
+    @media #{media('<')} {
+      @include fsl(18px);
+      letter-spacing: -0.36px;
+      margin-bottom: rem(12px);
+      margin-top: rem(8px);
+    }
   }
 
   &__tag {
@@ -223,9 +237,17 @@
 
     @include fsl(20px, 110%);
     text-transform: uppercase;
+
+    @media #{media('<')} {
+      padding: rem(8px) rem(12px);
+      @include fsl(12px);
+    }
   }
 
   &__extra {
     margin-top: rem(120px);
+    @media #{media('<')} {
+      margin-top: rem(48px);
+    }
   }
 }
