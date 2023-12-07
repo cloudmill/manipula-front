@@ -1,0 +1,45 @@
+extends ../app
+
+include ../components/breadcrumbs
+
+block content
+  .container.solutions-search
+    +breadcrumbs(page='Подобрать защитное решение')
+    h1.h1 Подобрать защитное решение
+
+    .solutions-title
+      .slider-control.dark
+        +arrow-left
+      h3 Профессия
+
+    .solutions-note Наш каталог содержит средства индивидуальной защиты рук для более 5000 профессий. #[br] Воспользуйтесь умным поиском или выберите из самых популярных.
+
+    .search-form
+      label.search
+        .search__ico
+          +search
+        .search__input
+          input(
+            type='search',
+            name='search',
+            placeholder='Введите запрос',
+            data-search
+          )
+
+    .solutions-queries
+      .solutions-queries__title Популярные запросы
+      .solutions-queries__row
+        -
+          const items = [
+            'Дефектовщик',
+            'Заготовщик бумажных пакетов',
+            'Горнорабочий подземный',
+            'Горнорабочий на геологических работах',
+            'Асфальтобетонщик-варильщик',
+            'Заготовщик водорослей',
+            'Бурильщик шпуров',
+            'Бетонщик',
+            'Проходчик горных склонов'
+          ]
+        each it in items
+          .solutions-queries__item= it

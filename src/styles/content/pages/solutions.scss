@@ -251,3 +251,84 @@
     }
   }
 }
+
+.solutions-note {
+  @include fsl(20px, 140%);
+  letter-spacing: -0.2px;
+  margin: rem(40px) 0;
+
+  @media #{media('<')} {
+    @include fsl(15px);
+    letter-spacing: -0.15px;
+    margin: rem(24px) 0;
+  }
+}
+
+.solutions-queries {
+  width: cols(8);
+  margin-top: rem(60px);
+
+  @media #{media('<')} {
+    width: 100%;
+    margin-top: rem(48px);
+  }
+
+  &__title {
+    @include fsl(22px, 120%);
+    letter-spacing: -0.44px;
+    margin-bottom: rem(20px);
+
+    @media #{media('<')} {
+      @include fsl(18px);
+      letter-spacing: -0.36px;
+      margin-bottom: rem(16px);
+    }
+  }
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(8px);
+
+    @media #{media('<')} {
+      gap: rem(4px);
+    }
+  }
+  &__item {
+    @include fsl(18px, 130%);
+    letter-spacing: -0.36px;
+
+    padding: rem(16px) rem(20px);
+    border-radius: rem(6px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    cursor: pointer;
+    transition: $transition;
+
+    @media #{media('<')} {
+      @include fsl(13px);
+      letter-spacing: -0.13px;
+      padding: rem(12px);
+    }
+
+    &:hover {
+      border-color: var(--red);
+    }
+  }
+}
+
+.solutions-search {
+  padding-bottom: rem(120px);
+  @media #{media('<')} {
+    padding-bottom: rem(48px);
+  }
+
+  .search-form {
+    width: cols(8);
+    margin: rem(40px) 0 rem(60px);
+
+    @media #{media('<')} {
+      width: 100%;
+      margin: rem(24px) 0 rem(48px);
+    }
+  }
+}
