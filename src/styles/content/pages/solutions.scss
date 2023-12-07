@@ -200,3 +200,32 @@
     }
   }
 }
+
+.solutions-result {
+  margin-top: rem(80px);
+
+  &__top {
+    margin-bottom: rem(40px);
+  }
+
+  &__title {
+    @include fsl(36px);
+    letter-spacing: -1.44px;
+    color: var(--main-bg);
+    margin-bottom: rem(24px);
+  }
+
+  &__tag {
+    width: fit-content;
+    padding: rem(12px) rem(16px);
+    background: var(--red);
+    border-radius: rem(4px);
+
+    @include fsl(20px, 110%);
+    text-transform: uppercase;
+  }
+
+  &__extra {
+    margin-top: rem(120px);
+  }
+}

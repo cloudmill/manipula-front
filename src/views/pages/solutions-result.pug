@@ -1,0 +1,55 @@
+extends ../app
+
+include ../components/breadcrumbs
+include ../components/cards/product-card
+
+block content
+  .container
+    +breadcrumbs(page='Подобрать защитное решение')
+    h1.h1 Подобрать защитное решение
+
+    .solutions-steps
+      -
+        const steps = [
+          'Идентифицированные опасности',
+          'Вид опасности',
+          'Опасные события',
+          'Тип СИЗ рук, обязательных к выдаче'
+        ]
+        const active = 3
+      each el, i in steps
+        if i < active
+          .solutions-steps__item
+            .button.filter.old-active.no-hover
+              .button__ico= i + 1
+              span= el
+        else if i === active
+          .solutions-steps__item
+            .button.filter.active.no-hover
+              .button__ico= i + 1
+              span= el
+        else
+          .solutions-steps__item
+            .button.filter.no-hover
+              .button__ico= i + 1
+              span= el
+
+    .solutions-title
+      .slider-control.dark
+        +arrow-left
+      h3 Удар работника или падение на работника предмета, тяжелого инструмента или груза, упавшего при перемещении или подъеме
+
+  .search-result.solutions-result
+    .solutions-result__top
+      .solutions-result__title СИЗ рук от механических воздействий
+      .solutions-result__tag [ Нормы выдачи СИЗ: 12 пар ]
+    .search-result__table
+      - for (i=0;i<8;i++)
+        +card
+
+    .solutions-result__extra
+      .solutions-result__top
+        .solutions-result__title СИЗ рук от механических воздействий
+      .search-result__table
+        - for (i=0;i<2;i++)
+          +card
