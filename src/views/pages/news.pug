@@ -15,10 +15,25 @@ block content
       button.tabs__item Конференции
 
     .news-table
-      - for (i=0;i<12;i++)
+      +news-card(
+        img='news-0',
+        date='6 марта 2023',
+        tag='Новости компании',
+        title='Выставка KIOSH-2023 в Казахстане 24-26 мая Выставка KIOSH-2023 в Казахстане 24-26 мая Выставка KIOSH-2023 в Казахстане 24-26 мая'
+      )
+      - for (i=0;i<5;i++)
+        +news-card(
+          img='news-1',
+          date='6 марта 2023',
+          tag='Новости компании',
+          title='Выставка KIOSH-2023 в Казахстане 24-26 мая'
+        )
         +news-card(
           img='news-0',
           date='6 марта 2023',
           tag='Новости компании',
           title='Выставка KIOSH-2023 в Казахстане 24-26 мая'
         )
+
+block modals
+  include ../components/modals/news-modal

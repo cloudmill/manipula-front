@@ -1,16 +1,36 @@
 .news-item {
   cursor: pointer;
   @media #{media('<')} {
-    // width: cols-mob(3);
     width: rem(260px);
     flex: none;
+  }
+
+  &:hover {
+    .news-item__img img {
+      transform: scale(1.1);
+    }
+    .news-item__title {
+      color: var(--red);
+    }
   }
 
   &__img {
     display: block;
     width: 100%;
+    height: rem(240px);
     border-radius: rem(8px);
     overflow: hidden;
+
+    @media #{media('<')} {
+      height: rem(190px);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: $transition;
+    }
   }
 
   &__info {
@@ -33,7 +53,8 @@
     @include fsl(22px, 120%);
     letter-spacing: -0.44px;
     margin-top: rem(12px);
-    @include cropText(2);
+    @include cropText(3);
+    text-transform: uppercase;
 
     @media #{media('<')} {
       @include fsl(16px);

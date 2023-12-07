@@ -7,7 +7,7 @@
     padding: 0 $col-pad-m;
     margin-left: -$col-pad-m;
 
-    width: calc(100% + #{rem(20px)} * 2);
+    width: 100vw;
     display: flex;
 
     overflow-y: scroll;
