@@ -9,81 +9,28 @@ block content
 
     .where-buy-top
       .tabs.big
-        .tabs__item.active Юридическим лицам и ИП
-        a.tabs__item(href) Физическим лицам
+        a.tabs__item(href) Юридическим лицам и ИП
+        .tabs__item.active Физическим лицам
 
-      .tabs
-        .tabs__item.active Россия
-        a.tabs__item(href) Беларусь
-        a.tabs__item(href) Казахстан
+    .where-buy-fiz
+      div
+        .where-buy-fiz__title Россия
+        .where-buy-fiz__row
+          - for (i=0;i<6;i++)
+            a.where-buy-fiz__item(href, target='_blank')
+              img(src=`assets/images/where-${i}.png`, alt='')
+              +link
 
-    .where-buy-main
-      .dropdown.dark(data-dropdown)
-        button.dropdown-button.dropdown-button(data-dropdown-button)
-          span Выбрать город
-          .dropdown-arrow
-            +arrow-down
-        .dropdown-drop(data-dropdown-drop, style='display: none')
-          .dropdown-inner Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem atque exercitationem dolore, ullam voluptate nobis officia numquam neque dolor id voluptates unde nulla et ad obcaecati error reprehenderit tenetur ducimus?
+      div
+        .where-buy-fiz__title Беларусь
+        .where-buy-fiz__row
+          a.where-buy-fiz__item(href, target='_blank')
+            img(src='assets/images/where-3.png', alt='')
+            +link
 
-      #map
-        a(
-          href='https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps',
-          style='color: #eee; font-size: 12px; position: absolute; top: 0px'
-        ) Санкт‑Петербург
-        a(
-          href='https://yandex.ru/maps/2/saint-petersburg/?ll=30.302539%2C59.942265&utm_medium=mapframe&utm_source=maps&z=13.78',
-          style='color: #eee; font-size: 12px; position: absolute; top: 14px'
-        ) Яндекс Карты
-        iframe(
-          src='https://yandex.ru/map-widget/v1/?ll=30.302539%2C59.942265&z=13.78',
-          frameborder='1',
-          allowfullscreen,
-          style='position: relative'
-        )
-
-      .where-buy-list(data-tabs-panel)
-        -
-          const cards = [
-            {
-              ttl: 'ПКФ Специалист',
-              txt: 'Красноярск, ул. Затонская, 32 стр.1'
-            },
-            {
-              ttl: 'Спецобъединение Юго-Запад',
-              txt: 'Москва, ул. Рябиновая, д. 26, стр. 2'
-            },
-            {
-              ttl: 'ТД Спецперчатка',
-              txt: 'Красноярск, ул. Затонская, 32 стр.1'
-            },
-            {
-              ttl: 'ПКФ Специалист',
-              txt: 'Красноярск, ул. Затонская, 32 стр.1'
-            },
-            {
-              ttl: 'Спецобъединение Юго-Запад',
-              txt: 'Москва, ул. Рябиновая, д. 26, стр. 2'
-            },
-            {
-              ttl: 'ТД Спецперчатка',
-              txt: 'Красноярск, ул. Затонская, 32 стр.1'
-            },
-          ]
-        each el in cards
-          .where-buy-item(data-tab)
-            .where-buy-item__title= el.ttl
-            .where-buy-item__text= el.txt
-            ul.list-red-dot
-              li
-                a(href='tel:+73912717917') +7 (391) 271-79-17
-              li
-                a(href='mailto:pkf.24@yandex.ru') pkf.24@yandex.ru
-              li
-                a(href='ps-sib.ru') ps-sib.ru
-
-block scripts
-  script(
-    src='https://api-maps.yandex.ru/2.1/?apikey=dbf69e3e-9063-4438-8229-4598883ac0dc&lang=ru_RU',
-    type='text/javascript'
-  )
+      div
+        .where-buy-fiz__title Казахстан
+        .where-buy-fiz__row
+          a.where-buy-fiz__item(href, target='_blank')
+            img(src='assets/images/where-3.png', alt='')
+            +link
