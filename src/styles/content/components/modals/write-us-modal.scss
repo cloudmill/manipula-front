@@ -23,6 +23,7 @@
   &__submit {
     height: rem(60px);
     justify-content: center;
+    padding-left: 0;
 
     @media #{media('<')} {
       height: rem(50px);
