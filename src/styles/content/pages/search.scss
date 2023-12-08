@@ -51,7 +51,7 @@
 
   &__input {
     width: 100%;
-    padding: rem(8px) rem(8px) rem(8px) rem(24px);
+    padding: rem(8px) rem(8px) rem(8px) rem(20px);
 
     @media #{media('<')} {
       padding: rem(12px) rem(10px) rem(13px) rem(12px);
@@ -70,7 +70,6 @@
       @media #{media('>')} {
         @include fsl(18px);
         letter-spacing: -0.36px;
-        margin-left: rem(20px);
       }
 
       &::-webkit-search-cancel-button {

@@ -41,7 +41,7 @@
     letter-spacing: -0.16px;
 
     @media #{media('<')} {
-      @include fsl(12px);
+      @include fsl(14px);
       letter-spacing: -0.14px;
     }
   }

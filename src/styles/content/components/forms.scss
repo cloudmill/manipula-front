@@ -34,7 +34,7 @@
     @include fsl(15px, 140%);
     letter-spacing: -0.15px;
 
-    padding: rem(13px) rem(24px);
+    padding: rem(16px) rem(24px) rem(10px);
   }
 
   &:focus,
@@ -45,6 +45,12 @@
       top: rem(24px);
       @include fsl(16px);
       letter-spacing: -0.32px;
+
+      @media #{media('<')} {
+        top: rem(5px);
+        @include fsl(9px);
+        letter-spacing: -0.18px;
+      }
     }
   }
 
@@ -192,7 +198,7 @@
   cursor: pointer;
 
   @media #{media('<')} {
-    @include fsl(10px);
+    @include fsl(12px);
     letter-spacing: -0.1px;
   }
 }

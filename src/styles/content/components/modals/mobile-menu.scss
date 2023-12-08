@@ -22,6 +22,14 @@
     align-items: flex-start;
     gap: rem(8px);
   }
+  &__lk {
+    padding-left: rem(20px);
+    .button__ico {
+      padding-left: rem(20px);
+      padding-right: rem(20px);
+      margin-left: rem(20px);
+    }
+  }
   &__nav {
     margin-top: rem(20px);
     display: flex;
@@ -32,6 +40,7 @@
     letter-spacing: -0.14px;
   }
   &__tel {
+    display: block;
     margin-top: rem(20px);
     @include fsl(20px, 120%);
     letter-spacing: -0.4px;

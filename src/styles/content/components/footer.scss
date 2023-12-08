@@ -130,15 +130,28 @@
       display: flex;
       align-items: center;
       gap: rem(4px);
+      transition: $transition;
 
       @media #{media('<')} {
         @include fsl(13px);
         letter-spacing: -0.13px;
       }
 
+      &:hover {
+        color: var(--red);
+
+        svg path {
+          stroke: var(--red);
+        }
+      }
+
       svg {
         width: rem(16px);
         height: rem(16px);
+
+        path {
+          transition: $transition;
+        }
       }
     }
   }

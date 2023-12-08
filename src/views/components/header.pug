@@ -12,7 +12,7 @@ mixin header
 
         .header__contacts.only-desktop
           a.header__tel(href='tel:+74950330331') +7 495 033-033-1
-          a.button.button--small(href='')
+          a.button.button--small(href='', target='_blank')
             span Мы Вконтакте
             .button__ico
               +vk-blue
@@ -35,7 +35,7 @@ mixin header
             +double-arrow-down.default-icon
             +white-cross.active-icon
 
-        button.button.button--blue.only-desktop
+        a.button.button--blue.only-desktop(href)
           span Подобрать защитное решение
           .button__ico
             +double-arrow-right
@@ -54,7 +54,7 @@ mixin header
             //- +search-cross
           //- button.header__search-button Найти
 
-        button.header__search.only-mobile
+        button.header__search.search-mob.only-mobile
           +search
 
         button.header__profile.only-desktop(data-fancy-button='login')

@@ -122,6 +122,9 @@
       @media #{media('<')} {
         width: rem(84px);
       }
+      @media #{media('<', xs)} {
+        width: rem(74px);
+      }
     }
   }
 
@@ -129,6 +132,17 @@
     margin-left: auto;
     @media #{media('>')} {
       margin-left: rem(52px);
+    }
+    @media #{media('<', xs)} {
+      .button__ico {
+        padding: rem(10px) rem(8px);
+        margin-left: rem(8px);
+
+        svg {
+          width: rem(12px);
+          height: rem(12px);
+        }
+      }
     }
 
     .button__ico {
@@ -181,6 +195,10 @@
       flex: none;
 
       margin-left: rem(2px);
+    }
+    @media #{media('<', xs)} {
+      width: rem(34px);
+      height: rem(34px);
     }
 
     cursor: text;
@@ -289,6 +307,13 @@
       cursor: text;
       transition: $transition;
     }
+
+    &.search-mob svg {
+      @media #{media('<', xs)} {
+        width: rem(10px);
+        height: rem(10px);
+      }
+    }
   }
 
   &__profile {
@@ -358,10 +383,19 @@
   position: relative;
   transition: $transition;
 
+  @media #{media('<', xs)} {
+    width: rem(34px);
+    height: rem(34px);
+  }
+
   svg {
     width: rem(16px);
     height: rem(16px);
     transition: $transition;
+    @media #{media('<', xs)} {
+      width: rem(10px);
+      height: rem(10px);
+    }
   }
 
   .active-ico {
