@@ -8,6 +8,10 @@ $(() => {
   $('form').on('submit', (e) => {
     e.preventDefault()
     e.target.closest('form').reset()
+    e.target
+      .closest('form')
+      .querySelectorAll('.form-input')
+      .forEach((it) => it.classList.remove('active'))
 
     if (
       e.target.closest('[data-write-form]') ||

@@ -40,11 +40,11 @@ block content
       div
         .catalog-top__title.only-desktop Фильтры
         .catalog-top__drops.only-desktop
-          - for (i=0;i<4;i++)
+          each el in ['Отрасли промышленности', 'Условия применения', 'Основа', 'Покрытие']
             .dropdown-container
               .dropdown.dark.select(data-dropdown)
                 button.dropdown-button(data-dropdown-button)
-                  span Отрасли промышленности
+                  span= el
                   .dropdown-arrow
                     +arrow-down
                 .dropdown-drop(data-dropdown-drop, style='display: none')
@@ -58,7 +58,7 @@ block content
                       li Химическая промышленность
 
         .catalog-top__buttons.only-mobile
-          .catalog-top__button
+          .catalog-top__button(data-fancy-button='filter-group')
             span Защитные группы
             +plus
           .catalog-top__button
@@ -83,7 +83,7 @@ block content
 
   .search-result
     .search-result__table
-      - for (i=0;i<8;i++)
+      - for (i=0;i<16;i++)
         +card
 
     button.button.button--blue.more-button
@@ -93,4 +93,5 @@ block content
 
 block modals
   include ../components/modals/product-modal
+  include ../components/modals/groups-filter-modal
   include ../components/modals/groups-filter-modal

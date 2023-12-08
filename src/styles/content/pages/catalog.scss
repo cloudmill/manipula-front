@@ -28,6 +28,11 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     gap: rem(6px);
+
+    @media #{media('<')} {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 
   &__checks {
@@ -87,6 +92,7 @@
     @include fsl(14px);
     letter-spacing: -0.14px;
     color: #fff;
+    white-space: nowrap;
 
     svg {
       width: rem(20px);

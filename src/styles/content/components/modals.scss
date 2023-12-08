@@ -50,6 +50,7 @@
     top: 0;
     right: rem(-68px);
     opacity: 1;
+    outline: none;
 
     @media #{media('<')} {
       top: rem(16px) !important;
@@ -160,12 +161,24 @@
     letter-spacing: -1.44px;
     text-align: center;
     margin-bottom: rem(24px);
+
+    @media #{media('<')} {
+      @include fsl(20px);
+      letter-spacing: -0.56px;
+      margin-bottom: rem(16px);
+    }
   }
   &__txt {
     @include fsl(20px, 140%);
     letter-spacing: -0.2px;
     text-align: center;
     margin-bottom: rem(24px);
+
+    @media #{media('<')} {
+      @include fsl(14px);
+      letter-spacing: -0.14px;
+      margin-bottom: rem(10px);
+    }
   }
   &__close {
     margin: 0 auto;

@@ -1,1 +1,20 @@
-#fancy-modal-filter-group.catalog-filters-modal(style='display: none') filter
+#fancy-modal-filter-group.catalog-filters-modal.center-modal(
+  style='display: none'
+)
+  h3.catalog-filters__title Защитные группы
+
+  .catalog-top__row
+    a.button.filter.active.no-hover(href='')
+      .button__ico
+        +filter-all
+      span Все
+
+    each el, i in [ 'Механические воздействия', 'Порезы', 'Вибрации', 'Ударные воздействия', 'Статическое электричество', 'Химические факторы', ]
+      a.button.filter.mob(href='')
+        .button__ico
+          +filters(i)
+        span= el
+
+  .catalog-filters__bottom
+    button.button.button--blue
+      span Применить

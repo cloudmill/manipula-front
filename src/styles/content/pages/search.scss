@@ -11,6 +11,10 @@
     margin: rem(24px) 0;
     gap: rem(12px);
   }
+
+  &.empty {
+    margin-bottom: rem(300px);
+  }
 }
 
 .search {

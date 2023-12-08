@@ -77,15 +77,21 @@
     }
 
     .button__ico {
-      padding: rem(18px);
       margin-left: 0;
-      margin-right: rem(20px);
+      margin-right: rem(12px);
       border-left: none;
       border-right: 1px solid rgba(255, 255, 255, 0.1);
 
+      @media #{media('>')} {
+        padding: rem(18px);
+        margin-right: rem(20px);
+      }
+
       svg {
-        width: rem(24px);
-        height: rem(24px);
+        @media #{media('>')} {
+          width: rem(24px);
+          height: rem(24px);
+        }
       }
     }
   }

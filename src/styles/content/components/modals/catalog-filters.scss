@@ -1,3 +1,37 @@
-.catalog-filters-modal {
+.fancybox__content.catalog-filters-modal {
+  width: calc(100% - #{rem(24px)});
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding: rem(24px) rem(12px);
   background: var(--main-bg);
+  color: #fff;
+
+  overflow-y: auto;
+  @include scrollbar-hidden;
+}
+
+.catalog-filters {
+  &__title {
+    @include fsl(20px);
+    letter-spacing: -0.4px;
+    margin-bottom: rem(40px);
+  }
+
+  &__bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: rem(24px);
+    padding: rem(12px);
+    border-top: 1px solid #3c454d;
+
+    button {
+      width: 100%;
+      height: rem(44px);
+      justify-content: center;
+    }
+  }
 }
