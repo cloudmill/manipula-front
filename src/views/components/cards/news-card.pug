@@ -1,5 +1,5 @@
 mixin news-card
-  .news-item(data-fancy-button='news')
+  .news-item(data-fancy-button=attributes.modal)
     picture.news-item__img
       source(srcset=`assets/images/${attributes.img}.webp`, type='image/webp')
       img(src=`assets/images/${attributes.img}.jpg`, alt='')

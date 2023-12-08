@@ -83,29 +83,36 @@ block content
                     img='news-0',
                     date='6 марта 2023',
                     tag='Новости компании',
-                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая'
+                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая',
+                    modal='news'
                   )
                   +news-card(
                     img='news-0',
                     date='6 марта 2023',
                     tag='Новости компании',
-                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая'
+                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая',
+                    modal='news'
                   )
                   +news-card(
                     img='news-0',
                     date='6 марта 2023',
                     tag='Новости компании',
-                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая'
+                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая',
+                    modal='news'
                   )
                 .only-mobile
                   +news-card(
                     img='news-0',
                     date='6 марта 2023',
                     tag='Новости компании',
-                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая'
+                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая',
+                    modal='news'
                   )
 
         a.button.news-slider__more(href='')
           span Все новости
           .button__ico
             +double-arrow-right
+
+block modals
+  include ../components/modals/news-modal

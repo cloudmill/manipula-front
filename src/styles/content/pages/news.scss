@@ -1,8 +1,10 @@
 .news-filters {
-  margin: rem(60px) 0;
-
+  @media #{media('>')} {
+    margin: rem(60px) 0;
+  }
   @media #{media('<')} {
-    margin: rem(24px) 0 rem(16px);
+    margin-top: rem(24px);
+    margin-bottom: rem(16px);
   }
 }
 
