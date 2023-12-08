@@ -9,9 +9,9 @@
     .news-item__img img {
       transform: scale(1.1);
     }
-    .news-item__title {
-      color: var(--red);
-    }
+    // .news-item__title {
+    //   color: var(--red);
+    // }
   }
 
   &__img {
@@ -55,6 +55,7 @@
     margin-top: rem(12px);
     @include cropText(3);
     text-transform: uppercase;
+    transition: $transition;
 
     @media #{media('<')} {
       @include fsl(16px);

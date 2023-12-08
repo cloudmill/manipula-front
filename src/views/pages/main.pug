@@ -1,7 +1,7 @@
 extends ../app
 
 block variables
-  //- - preloader = true
+  - isMain = true
 
 include ../components/cards/news-card
 
@@ -14,7 +14,30 @@ block content
             - for (i=0;i<3;i++)
               .swiper-slide
                 picture.first-screen-slider__bg
-                  //- source
+                  source(
+                    srcset='assets/images/first-screen-0-mob.webp',
+                    type='image/webp',
+                    media='(max-width: 767px)'
+                  )
+                  source(
+                    srcset='assets/images/first-screen-0-mob.jpg',
+                    type='image/jpeg',
+                    media='(max-width: 767px)'
+                  )
+                  source(
+                    srcset='assets/images/first-screen-0-tablet.webp',
+                    type='image/webp',
+                    media='(min-width: 768px) and (max-width: 1023px)'
+                  )
+                  source(
+                    srcset='assets/images/first-screen-0-tablet.jpg',
+                    type='image/jpeg',
+                    media='(min-width: 768px) and (max-width: 1023px)'
+                  )
+                  source(
+                    srcset='assets/images/first-screen-0.webp',
+                    type='image/webp'
+                  )
                   img(src='assets/images/first-screen-0.jpg', alt='')
                 .first-screen-slider__content
                   h2.first-screen-slider__title Перчатки «Дэтрион»
@@ -28,10 +51,12 @@ block content
 
       each el, i in first
         a.first-screen-cell(href)
-          img.first-screen-cell__bg(
-            src=`assets/images/first-screen-${i + 1}.jpg`,
-            alt=''
-          )
+          picture.first-screen-cell__bg
+            source(
+              srcset=`assets/images/first-screen-${i + 1}.webp`,
+              type='image/webp'
+            )
+            img(src=`assets/images/first-screen-${i + 1}.jpg`, alt='')
           .first-screen-cell__title= el
 
     .first-bottom
@@ -55,13 +80,16 @@ block content
             'Пищевая <br/> промышленность',
             'Химическая <br/> промышленность'
           ]
-        each el, index in list
+        each el, i in list
           a.solutions-item(href)
-            img.solutions-item__bg(
-              src=`assets/images/solutions-${index}.png`,
-              alt=''
-            )
+            picture.solutions-item__bg
+              source(
+                srcset=`assets/images/solutions-${i}.webp`,
+                type='image/webp'
+              )
+              img(src=`assets/images/solutions-${i}.jpg`, alt='')
             .solutions-item__ttl!= el
+            +solutions(i)
 
   .container
     section.news

@@ -102,33 +102,68 @@
 
   &-cell {
     position: relative;
-    padding: rem(32px);
     border-radius: rem(8px);
     overflow: hidden;
-    background: #e3e3e3;
+
+    &:hover .first-screen-cell__bg {
+      &::before {
+        background: rgba(0, 0, 0, 0.2);
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
 
     @media #{media('<')} {
-      padding: rem(20px);
       border-radius: rem(4px);
     }
 
     &__title {
-      position: relative;
+      position: absolute;
+      top: rem(32px);
+      left: rem(32px);
       @include fsl(28px, 100%);
       letter-spacing: -0.56px;
 
       @media #{media('<')} {
         @include fsl(16px, 100%);
         letter-spacing: -0.32px;
+        top: rem(20px);
+        left: rem(20px);
       }
     }
 
     &__bg {
-      position: absolute;
-      inset: 0;
+      position: relative;
       width: 100%;
       height: 100%;
       object-fit: cover;
+
+      &::after,
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+
+        transition: $transition;
+      }
+      &::after {
+        background: linear-gradient(
+          180deg,
+          rgba(15, 15, 15, 0.38) 0%,
+          rgba(14, 26, 36, 0) 100%
+        );
+      }
+      &::before {
+        background: rgba(22, 22, 22, 0.1);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: $transition;
+      }
     }
   }
 }
@@ -171,7 +206,7 @@
 
   &__text {
     display: grid;
-    grid-template-columns: repeat(2, rem(465px));
+    grid-template-columns: repeat(2, rem(482px));
     gap: rem(125px);
     padding: 0 cols-g(2);
 
@@ -193,6 +228,7 @@
 
     &::before {
       content: '[';
+      width: rem(5px);
       @include fsl(20px, 100%);
       color: var(--red);
       text-transform: uppercase;
@@ -248,6 +284,10 @@
       flex: none;
     }
 
+    &:hover .solutions-item__bg img {
+      transform: scale(1.1);
+    }
+
     &__ttl {
       position: absolute;
       top: rem(20px);
@@ -271,6 +311,23 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: $transition;
+      }
+    }
+
+    svg {
+      position: absolute;
+      left: rem(27px);
+      bottom: rem(27px);
+      height: rem(80px);
+
+      @media #{media('<')} {
+      }
     }
   }
 }
@@ -305,6 +362,10 @@
   @media #{media('>')} {
     .news-item:first-child {
       grid-column: 1 / 3;
+
+      .news-item__img {
+        height: rem(485px);
+      }
     }
   }
 }

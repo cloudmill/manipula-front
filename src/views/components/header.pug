@@ -22,8 +22,12 @@ mixin header
               +msg
 
       .header__row
-        a.header__logo(href='')
-          img(src='assets/images/svg/logo.svg', alt='logo')
+        if isMain === true
+          .header__logo
+            img(src='assets/images/svg/logo.svg', alt='logo')
+        else
+          a.header__logo(href='')
+            img(src='assets/images/svg/logo.svg', alt='logo')
 
         button.button.button--red.header__catalog(data-fancy-button='catalog')
           span Каталог СИЗ рук
