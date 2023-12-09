@@ -1,0 +1,109 @@
+.subscribe {
+  margin: rem(120px) 0;
+
+  @media #{media('<')} {
+    margin: rem(48px) 0;
+  }
+
+  &__title {
+    @include fsl(36px, 120%);
+    letter-spacing: -1.44px;
+    margin-bottom: rem(45px);
+
+    @media #{media('<')} {
+      @include fsl(20px);
+      letter-spacing: -0.4px;
+      margin-bottom: rem(20px);
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: cols(4) 1fr;
+    column-gap: rem(8px);
+    row-gap: rem(18px);
+
+    @media #{media('<')} {
+      grid-template-columns: rem(304px) 1fr;
+      row-gap: rem(12px);
+    }
+    @media #{media('<', m)} {
+      grid-template-columns: 1fr rem(54px);
+    }
+
+    .form-note {
+      grid-column: 1 / 3;
+
+      @media #{media('<')} {
+        @include fsl(10px);
+      }
+    }
+
+    .form-placeholder {
+      @include fsl(18px, 100%);
+      letter-spacing: -0.36px;
+      top: rem(24px);
+      left: rem(24px);
+
+      @media #{media('<')} {
+        @include fsl(14px, 140%);
+        letter-spacing: -0.14px;
+        top: rem(12px);
+        left: rem(12px);
+      }
+    }
+
+    .form-input {
+      @include fsl(18px, 100%);
+      letter-spacing: -0.36px;
+      padding: rem(25px) rem(24px) rem(13px) rem(24px);
+
+      @media #{media('<')} {
+        @include fsl(14px, 140%);
+        letter-spacing: -0.14px;
+        padding: rem(18px) rem(12px) rem(6px) rem(12px);
+      }
+
+      &:focus,
+      &.active {
+        ~ .form-placeholder {
+          top: rem(12px);
+          @include fsl(10px);
+          letter-spacing: -0.32px;
+
+          @media #{media('<')} {
+            top: rem(6px);
+            @include fsl(8px);
+          }
+        }
+      }
+    }
+  }
+
+  &__submit {
+    width: rem(80px);
+    height: rem(62px);
+    border-radius: rem(6px);
+    background: #3b6a88;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media #{media('<')} {
+      width: rem(54px);
+      height: rem(44px);
+    }
+
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+      flex-shrink: 0;
+
+      @media #{media('<')} {
+        width: rem(20px);
+        height: rem(20px);
+      }
+    }
+  }
+}

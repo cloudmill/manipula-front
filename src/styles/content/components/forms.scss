@@ -74,8 +74,8 @@
   left: rem(36px);
 
   @include fsl(24px, 100%);
-  color: #fff;
   letter-spacing: -0.48px;
+  color: #fff;
   transition: $transition;
 
   @media #{media('<')} {

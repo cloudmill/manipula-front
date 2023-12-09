@@ -9,6 +9,11 @@
     display: none !important;
   }
 }
+.only-mobile-no-tab {
+  @media #{media('>', m)} {
+    display: none !important;
+  }
+}
 
 .only-tablet {
   @media #{media('<', m)} {

@@ -19,6 +19,8 @@ $(() => {
     ) {
       Fancybox.close()
       Fancybox.show([{ src: `#fancy-modal-success`, type: 'inline' }])
+    } else if (e.target.closest('[data-subscribe-form]')) {
+      Fancybox.show([{ src: `#fancy-subscribe-success`, type: 'inline' }])
     }
     if (e.target.closest('[data-login-form]')) {
       Fancybox.close()
