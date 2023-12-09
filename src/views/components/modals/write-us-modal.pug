@@ -4,25 +4,36 @@ mixin write-us-modal
 
     form.write-us-form(data-write-form)
       label.form-label.light
-        input.form-input.light(type='text', required, data-input)
+        input.form-input.light(
+          type='text',
+          required,
+          data-input,
+          data-parsley-string
+        )
         span.form-placeholder Имя
       label.form-label.light
         input.form-input.light(
           type='tel',
           required,
           data-input,
-          data-mask-phone
+          data-mask-phone,
+          data-parsley-phone
         )
         span.form-placeholder Телефон
       label.form-label.light
         input.form-input.light(type='email', required, data-input)
         span.form-placeholder E-mail
       label.form-label.light
-        input.form-input.light(type='text', required, data-input)
+        input.form-input.light(
+          type='text',
+          required,
+          data-input,
+          data-parsley-string
+        )
         span.form-placeholder Страна, город
       label.form-label.light
         textarea.form-input.form-textarea(data-input)
-        span.form-placeholder Сообщение
+        span.form-placeholder.t-area Сообщение
 
       .write-us-form__bottom
         .form-note(data-fancy-button='policy') Нажимая на кнопку «Отправить», вы даете согласие на #[span.red Политику конфиденциальности]

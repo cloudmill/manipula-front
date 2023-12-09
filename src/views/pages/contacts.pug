@@ -88,7 +88,13 @@ block content
           input.form-input(type='text', required, data-input)
           span.form-placeholder ФИО
         label.form-label
-          input.form-input(type='tel', required, data-input, data-mask-phone)
+          input.form-input(
+            type='tel',
+            required,
+            data-input,
+            data-mask-phone,
+            data-parsley-phone
+          )
           span.form-placeholder Телефон
         label.form-label
           input.form-input(type='email', required, data-input)
