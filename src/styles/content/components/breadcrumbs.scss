@@ -34,6 +34,9 @@
     @media #{media('<')} {
       @include fsl(10px);
     }
+    @media #{media('<', xs)} {
+      @include fsl(8px);
+    }
 
     &:not(:first-child) {
       margin-left: rem(24px);
@@ -53,6 +56,9 @@
           @include fsl(10px);
           margin-right: rem(8px);
         }
+        @media #{media('<', xs)} {
+          @include fsl(8px);
+        }
       }
     }
   }
@@ -70,5 +76,11 @@
     &:hover {
       color: var(--red);
     }
+  }
+}
+
+.fancybox__content .breadcrumbs {
+  @media #{media('<')} {
+    width: 100%;
   }
 }

@@ -147,6 +147,9 @@
       @media #{media('<')} {
         width: rem(130px);
       }
+      @media #{media('<', xs)} {
+        width: rem(80px);
+      }
     }
   }
 }
