@@ -38,6 +38,9 @@
     min-height: rem(157px);
     padding: rem(12px) rem(12px) rem(23px);
   }
+  @media #{media('<', xs)} {
+    min-height: rem(120px);
+  }
 
   &:hover {
     border-color: var(--red);
@@ -63,6 +66,10 @@
       @include fsl(13px);
       letter-spacing: -0.13px;
     }
+    @media #{media('<', xs)} {
+      @include fsl(10px);
+      letter-spacing: -0.1px;
+    }
   }
 
   &__tag {
@@ -76,6 +83,10 @@
 
     @media #{media('<')} {
       @include fsl(7px);
+    }
+    @media #{media('<', xs)} {
+      @include fsl(6px);
+      gap: rem(3px);
     }
 
     &::before {

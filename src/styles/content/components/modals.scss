@@ -81,8 +81,11 @@
     bottom: 0;
 
     width: calc(100% - #{rem(12px)});
-    padding: rem(24px);
+    padding: rem(24px) rem(48px);
     border-radius: 0;
+  }
+  @media #{media('<', m)} {
+    padding: rem(24px);
   }
 
   .f-button.is-close-btn {
@@ -136,19 +139,32 @@
   .breadcrumbs {
     margin-top: 0;
 
-    &__item:not(:first-child)::before {
-      color: var(--main-bg);
-    }
-    &__text .text {
-      width: rem(500px);
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      @media #{media('<')} {
-        width: rem(130px);
+    &__item {
+      max-width: 50%;
+      &:not(:first-child)::before {
+        color: var(--main-bg);
       }
-      @media #{media('<', xs)} {
-        width: rem(80px);
+      &:last-child {
+        @media #{media('<')} {
+          max-width: 20%;
+        }
+      }
+    }
+    &__text {
+      max-width: 100%;
+
+      .text {
+        max-width: rem(500px);
+        width: fit-content;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @media #{media('<')} {
+          max-width: rem(130px);
+        }
+        @media #{media('<', xs)} {
+          max-width: rem(80px);
+        }
       }
     }
   }
