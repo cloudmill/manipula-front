@@ -12,7 +12,7 @@ block content
     h1.h1 Результаты поиска
 
     .search-form.empty
-      label.search
+      label.search(data-search-form)
         .search__ico
           +search
         .search__input
@@ -21,7 +21,11 @@ block content
             name='search',
             value='121324343',
             placeholder='Введите запрос',
+            autocomplete='off',
             data-search
           )
+
+        button.search__reset(data-search-reset)
+          +white-cross
 
       .search-counter По запросу #[span «121324343»] найдено товаров: 0

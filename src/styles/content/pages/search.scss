@@ -39,11 +39,10 @@
     border-color: var(--blue3);
     //   background: var(--green2);
 
-    //   .header__search-button,
-    //   .header__search-reset {
-    //     opacity: 1;
-    //     cursor: pointer;
-    //   }
+    .search__reset {
+      opacity: 1;
+      cursor: pointer;
+    }
 
     //   .header__search-ico path {
     //     stroke: var(--green-text);
@@ -123,7 +122,7 @@
     align-items: center;
     justify-content: center;
 
-    margin-right: rem(20px);
+    margin-right: rem(18px);
     flex: none;
 
     opacity: 0;

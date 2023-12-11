@@ -9,7 +9,7 @@ block content
     h1.h1 Результаты поиска
 
     .search-form
-      label.search
+      label.search(data-search-form)
         .search__ico
           +search
         .search__input
@@ -17,8 +17,12 @@ block content
             type='search',
             name='search',
             placeholder='Введите запрос',
+            autocomplete='off',
             data-search
           )
+
+        button.search__reset(data-search-reset)
+          +white-cross
 
       .search-counter По запросу #[span «перчатки»] найдено товаров: 12
 

@@ -40,7 +40,7 @@ mixin header
           .button__ico
             +double-arrow-right
 
-        label.search.only-desktop
+        label.search.only-desktop(data-search-form)
           .search__ico
             +search
           .search__input
@@ -50,9 +50,8 @@ mixin header
               placeholder='Введите запрос',
               data-search
             )
-          //- button.header__search-reset(data-search-reset)
-            //- +search-cross
-          //- button.header__search-button Найти
+          button.search__reset(data-search-reset)
+            +white-cross
 
         button.header__search.search-mob.only-mobile
           +search

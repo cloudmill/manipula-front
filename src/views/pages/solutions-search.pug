@@ -15,7 +15,7 @@ block content
     .solutions-note Наш каталог содержит средства индивидуальной защиты рук для более 5000 профессий. #[br] Воспользуйтесь умным поиском или выберите из самых популярных.
 
     .search-form(data-solutions-search)
-      label.search
+      label.search(data-search-form)
         .search__ico
           +search
         .search__input
@@ -26,6 +26,8 @@ block content
             autocomplete='off',
             data-search
           )
+        button.search__reset(data-search-reset)
+          +white-cross
 
     .solutions-queries
       .solutions-queries__title Популярные запросы

@@ -15,4 +15,15 @@ window.addEventListener('DOMContentLoaded', () => {
   dropdown()
   tabs()
   tooltip()
+
+  const searchReset = document.querySelectorAll('[data-search-reset]')
+
+  if (searchReset.length) {
+    searchReset.forEach((it) => {
+      it.addEventListener('click', (e) => {
+        const form = e.target.closest('[data-search-form]')
+        form.querySelector('[data-search]').value = ''
+      })
+    })
+  }
 })
