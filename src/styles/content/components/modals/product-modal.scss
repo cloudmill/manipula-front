@@ -6,6 +6,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   @include styled-scrollbar;
+  color: var(--main-bg);
 
   @media #{media('<')} {
     top: 0;
@@ -26,10 +27,17 @@
     background: #f7f7f7;
 
     color: var(--main-bg);
+    transition: $transition;
 
     @media #{media('<')} {
       width: rem(32px);
       height: rem(32px);
+    }
+
+    &:hover {
+      background: var(--red);
+      border-color: var(--red);
+      color: #fff;
     }
 
     svg {
@@ -223,10 +231,15 @@
     border: 1px solid var(--grey-border);
     border-radius: rem(6px);
     background-color: #f7f7f7;
+    transition: $transition;
 
     @media #{media('<')} {
       padding: rem(15px) rem(17px);
       border-radius: rem(4px);
+    }
+
+    &:hover {
+      border-color: var(--red);
     }
 
     img {
@@ -254,6 +267,11 @@
 
     a {
       text-decoration: underline;
+      transition: $transition;
+
+      &:hover {
+        color: var(--red);
+      }
     }
   }
 }
@@ -427,24 +445,50 @@
     border-radius: rem(6px);
     border: 1px solid #e3e3e3;
     background: #f7f7f7;
+    transition: $transition;
 
     @media #{media('<')} {
       gap: rem(16px);
       padding: rem(16px);
     }
 
-    img {
+    &:hover {
+      border-color: var(--red);
+      background: var(--red);
+
+      .documents-title,
+      .documents-size {
+        color: #fff;
+      }
+
+      svg path {
+        &:nth-child(1) {
+          stroke: #fff;
+        }
+        &:nth-child(2) {
+          fill: #fff;
+        }
+      }
+    }
+
+    img,
+    svg {
       width: rem(36px);
       flex-shrink: 0;
 
       @media #{media('<')} {
         width: rem(26px);
       }
+
+      path {
+        transition: $transition;
+      }
     }
   }
   &-title {
     @include fsl(18px);
     letter-spacing: -0.36px;
+    transition: $transition;
 
     @media #{media('<')} {
       @include fsl(15px);
@@ -458,6 +502,7 @@
   &-size {
     @include fsl(14px);
     letter-spacing: -0.28px;
+    transition: $transition;
 
     @media #{media('<')} {
       @include fsl(12px);

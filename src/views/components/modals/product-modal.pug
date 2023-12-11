@@ -169,8 +169,9 @@
                 'Спецка'
               ]
             each el in docs
-              a.documents-item(href)
-                img(src='assets/images/svg/document.svg', alt='')
+              a.documents-item(href, download)
+                //- img(src='assets/images/svg/document.svg', alt='')
+                +pdf
                 div
                   .documents-title= el
                   .documents-size 188 Кб

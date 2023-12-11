@@ -139,10 +139,15 @@
       }
     }
 
-    // &:hover {
-    //   border-color: var(--red);
-    //   background-color: var(--red);
-    // }
+    &:hover {
+      // border-color: var(--red);
+      // background-color: var(--red);
+      color: #fff;
+
+      .button__ico svg path {
+        fill: #fff;
+      }
+    }
   }
 }
 
@@ -186,6 +191,10 @@
   &:hover {
     border-color: var(--red);
     background: var(--red);
+
+    svg path {
+      fill: #fff;
+    }
   }
   &:disabled {
     pointer-events: none;
@@ -198,6 +207,10 @@
     @media #{media('<')} {
       width: rem(16px);
       height: rem(16px);
+    }
+
+    path {
+      transition: $transition;
     }
   }
 }
