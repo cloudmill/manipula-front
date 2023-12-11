@@ -1,0 +1,34 @@
+#fancy-modal-filter2.catalog-filters-modal.center-modal(style='display: none')
+  button.catalog-filter-back(data-fancy-button='filter1')
+    +arrow-left
+
+  h3.catalog-filters__title.sec Отрасли промышленности
+
+  .catalog-filter-list2
+    -
+      const list3 = [
+        'ЖКХ, клининг (17)',
+        'Косметология (10)',
+        'Пищевое производство и реализация (18)',
+        'Рыбная промышленность (7)',
+        'Сельское хозяйство (18)',
+        'ЖКХ, клининг (17)',
+        'Косметология (10)',
+        'Пищевое производство и реализация (18)',
+        'Рыбная промышленность (7)',
+        'Сельское хозяйство (18)',
+      ]
+    each el in list3
+      label.checkbox
+        .checkbox__container
+          input.checkbox__input(type='checkbox')
+          +checkbox.checkbox__ico
+        .checkbox__caption= el
+
+  button.catalog-top__reset
+    +reset
+    span Сбросить
+
+  .catalog-filters__bottom
+    button.button.button--blue
+      span Применить

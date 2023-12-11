@@ -42,7 +42,7 @@ block content
         .catalog-top__drops.only-desktop
           each el in ['Отрасли промышленности', 'Условия применения', 'Основа', 'Покрытие']
             .dropdown-container
-              .dropdown.dark.select(data-dropdown)
+              .dropdown.dark.select(data-dropdown, data-select)
                 button.dropdown-button(data-dropdown-button)
                   span= el
                   .dropdown-arrow
@@ -61,19 +61,19 @@ block content
           button.catalog-top__button(data-fancy-button='filter-group')
             span Защитные группы
             +plus
-          button.catalog-top__button
+          button.catalog-top__button(data-fancy-button='filter1')
             span Фильтры
             +plus
 
         .catalog-top__checks
           label.checkbox
             .checkbox__container
-              input.checkbox__input(type='checkbox', checked, required)
+              input.checkbox__input(type='checkbox', checked)
               +checkbox.checkbox__ico
             .checkbox__caption Новинки
           label.checkbox
             .checkbox__container
-              input.checkbox__input(type='checkbox', required)
+              input.checkbox__input(type='checkbox')
               +checkbox.checkbox__ico
             .checkbox__caption Произведено в России
 
@@ -94,4 +94,5 @@ block content
 block modals
   include ../components/modals/product-modal
   include ../components/modals/groups-filter-modal
-  include ../components/modals/groups-filter-modal
+  include ../components/modals/filter1-modal
+  include ../components/modals/filter2-modal

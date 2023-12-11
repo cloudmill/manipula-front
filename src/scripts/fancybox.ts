@@ -10,6 +10,7 @@ export function fancyboxInit() {
   const buttons = document.querySelectorAll('[data-fancy-button]')
   buttons.forEach((button) => {
     const id = button.getAttribute('data-fancy-button')
+
     button?.addEventListener('click', () => {
       Fancybox.defaults = {
         ...defaults,
@@ -34,6 +35,9 @@ export function fancyboxInit() {
           }
         }
         button.classList.add('active')
+        if (id === 'filter1' || id === 'filter2') {
+          Fancybox.close()
+        }
         // @ts-ignore
         Fancybox.show([{ src: `#fancy-modal-${id}`, type: 'inline' }])
       }

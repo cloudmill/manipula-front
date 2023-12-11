@@ -1,2 +1,23 @@
-#fancy-modal-filter1.mobile-menu(style='display: none')
-  | filter1
+#fancy-modal-filter1.catalog-filters-modal.center-modal(style='display: none')
+  h3.catalog-filters__title Фильтры
+
+  ul.catalog-filter-list
+    -
+      const list2 = [
+        'Отрасли промышленности',
+        'Условия применения',
+        'Основа',
+        'Покрытие'
+      ]
+    each el in list2
+      li(data-fancy-button='filter2')
+        span= el
+        +arrow-right
+
+  button.catalog-top__reset
+    +reset
+    span Сбросить
+
+  .catalog-filters__bottom
+    button.button.button--blue
+      span Применить

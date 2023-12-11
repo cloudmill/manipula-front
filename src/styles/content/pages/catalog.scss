@@ -54,6 +54,13 @@
     margin-left: auto;
     transition: $transition;
 
+    @media #{media('<')} {
+      @include fsl(16px);
+      letter-spacing: -0.16px;
+      margin-left: 0;
+      margin-top: rem(40px);
+    }
+
     &:hover {
       color: var(--red);
 
