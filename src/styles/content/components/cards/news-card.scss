@@ -54,7 +54,6 @@
     letter-spacing: -0.44px;
     margin-top: rem(12px);
     @include cropText(3);
-    text-transform: uppercase;
     transition: $transition;
 
     @media #{media('<')} {

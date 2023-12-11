@@ -105,7 +105,7 @@
     border-radius: rem(8px);
     overflow: hidden;
 
-    &:hover .first-screen-cell__bg {
+    &:not(.no-hover):hover .first-screen-cell__bg {
       &::before {
         background: rgba(0, 0, 0, 0.2);
       }

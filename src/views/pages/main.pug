@@ -50,14 +50,36 @@ block content
         const first = ['О компании', 'Технологии', 'Где купить', 'Услуги']
 
       each el, i in first
-        a.first-screen-cell(href)
-          picture.first-screen-cell__bg
-            source(
-              srcset=`assets/images/first-screen-${i + 1}.webp`,
-              type='image/webp'
-            )
-            img(src=`assets/images/first-screen-${i + 1}.jpg`, alt='')
-          .first-screen-cell__title= el
+        if i === 3
+          .first-screen-cell.no-hover
+            picture.first-screen-cell__bg
+              source(
+                srcset='assets/images/first-screen-4.webp',
+                type='image/webp'
+              )
+              img(src='assets/images/first-screen-4.jpg', alt='')
+            .first-screen-cell__title= el
+
+        else
+          a.first-screen-cell(href)
+            picture.first-screen-cell__bg
+              if i === 1 || i === 2
+                source(
+                  srcset=`assets/images/first-screen-${i + 1}-mob.webp`,
+                  type='image/webp',
+                  media='(max-width: 1023px)'
+                )
+                source(
+                  srcset=`assets/images/first-screen-${i + 1}-mob.jpg`,
+                  type='image/jpeg',
+                  media='(max-width: 1023px)'
+                )
+              source(
+                srcset=`assets/images/first-screen-${i + 1}.webp`,
+                type='image/webp'
+              )
+              img(src=`assets/images/first-screen-${i + 1}.jpg`, alt='')
+            .first-screen-cell__title= el
 
     .first-bottom
       h2.first-bottom__title Манипула Специалист — первый российский производитель профессиональных высококачественных СИЗ рук
