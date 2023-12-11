@@ -19,7 +19,7 @@ block content
       each el, i in steps
         if i < active
           .solutions-steps__item
-            .button.filter.old-active.no-hover
+            a.button.filter.old-active(href)
               .button__ico= i + 1
               span= el
         else if i === active

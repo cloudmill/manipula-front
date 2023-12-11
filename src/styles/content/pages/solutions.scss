@@ -19,11 +19,11 @@
   gap: $col-gap-d;
 
   @media #{media('<')} {
-    margin: rem(24px) 0;
+    margin: rem(24px) 0 rem(200px);
     grid-template-columns: repeat(2, cols-mob(2));
     gap: $col-gap-m;
   }
-  @media #{media('<')} {
+  @media #{media('<', m)} {
     grid-template-columns: 100%;
   }
 
@@ -141,6 +141,10 @@
   h3 {
     @include fsl(36px);
     letter-spacing: -1.44px;
+    width: 80%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     @media #{media('<')} {
       @include fsl(16px);

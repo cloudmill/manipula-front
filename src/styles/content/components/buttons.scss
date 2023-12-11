@@ -74,6 +74,11 @@
       svg path {
         fill: #fff;
       }
+
+      &:not(.no-hover):hover {
+        border-color: var(--red);
+        background-color: var(--red);
+      }
     }
 
     .button__ico {
