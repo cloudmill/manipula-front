@@ -1,9 +1,22 @@
 export function dropdown() {
+  const mediaQuery = window.matchMedia(`(max-width: 1023px)`)
+
   $('[data-dropdown-button]').on('click', function () {
-    $(this).closest('[data-dropdown]').toggleClass('active')
-    $(this)
-      .closest('[data-dropdown]')
-      .find('[data-dropdown-drop]')
-      .slideToggle()
+    if (
+      Boolean($(this).closest('[data-dropdown-mob]').length) &&
+      mediaQuery.matches
+    ) {
+      $(this).closest('[data-dropdown]').toggleClass('active')
+      $(this)
+        .closest('[data-dropdown]')
+        .find('[data-dropdown-drop]')
+        .slideToggle()
+    } else if (!$(this).closest('[data-dropdown-mob]').length) {
+      $(this).closest('[data-dropdown]').toggleClass('active')
+      $(this)
+        .closest('[data-dropdown]')
+        .find('[data-dropdown-drop]')
+        .slideToggle()
+    }
   })
 }

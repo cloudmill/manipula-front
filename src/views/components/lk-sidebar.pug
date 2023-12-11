@@ -1,31 +1,41 @@
 mixin sidebar
   .lk-sidebar-container
     .lk-sidebar
-      .lk-sidebar-block.lk-sidebar-contacts
-        .lk-sidebar-block__top
-          .lk-sidebar-block__subtitle Ваш персональный менеджер
-          .lk-sidebar-block__title Игорь Давидов
-        //- .lk-sidebar-block__arrow.only-mobile
-        //-   +arrow-down
+      .lk-sidebar-block.lk-sidebar-contacts(data-dropdown, data-dropdown-mob)
+        .lk-sidebar-block__top(data-dropdown-button)
+          .lk-sidebar-block__top-inner
+            .lk-sidebar-block__subtitle Ваш персональный менеджер
+            .lk-sidebar-block__title Игорь Давидов
+          .lk-sidebar-block__arrow.only-mobile
+            +arrow-down
 
-        ul.list-red-dot
-          li
-            a(href='tel:+79811579290') +7 981 157 9290
-          li
-            a(href='mailto:id@manipulas.ru') id@manipulas.ru
+        .lk-sidebar-contacts__drop(data-dropdown-drop)
+          ul.list-red-dot
+            li
+              a(href='tel:+79811579290') +7 981 157 9290
+            li
+              a(href='mailto:id@manipulas.ru') id@manipulas.ru
 
-      .lk-sidebar-block
-        nav.lk-sidebar-nav
-          ul
-            -
-              const items = ['Программа лояльности', 'Профиль', 'Дистрибьюторское соглашение', 'Программа маркетинговой поддержки', 'POS-материалы']
-            each item, index in items
-              if index === attributes.active
-                li.active= item
-              else
-                li
-                  a(href='')= item
+      .lk-sidebar-block(data-dropdown, data-dropdown-mob)
+        .lk-sidebar-block__top2.only-mobile(data-dropdown-button)
+          .lk-sidebar-block__top2-inner
+            div= attributes.ttl
 
-        button.lk-exit
-          +exit
-          span Выйти
+          .lk-sidebar-block__arrow.only-mobile
+            +arrow-down
+
+        .lk-sidebar-contacts__drop2(data-dropdown-drop)
+          nav.lk-sidebar-nav
+            ul
+              -
+                const items = ['Программа лояльности', 'Профиль', 'Дистрибьюторское соглашение', 'Программа маркетинговой поддержки', 'POS-материалы']
+              each item, index in items
+                if index === attributes.active
+                  li.active= item
+                else
+                  li
+                    a(href='')= item
+
+          button.lk-exit
+            +exit
+            span Выйти

@@ -10,9 +10,46 @@ block content
     h1.h1 Программа лояльности
 
     .lk-body
-      +sidebar(active=0)
+      +sidebar(active=0, ttl='Программа лояльности')
 
       .loyal-column
+        .loyal-top
+          .loyal-top__col
+            .loyal-top__title Текущая скидка
+            .loyal-top__level 9%
+
+          .loyal-top__main
+            .loyal-top__title Планы продаж
+
+            .loyal-top__main-inner
+              .loyal-top__main-col
+                .dropdown.dark.select(data-dropdown)
+                  button.dropdown-button.dropdown-button(data-dropdown-button)
+                    span I квартал 1-ое полугодие
+                    .dropdown-arrow
+                      +arrow-down
+                  .dropdown-drop(data-dropdown-drop, style='display: none')
+                    .dropdown-inner
+                      ul.dropdown-list
+                        li Москва
+                        li Краснодар
+
+                .loyal-top__main-num 112 500 ₽
+
+              .loyal-top__main-col
+                .dropdown.dark.select(data-dropdown)
+                  button.dropdown-button.dropdown-button(data-dropdown-button)
+                    span 2023
+                    .dropdown-arrow
+                      +arrow-down
+                  .dropdown-drop(data-dropdown-drop, style='display: none')
+                    .dropdown-inner
+                      ul.dropdown-list
+                        li Москва
+                        li Краснодар
+
+                .loyal-top__main-num 450 000 ₽
+
         .loyal-text
           .lk-main__subtitle Производитель имеет право предоставить дополнительные скидки от цены, указанной в колонке «Дистрибьютор» Спецификации, на следующий условиях
           ul.list-red-dot

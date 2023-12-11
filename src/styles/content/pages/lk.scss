@@ -6,10 +6,14 @@
   gap: calc(#{cols-g-nc(1)} + #{$col-gap-d});
 
   @media #{media('<')} {
-    grid-template-columns: 100%;
-    gap: rem(24px);
+    grid-template-columns: repeat(2, cols-mob(2));
+    gap: $col-gap-m;
 
     margin: rem(16px) 0 rem(48px);
+  }
+  @media #{media('<', m)} {
+    grid-template-columns: 100%;
+    gap: rem(24px);
   }
 }
 
@@ -25,10 +29,15 @@
   flex-direction: column;
   gap: rem(20px);
 
+  @media #{media('<')} {
+    gap: $col-gap-m;
+  }
+
   &-block {
     border-radius: rem(8px);
     background: var(--main-bg2);
     overflow: hidden;
+    transition: $transition;
 
     @media #{media('<')} {
       border-radius: rem(4px);
@@ -36,8 +45,49 @@
       box-shadow: 0px rem(8px) 20px 0px rgba(0, 0, 0, 0.08);
     }
 
+    &.active {
+      border-color: #507e9b;
+
+      .lk-sidebar-block__arrow svg {
+        transform: rotate(180deg);
+      }
+    }
+
     &__top {
-      margin-bottom: rem(28px);
+      @media #{media('>')} {
+        margin-bottom: rem(28px);
+      }
+      @media #{media('<')} {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+      }
+
+      &-inner {
+        @media #{media('<')} {
+          padding: rem(20px);
+        }
+      }
+    }
+    &__top2 {
+      @media #{media('<')} {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+
+        &-inner {
+          @include fsl(14px, 120%);
+          letter-spacing: -0.14px;
+          color: var(--red);
+          padding: rem(20px) rem(10px) rem(16px) rem(20px);
+
+          div {
+            white-space: nowrap;
+            padding-bottom: rem(3px);
+            border-bottom: 1px solid var(--red);
+          }
+        }
+      }
     }
 
     &__subtitle {
@@ -60,25 +110,75 @@
         letter-spacing: -0.32px;
       }
     }
+
+    &__arrow {
+      padding: rem(20px);
+      border-left: 1px solid rgba(255, 255, 255, 0.1);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: rem(20px);
+        height: rem(20px);
+        flex-shrink: 0;
+        transition: $transition;
+      }
+    }
   }
 
   &-contacts {
-    padding: rem(36px) rem(24px);
+    @media #{media('>')} {
+      padding: rem(36px) rem(24px);
+    }
+
+    &__drop {
+      @media #{media('<')} {
+        display: none;
+        padding: rem(20px);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
+    &__drop2 {
+      @media #{media('<')} {
+        display: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    }
 
     .list-red-dot {
       gap: rem(4px);
-      margin-top: rem(28px);
+
+      @media #{media('>')} {
+        margin-top: rem(28px);
+      }
 
       li {
         @include fsl(18px, 140%);
         letter-spacing: -0.18px;
         align-items: center;
+
+        @media #{media('<')} {
+          @include fsl(14px);
+          letter-spacing: -0.14px;
+
+          &::before {
+            width: rem(16px);
+            height: rem(16px);
+            margin-right: rem(6px);
+          }
+        }
       }
     }
   }
 
   &-nav {
     padding: rem(36px) rem(24px);
+
+    @media #{media('<')} {
+      padding: rem(20px) rem(20px) rem(16px);
+    }
 
     ul {
       display: flex;
@@ -89,17 +189,29 @@
 
     li {
       display: flex;
-      @include fsl(18px);
+      @include fsl(18px, 120%);
       letter-spacing: -0.36px;
       padding-bottom: rem(5px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
       transition: $transition;
 
+      @media #{media('<')} {
+        @include fsl(14px);
+        letter-spacing: -0.14px;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
       &.active,
       &:hover {
         color: var(--red);
         border-color: var(--red);
+      }
+      &.active {
+        @media #{media('<')} {
+          display: none;
+        }
       }
     }
   }
@@ -147,11 +259,18 @@
   align-items: center;
   gap: rem(12px);
 
-  @include fsl(18px);
+  @include fsl(18px, 120%);
   letter-spacing: -0.36px;
   color: #fff;
 
   transition: $transition;
+
+  @media #{media('<')} {
+    @include fsl(14px);
+    letter-spacing: -0.36px;
+    padding: rem(20px);
+    gap: rem(4px);
+  }
 
   &:hover {
     background: rgba(255, 255, 255, 0.08);
@@ -160,6 +279,11 @@
   svg {
     width: rem(24px);
     height: rem(24px);
+
+    @media #{media('<')} {
+      width: rem(20px);
+      height: rem(20px);
+    }
   }
 }
 
@@ -365,12 +489,22 @@
   flex-direction: column;
   gap: rem(20px);
   width: cols(7);
+
+  @media #{media('<')} {
+    width: 100%;
+    gap: rem(8px);
+  }
 }
 
 .loyal-text {
   padding: rem(40px) rem(80px) rem(32px) rem(40px);
   border-radius: rem(6px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media #{media('<')} {
+    padding: rem(20px);
+    border-radius: rem(4px);
+  }
 
   .list-red-dot {
     gap: rem(12px);
@@ -389,5 +523,92 @@
     margin-top: rem(24px);
     @include fsl(16px, 140%);
     letter-spacing: -0.16px;
+  }
+}
+
+.loyal-top {
+  display: flex;
+  border-radius: rem(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  @media #{media('<')} {
+    flex-direction: column;
+    border-radius: rem(4px);
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: rem(100px);
+
+    min-width: rem(263px);
+    padding: rem(40px) rem(40px) rem(45px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+
+    @media #{media('<')} {
+      flex-direction: row;
+      align-items: center;
+      padding: rem(20px);
+
+      gap: unset;
+      min-width: none;
+      border-right: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__title {
+    @include fsl(22px, 120%);
+    letter-spacing: -0.44px;
+
+    @media #{media('<')} {
+      @include fsl(13px);
+      letter-spacing: -0.13px;
+      color: #848b92;
+    }
+  }
+  &__level {
+    @include fsl(36px, 120%);
+    letter-spacing: -1.44px;
+    color: #51cc4e;
+
+    @media #{media('<')} {
+      @include fsl(20px);
+      letter-spacing: -0.4px;
+    }
+  }
+
+  &__main {
+    padding: rem(40px);
+
+    @media #{media('<')} {
+      padding: rem(20px);
+    }
+
+    &-inner {
+      margin-top: rem(27px);
+      display: flex;
+      gap: rem(40px);
+
+      @media #{media('<')} {
+        margin-top: rem(12px);
+        flex-direction: column;
+        gap: rem(20px);
+      }
+    }
+
+    &-num {
+      margin-top: rem(24px);
+      @include fsl(36px, 120%);
+      letter-spacing: -1.44px;
+
+      @media #{media('<')} {
+        margin-top: rem(16px);
+        @include fsl(20px);
+        letter-spacing: -0.4px;
+      }
+    }
   }
 }
