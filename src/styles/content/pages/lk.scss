@@ -513,6 +513,11 @@
       @include fsl(20px, 140%);
       letter-spacing: -0.2px;
 
+      @media #{media('<')} {
+        @include fsl(14px);
+        letter-spacing: -0.14px;
+      }
+
       &::before {
         margin-top: rem(2px);
       }
@@ -523,6 +528,13 @@
     margin-top: rem(24px);
     @include fsl(16px, 140%);
     letter-spacing: -0.16px;
+
+    @media #{media('<')} {
+      margin-top: rem(16px);
+      @include fsl(10px);
+      letter-spacing: -0.1px;
+      color: #848b92;
+    }
   }
 }
 
