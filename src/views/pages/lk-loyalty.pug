@@ -13,7 +13,7 @@ block content
       +sidebar(active=0, ttl='Программа лояльности')
 
       .loyal-column
-        .loyal-top
+        .loyal-top.loyal-block
           .loyal-top__col
             .loyal-top__title Текущая скидка
             .loyal-top__level 9%
@@ -24,33 +24,81 @@ block content
             .loyal-top__main-inner
               .loyal-top__main-col
                 .dropdown.dark.select(data-dropdown)
-                  button.dropdown-button.dropdown-button(data-dropdown-button)
+                  button.dropdown-button(data-dropdown-button)
                     span I квартал 1-ое полугодие
                     .dropdown-arrow
                       +arrow-down
                   .dropdown-drop(data-dropdown-drop, style='display: none')
                     .dropdown-inner
                       ul.dropdown-list
-                        li Москва
-                        li Краснодар
+                        li Вариант 1
+                        li Вариант 2
 
                 .loyal-top__main-num 112 500 ₽
 
               .loyal-top__main-col
                 .dropdown.dark.select(data-dropdown)
-                  button.dropdown-button.dropdown-button(data-dropdown-button)
+                  button.dropdown-button(data-dropdown-button)
                     span 2023
                     .dropdown-arrow
                       +arrow-down
                   .dropdown-drop(data-dropdown-drop, style='display: none')
                     .dropdown-inner
                       ul.dropdown-list
-                        li Москва
-                        li Краснодар
+                        li Вариант 1
+                        li Вариант 2
 
                 .loyal-top__main-num 450 000 ₽
 
-        //- .loyal-middle
+        .loyal-middle.loyal-block
+          .loyal-top__title Планы продаж
+          .loyal-progress
+            .loyal-progress__line-bg
+              .loyal-progress__line(style='width: 20%') 132 670 ₽
+
+            .loyal-progress__info
+              div 0 ₽
+              div 450 000 ₽
+
+          .loyal-stages
+            -
+              const stages = [
+                {
+                  ttl: 'I квартал',
+                  value: '112 500 ₽'
+                },
+                {
+                  ttl: 'II квартал',
+                  value: '112 500 ₽'
+                },
+                {
+                  ttl: 'III квартал',
+                  value: '112 500 ₽'
+                },
+                {
+                  ttl: 'IV квартал',
+                  value: '112 500 ₽'
+                },
+              ]
+            each el, i in stages
+              if i === 0
+                .loyal-stages__item.active
+                  img.stage-active(
+                    src='data:image/svg+xml,%3Csvg width=\'36\' height=\'36\' viewBox=\'0 0 36 36\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'36\' height=\'36\' rx=\'18\' fill=\'%2351CC4E\'/%3E%3Cpath d=\'M11 19L14.5 22.5L24 13\' stroke=\'white\' stroke-width=\'1.5\'/%3E%3C/svg%3E',
+                    alt=''
+                  )
+                  div
+                    .loyal-stages__title= el.ttl
+                    .loyal-stages__value= el.value
+              else
+                .loyal-stages__item
+                  img.stage-default(
+                    src='data:image/svg+xml,%3Csvg width=\'36\' height=\'36\' viewBox=\'0 0 36 36\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Crect width=\'36\' height=\'36\' rx=\'18\' fill=\'%23192128\'/%3E%3Cpath opacity=\'0.1\' d=\'M11 19L14.5 22.5L24 13\' stroke=\'white\' stroke-width=\'1.5\'/%3E%3C/svg%3E',
+                    alt=''
+                  )
+                  div
+                    .loyal-stages__title= el.ttl
+                    .loyal-stages__value= el.value
 
         .loyal-text
           .lk-main__subtitle Производитель имеет право предоставить дополнительные скидки от цены, указанной в колонке «Дистрибьютор» Спецификации, на следующий условиях
@@ -61,6 +109,53 @@ block content
               span При выполнении квартальных планов по объему закупок продукции Производителя, зафиксировано в Приложении №1, Дистрибьютору представляется скидка в размере 2% на закупки продукции в течении квартала, следующего за отчетным. Объем закупки считается суммарная стоимость всех товарных накладных за вычетом стоимости возвращенной продукции.
             li
               span При выполнении годового плана по объему закупок* продукции Производителя, зафиксированного в Приложении №1 Дистрибьютору предоставляется скидка в следующем размере:
+
+            ul.list-red-dot
+              -
+                const list = [
+                  {
+                    percent: '1%',
+                    text: 'Достижение порога в 10 000 000 ₽'
+                  },
+                  {
+                    percent: '2%',
+                    text: 'Достижение порога в 20 000 000 ₽'
+                  },
+                  {
+                    percent: '3%',
+                    text: 'Достижение порога в 30 000 000 ₽'
+                  },
+                  {
+                    percent: '4%',
+                    text: 'Достижение порога в 40 000 000 ₽'
+                  },
+                  {
+                    percent: '5%',
+                    text: 'Достижение порога в 50 000 000 ₽'
+                  },
+                  {
+                    percent: '6%',
+                    text: 'Достижение порога в 60 000 000 ₽'
+                  },
+                  {
+                    percent: '7%',
+                    text: 'Достижение порога в 70 000 000 ₽'
+                  },
+                  {
+                    percent: '8%',
+                    text: 'Достижение порога в 80 000 000 ₽'
+                  },
+                  {
+                    percent: '9%',
+                    text: 'Достижение порога в 90 000 000 ₽'
+                  },
+                ]
+              each el, i in list
+                li
+                  span.item
+                    span.percent= el.percent
+                    span.text= el.text
+
             li
               span При современном предоставлении Дистрибьютором полностью и подробно отчета по форме Приложения №3 Дистрибьютору предоставляется скидка в размере 1% в течении квартала, следующего за отчетным
 
