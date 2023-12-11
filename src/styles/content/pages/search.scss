@@ -129,10 +129,19 @@
     cursor: text;
     transition: $transition;
 
+    @media #{media('<')} {
+      margin-right: rem(12px);
+    }
+
     svg {
       width: rem(24px);
       height: rem(24px);
       flex: none;
+
+      @media #{media('<')} {
+        width: rem(16px);
+        height: rem(16px);
+      }
     }
   }
   &__button {
@@ -203,5 +212,122 @@
   margin: rem(60px) auto 0;
   @media #{media('<')} {
     margin: rem(24px) auto 0;
+  }
+}
+
+.fancybox__content.search-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--main-bg);
+
+  height: rem(70px);
+  padding: rem(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  display: flex !important;
+  flex-direction: row;
+  gap: rem(4px);
+
+  .f-button.is-close-btn {
+    position: static;
+    flex-shrink: 0;
+
+    width: rem(44px);
+    height: rem(44px);
+
+    border-radius: rem(6px);
+    border: none;
+    background: #29475f;
+
+    svg {
+      width: rem(12px);
+      height: rem(12px);
+    }
+  }
+}
+
+.search-drop {
+  width: rem(595px);
+  color: var(--main-bg);
+  border-radius: rem(6px);
+  background: #fff;
+
+  @media #{media('<')} {
+    width: calc(100vw - #{rem(24px)});
+  }
+
+  &-list {
+    @media #{media('>', m)} and #{media('<')} {
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+    }
+  }
+
+  &-card {
+    display: grid;
+    grid-template-columns: rem(85px) 1fr;
+    gap: rem(20px);
+    padding: rem(20px);
+    border-bottom: 1px solid #e3e3e3;
+
+    @media #{media('<')} {
+      grid-template-columns: rem(52px) 1fr;
+      padding: rem(12px);
+    }
+    @media #{media('>', m)} and #{media('<')} {
+      &:nth-child(2n + 1) {
+        border-right: 1px solid #e3e3e3;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+
+    &__labels {
+      display: flex;
+      gap: rem(6px);
+      margin-bottom: rem(12px);
+
+      @media #{media('<')} {
+        margin-bottom: rem(8px);
+      }
+    }
+    &__tag {
+      @include fsl(15px);
+      color: #507e9b;
+      margin-bottom: rem(8px);
+
+      @media #{media('<')} {
+        @include fsl(13px);
+        margin-bottom: rem(4px);
+      }
+    }
+    &__ttl {
+      @include fsl(18px, 120%);
+      letter-spacing: -0.36px;
+
+      @media #{media('<')} {
+        @include fsl(16px);
+        letter-spacing: -0.16px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(20px);
+
+    @media #{media('<')} {
+      padding: rem(12px);
+    }
+
+    a {
+      width: fit-content;
+    }
   }
 }

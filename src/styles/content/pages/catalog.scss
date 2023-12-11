@@ -119,3 +119,27 @@
     width: rem(24px);
   }
 }
+
+.card-label {
+  display: flex;
+  align-items: center;
+  gap: rem(3px);
+
+  @include fsl(10px, 100%);
+  color: #fff;
+  text-transform: uppercase;
+  padding: rem(4px) rem(6px);
+  border-radius: rem(2px);
+
+  img {
+    width: rem(12px);
+    height: rem(12px);
+  }
+
+  &.red {
+    background: var(--red);
+  }
+  &.blue {
+    background: var(--blue3);
+  }
+}

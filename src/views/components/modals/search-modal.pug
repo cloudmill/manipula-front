@@ -1,0 +1,15 @@
+#fancy-modal-mob-search.search-mobile(style='display: none')
+  label.search(data-search-form, data-search-form-cont)
+    .search__ico
+      +search
+    .search__input
+      input(
+        type='search',
+        name='search',
+        placeholder='Введите запрос',
+        autocomplete='off',
+        data-search
+      )
+
+    button.search__reset(data-search-reset)
+      +white-cross

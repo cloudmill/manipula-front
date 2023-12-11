@@ -40,7 +40,7 @@ mixin header
           .button__ico
             +double-arrow-right
 
-        label.search.only-desktop(data-search-form)
+        label.search.only-desktop(data-search-form, data-search-form-cont)
           .search__ico
             +search
           .search__input
@@ -48,12 +48,15 @@ mixin header
               type='search',
               name='search',
               placeholder='Введите запрос',
+              autocomplete='off',
               data-search
             )
           button.search__reset(data-search-reset)
             +white-cross
 
-        button.header__search.search-mob.only-mobile
+        button.header__search.search-mob.only-mobile(
+          data-fancy-button='mob-search'
+        )
           +search
 
         button.header__profile.only-desktop(data-fancy-button='login')
@@ -64,3 +67,24 @@ mixin header
         button.burger.only-mobile(data-fancy-button='mobile-menu')
           +burger.default-ico
           +white-cross.active-ico
+
+    #search-grop
+      .search-drop
+        .search-drop-list
+          - for (i=0;i<4;i++)
+            a.search-drop-card(href)
+              img(src='assets/images/product-0.jpg', alt='')
+              div
+                .search-drop-card__labels
+                  .card-label.red NEW
+                  .card-label.blue
+                    img(src='assets/images/svg/rus.svg', alt='')
+                    | RUS
+                .search-drop-card__tag Перчатки
+                .search-drop-card__ttl Микропол MG-162 (ex. TPU-13)
+
+        .search-drop__bottom
+          a.button.button--blue(href)
+            span Подобрать защитное решение
+            .button__ico
+              +double-arrow-right

@@ -345,7 +345,8 @@
   padding: 0 !important;
 }
 
-#solutions-search {
+#solutions-search,
+#search-grop {
   display: none;
 }
 
@@ -354,7 +355,7 @@
     max-width: 100vw !important;
   }
   .tippy-content {
-    width: cols(8);
+    width: fit-content;
 
     @media #{media('<')} {
       width: calc(100vw - #{$col-pad-m} - #{$col-pad-m});
@@ -363,6 +364,7 @@
 }
 
 .dropdown-inner.sol-search {
+  width: cols(8);
   background: #263039;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   border-radius: rem(6px) !important;

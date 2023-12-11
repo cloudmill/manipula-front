@@ -1,38 +1,42 @@
 import tippy from 'tippy.js'
 import 'tippy.js/dist/tippy.css'
-import { catalogMenu } from './catalog-menu'
 
 export function tooltip() {
   const template1 = document.getElementById('solutions-search')
-  const template2 = document.getElementById('catalog-menu')
+  const template2 = document.getElementById('search-grop')
 
-  if (template1) {
-    tippy('[data-solutions-search]', {
+  const solutionsInput = document.querySelector('[data-solutions-input]')
+
+  if (template1 && solutionsInput) {
+    const solutionsDrop = tippy('[data-solutions-search]', {
       content: template1.innerHTML,
-      // maxWidth: 400,
       placement: 'bottom-start',
       offset: [0, 4],
       arrow: false,
       allowHTML: true,
       interactive: true,
+      // triggerTarget: solutionsInput,
       trigger: 'click',
     })
+
+    // solutionsInput.addEventListener('input', (e) => {
+    //   if (e.target.value.length > 0) {
+    //     solutionsDrop.show()
+    //   } else {
+    //     solutionsDrop.hide()
+    //   }
+    // })
   }
 
   if (template2) {
-    tippy('[data-catalog-button]', {
+    tippy('[data-search-form-cont]', {
       content: template2.innerHTML,
-      placement: 'bottom',
+      placement: 'bottom-start',
+      offset: [0, 7],
       arrow: false,
       allowHTML: true,
       interactive: true,
       trigger: 'click',
-
-      onShow() {
-        setTimeout(() => {
-          catalogMenu()
-        }, 100)
-      },
     })
   }
 }
