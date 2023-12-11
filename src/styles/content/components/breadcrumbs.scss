@@ -64,9 +64,15 @@
   }
 
   &__text {
+    width: 100%;
     display: flex;
     align-items: center;
     gap: rem(4px);
+
+    .text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   &__link {

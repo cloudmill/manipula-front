@@ -2,7 +2,7 @@
   .product-modal-inner
     +breadcrumbs.only-mobile.product-modal-bread(
       items=['каталог'],
-      page='Дэтрион'
+      page='Дэтрион Дэтрион Дэтрион Дэтрион Дэтрион Дэтрион'
     )
 
     .product-top
@@ -151,13 +151,37 @@
                 .characteristics__value= el.value
 
         .product-top__block.product-drops
-          .dropdown.product(data-dropdown)
-            button.dropdown-button.dropdown-button(data-dropdown-button)
-              span Выбрать город
-              .dropdown-arrow
-                +arrow-down
-            .dropdown-drop(data-dropdown-drop, style='display: none')
-              .dropdown-inner Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem atque exercitationem dolore, ullam voluptate nobis officia numquam neque dolor id voluptates unde nulla et ad obcaecati error reprehenderit tenetur ducimus?
+          -
+            const drops = [
+              'Описание',
+              'Рекомендации по эксплуатации',
+              'Рекомендованные сферы применения'
+            ]
+          each el, i in drops
+            if i === 0
+              .dropdown.product.active(data-dropdown)
+                button.dropdown-button(data-dropdown-button)
+                  span= el
+                  .dropdown-arrow
+                    +arrow-down
+                .dropdown-drop(data-dropdown-drop)
+                  .dropdown-inner.article
+                    ul
+                      li Перчатки комбинированной конструкции из высокотехнологичного трикотажа и волокон, плотно облегающих руку и дающих комплексную защиту от механических воздействий, ударов и воздействия пониженных температур (в зависимости от типа проводимых работ и погодных условий предназначены для использования в климатических регионах IБ (IV) и IА («Особый») не более 3 часов непрерывного пребывания на холоде. При отсутствии ветра — не более 1 часа до -45 °С)
+                      li 3MTM ThinsulateTM плотностью 150 г/м2 отвечает за теплоизоляцию и сохраняет излучаемое телом тепло
+                      li Специльно разработанный анатомический рисунок запатентованной термопластичной накладки Inpax® защищает тыльную часть и суставы кисти от ударных воздействий
+                      li Мембрана HIPORA® не пропускает влагу внутрь перчатки, но при этом выводит влагу (пот), выделяемую телом при повышенной физической нагрузке
+                      li Гибкая и высокопрочная накладка из полиуретана Armortex® на ладонной части защищает от проколов и грубых механических воздействий
+                      li Двойная манжета для гарантированной защиты рук от холода и попадания масел, влаги и снега внутрь перчатки; край прошит светоотражающей лентой
+            else
+              .dropdown.product(data-dropdown)
+                button.dropdown-button(data-dropdown-button)
+                  span= el
+                  .dropdown-arrow
+                    +arrow-down
+                .dropdown-drop(data-dropdown-drop, style='display: none')
+                  .dropdown-inner.article
+                    p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem atque exercitationem dolore, ullam voluptate nobis officia numquam neque dolor id voluptates unde nulla et ad obcaecati error reprehenderit tenetur ducimus?
 
         .product-top__block
           h3.product-top__subtitle Документация

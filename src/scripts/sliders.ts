@@ -164,10 +164,13 @@ export function swiperInit() {
   new Swiper('#product-bottom-slider', {
     modules: [Navigation, Thumbs],
 
-    slidesPerView: 'auto',
+    slidesPerView: 1,
     spaceBetween: 8,
 
     breakpoints: {
+      [375]: {
+        slidesPerView: 'auto',
+      },
       [1024]: {
         slidesPerView: 4,
         spaceBetween: 20,
