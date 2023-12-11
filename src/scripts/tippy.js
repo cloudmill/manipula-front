@@ -3,14 +3,15 @@ import 'tippy.js/dist/tippy.css'
 import { catalogMenu } from './catalog-menu'
 
 export function tooltip() {
-  const template1 = document.getElementById('city-drop')
+  const template1 = document.getElementById('solutions-search')
   const template2 = document.getElementById('catalog-menu')
 
   if (template1) {
-    tippy('[data-cities-drop]', {
+    tippy('[data-solutions-search]', {
       content: template1.innerHTML,
-      maxWidth: 400,
-      placement: 'bottom',
+      // maxWidth: 400,
+      placement: 'bottom-start',
+      offset: [0, 4],
       arrow: false,
       allowHTML: true,
       interactive: true,

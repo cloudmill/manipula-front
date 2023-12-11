@@ -14,7 +14,7 @@ block content
 
     .solutions-note Наш каталог содержит средства индивидуальной защиты рук для более 5000 профессий. #[br] Воспользуйтесь умным поиском или выберите из самых популярных.
 
-    .search-form
+    .search-form(data-solutions-search)
       label.search
         .search__ico
           +search
@@ -23,6 +23,7 @@ block content
             type='search',
             name='search',
             placeholder='Введите запрос',
+            autocomplete='off',
             data-search
           )
 
@@ -43,3 +44,10 @@ block content
           ]
         each it in items
           .solutions-queries__item= it
+
+    #solutions-search
+      .dropdown-inner.sol-search
+        ul.dropdown-list
+          li Асфальтобетонщик-варильщик
+          li Аппретурщик
+          li Аппаратчик газового консервирования

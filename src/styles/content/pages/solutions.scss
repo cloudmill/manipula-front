@@ -150,6 +150,10 @@
       @include fsl(16px);
       letter-spacing: -0.32px;
     }
+    @media #{media('<', xs)} {
+      @include fsl(14px);
+      letter-spacing: -0.28px;
+    }
   }
 }
 
@@ -334,5 +338,37 @@
       width: 100%;
       margin: rem(24px) 0 rem(48px);
     }
+  }
+}
+
+.tippy-content {
+  padding: 0 !important;
+}
+
+#solutions-search {
+  display: none;
+}
+
+#tippy-1 {
+  .tippy-box {
+    max-width: 100vw !important;
+  }
+  .tippy-content {
+    width: cols(8);
+
+    @media #{media('<')} {
+      width: calc(100vw - #{$col-pad-m} - #{$col-pad-m});
+    }
+  }
+}
+
+.dropdown-inner.sol-search {
+  background: #263039;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: rem(6px) !important;
+
+  .dropdown-list {
+    @include fsl(13px);
+    letter-spacing: -0.13px;
   }
 }
