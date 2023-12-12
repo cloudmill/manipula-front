@@ -752,6 +752,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
+  @media #{media('<', xs)} {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   &__item {
     display: flex;

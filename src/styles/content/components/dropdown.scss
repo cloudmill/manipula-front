@@ -127,12 +127,19 @@
     border: 1px solid var(--grey-border2);
 
     transition: $transition;
+
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
   &-arrow {
     display: flex;
     padding: rem(20px);
     margin-left: rem(20px);
     border-left: 1px solid var(--grey-border2);
+    flex-shrink: 0;
 
     svg {
       width: rem(20px);
