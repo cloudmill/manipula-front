@@ -49,5 +49,10 @@
     margin-top: rem(16px);
     display: flex;
     gap: $col-gap-m;
+
+    @media #{media('<', xs)} {
+      flex-direction: column;
+      align-items: flex-start;
+    }
   }
 }

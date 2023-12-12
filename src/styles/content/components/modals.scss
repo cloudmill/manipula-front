@@ -75,6 +75,8 @@
 
   padding: rem(84px) rem(120px);
 
+  @include styled-scrollbar;
+
   @media #{media('<')} {
     right: 0;
     top: 0;

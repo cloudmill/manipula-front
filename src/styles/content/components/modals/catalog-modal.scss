@@ -9,9 +9,14 @@
   padding: rem(240px) rem(60px) rem(60px);
 
   color: #fff;
+  @include styled-scrollbar;
 
   @media #{media('<')} {
     padding: rem(90px) rem(12px) rem(12px);
+  }
+
+  .f-button.is-close-btn {
+    display: none !important;
   }
 }
 
@@ -75,7 +80,7 @@
 
     background-image: url('assets/images/catalog-modal-banner.png');
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 
     position: relative;
 
