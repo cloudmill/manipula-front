@@ -213,7 +213,7 @@
     }
   }
 
-  &:hover {
+  &:not(:disabled):hover {
     border-color: var(--red);
     background: var(--red);
 

@@ -65,7 +65,13 @@ export function swiperInit() {
           slider_options = {
             ...slider_options,
 
-            modules: [Navigation, Pagination],
+            modules: [Navigation, Pagination, Autoplay],
+
+            loop: true,
+            speed: 1000,
+            autoplay: {
+              delay: 4000,
+            },
 
             pagination: {
               el: `[data-swiper-pagination=${slider_id}]`,
@@ -158,6 +164,25 @@ export function swiperInit() {
 
     thumbs: {
       swiper: productThumbs,
+    },
+  })
+
+  const historyThumbs = new Swiper('#history-thumbs', {
+    slidesPerView: 'auto',
+  })
+
+  new Swiper('#history-slider', {
+    modules: [Navigation, Thumbs],
+
+    loop: true,
+
+    navigation: {
+      prevEl: `#history-slider-prev`,
+      nextEl: `#history-slider-next`,
+    },
+
+    thumbs: {
+      swiper: historyThumbs,
     },
   })
 

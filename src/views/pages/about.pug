@@ -3,7 +3,20 @@ extends ../app
 include ../components/breadcrumbs
 
 block content
-  .container.about-section
+  -
+    const years = [
+      '2008',
+      '2010',
+      '2013',
+      '2014',
+      '2016',
+      '2018',
+      '2020',
+      '2022',
+      '2023'
+    ]
+
+  .container
     .about-top
       picture.about-top__bg
         source(
@@ -39,6 +52,7 @@ block content
         +breadcrumbs(page='О компании')
         h1.h1 О компании
 
+  .about-bg.container
     .about-second
       .about-big-text Manipula Specialist® сегодня — #[br] лидирующий российский бренд в сфере &nbsp; #[br.only-desktop] высококачественных профессиональных СИЗ рук
 
@@ -61,6 +75,13 @@ block content
                 img(src='assets/images/about-slide.jpg', alt='')
       .swiper-pagination.about-pagination(data-swiper-pagination='about')
 
+      .product-slider-controls
+        button.slider-control.dark(data-prev='about')
+          +arrow-left
+        button.slider-control.dark(data-next='about')
+          +arrow-right
+
+  .container
     .about-cards
       .about-cards__item
         img.about-cards__ico(src='assets/images/svg/about-card-0.svg', alt='')
@@ -209,19 +230,33 @@ block content
               .model-drop-mark-line.bottom
 
               .dropdown.dark(data-dropdown)
-                button.dropdown-button(data-dropdown-button)
-                  span Подготовка
+                button.dropdown-button.model-drop(data-dropdown-button)
+                  .dropdown-button__inner
+                    +model1
+                    span Подготовка
                   .dropdown-arrow
                     +arrow-down
                 .dropdown-drop(data-dropdown-drop, style='display: none')
-                  .dropdown-inner Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem atque exercitationem dolore, ullam voluptate nobis officia numquam neque dolor id voluptates unde nulla et ad obcaecati error reprehenderit tenetur ducimus?
+                  .dropdown-inner
+                    ul.model-drop-list
+                      li
+                        .model-drop-mark
+                        .model-drop-mark-line.bottom
+                        span item
+                      li
+                        .model-drop-mark-line.top
+                        .model-drop-mark
+                        span item
+
             li
               .model-drop-mark-line.top
               .model-drop-mark
 
               .dropdown.dark(data-dropdown)
-                button.dropdown-button(data-dropdown-button)
-                  span Производственный комплекс и бэк-офис
+                button.dropdown-button.model-drop(data-dropdown-button)
+                  .dropdown-button__inner
+                    +model2
+                    span Производственный комплекс и бэк-офис
                   .dropdown-arrow
                     +arrow-down
                 .dropdown-drop(data-dropdown-drop, style='display: none')
@@ -236,6 +271,7 @@ block content
 
               .dropdown.dark(data-dropdown)
                 button.dropdown-button(data-dropdown-button)
+                  //- +model1
                   span Подготовка
                   .dropdown-arrow
                     +arrow-down
@@ -247,11 +283,89 @@ block content
 
               .dropdown.dark(data-dropdown)
                 button.dropdown-button(data-dropdown-button)
+                  //- +model2
                   span Производственный комплекс и бэк-офис
                   .dropdown-arrow
                     +arrow-down
                 .dropdown-drop(data-dropdown-drop, style='display: none')
                   .dropdown-inner Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem atque exercitationem dolore, ullam voluptate nobis officia numquam neque dolor id voluptates unde nulla et ad obcaecati error reprehenderit tenetur ducimus?
+
+  .main-bg2-section
+    .container
+      .trust
+        h2.about-title Нам доверяют
+        .trust__tabs.tabs.only-desktop
+          -
+            const tabs = [
+              'Авиакосмическая промышленность',
+              'Автомобильная промышленность',
+              'Атомная энергетика',
+              'Газовая промышленность',
+              'Оборонно-промышленный комплекс',
+              'Нефтяная и нефтеперерабатывающая промышленность',
+              'Пищевая промышленность',
+              'Химическая промышленность',
+              'Электротехническая промышленность',
+              'Электроэнергетика'
+            ]
+          each el, i in tabs
+            if i === 0
+              .tabs__item.active= el
+            else
+              a.tabs__item(href)= el
+
+        .trust__list
+          -
+            const items = [
+              'АО «Авиакомпания «Россия»',
+              'Госкорпорация «Роскосмос»',
+              'АО «Информационные спутниковые системы» имени академика М. Ф. Решетнёва»',
+              'ПАО «Роствертол»'
+            ]
+          each el, i in items
+            .trust__item
+              picture
+                source(
+                  srcset=`assets/images/trust-${i}-mob.webp`,
+                  type='image/webp',
+                  media='(max-width: 1023px)'
+                )
+                source(
+                  srcset=`assets/images/trust-${i}-mob.jpg`,
+                  type='image/jpeg',
+                  media='(max-width: 1023px)'
+                )
+                source(
+                  srcset=`assets/images/trust-${i}.webp`,
+                  type='image/webp'
+                )
+                img(src=`assets/images/trust-${i}.jpg`, alt='')
+              .trust__title= el
+
+      .history
+        h2.about-title История
+
+        .history-slider
+          #history-slider.swiper
+            .swiper-wrapper
+              each el in years
+                .swiper-slide.history-slider__slide
+                  picture
+                    img(src='assets/images/history-0.jpg', alt='')
+                  .history-slider__info
+                    h4= el
+                    p Создание бренда Manipula Specialist®. Разработка собственной технологии покрытия SlipGrip и выход первой продукции на рынок.
+
+          #history-thumbs.swiper
+            .swiper-wrapper
+              each el in years
+                .swiper-slide= el
+
+          .controls.only-desktop
+            button#history-slider-prev.slider-control.dark
+              +arrow-left
+            button#history-slider-next.slider-control.dark
+              +arrow-right
 
   .container
     .responsibility
