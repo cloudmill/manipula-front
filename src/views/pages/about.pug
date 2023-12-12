@@ -214,7 +214,7 @@ block content
         .button__ico
           +double-arrow-right
 
-    .about-block
+    .about-block.model-section
       .about-model-cols
         h2.about-title Бизнес-модель
         .responsibility__text
@@ -229,8 +229,8 @@ block content
               .model-drop-mark
               .model-drop-mark-line.bottom
 
-              .dropdown.dark(data-dropdown)
-                button.dropdown-button.model-drop(data-dropdown-button)
+              .dropdown.dark.model-drop(data-dropdown)
+                button.dropdown-button(data-dropdown-button)
                   .dropdown-button__inner
                     +model1
                     span Подготовка
@@ -242,11 +242,21 @@ block content
                       li
                         .model-drop-mark
                         .model-drop-mark-line.bottom
-                        span item
+                        span Заявка в научно-исследовательский центр
                       li
                         .model-drop-mark-line.top
                         .model-drop-mark
-                        span item
+                        .model-drop-mark-line.bottom
+                        span Разработка опытных образцов
+                      li
+                        .model-drop-mark-line.top
+                        .model-drop-mark
+                        .model-drop-mark-line.bottom
+                        span Сертификация продукции
+                      li
+                        .model-drop-mark-line.top
+                        .model-drop-mark
+                        span Серийный выпуск
 
             li
               .model-drop-mark-line.top
