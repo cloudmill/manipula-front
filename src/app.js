@@ -9,7 +9,8 @@ import { dropdown } from './scripts/dropdown.js'
 import { tabs } from './scripts/tabs.js'
 import { tooltip } from './scripts/tippy.js'
 import { select } from './scripts/select.js'
-import { initMap } from './scripts/maps.js'
+import { initContactsMap } from './scripts/contacts-map.js'
+import { initBuyMap } from './scripts/where-buy-map.js'
 
 window.addEventListener('DOMContentLoaded', () => {
   tooltip()
@@ -18,7 +19,8 @@ window.addEventListener('DOMContentLoaded', () => {
   dropdown()
   tabs()
   // select()
-  initMap()
+  initContactsMap()
+  initBuyMap()
 
   const searchReset = document.querySelectorAll('[data-search-reset]')
 

@@ -1,6 +1,4 @@
-const siteTemplPath = document.querySelector('[data-type=site-templ-path]')
-
-export function initMap() {
+export function initContactsMap() {
   ymaps.ready(() => {
     if (document.querySelector('#contacts-map')) {
       try {
@@ -56,39 +54,40 @@ export function initMap() {
       }
     }
 
-    // if (document.querySelector('#map2')) {
-    //   try {
-    //     ymaps.ready(function () {
-    //       var myMap = new ymaps.Map(
-    //           'map2',
-    //           {
-    //             center: [59.934277, 30.309636],
-    //             zoom: 14,
-    //           },
-    //           {
-    //             searchControlProvider: 'yandex#search',
-    //           }
-    //         ),
-    //         MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-    //           '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
-    //         ),
-    //         myPlacemark = new ymaps.Placemark(
-    //           [59.934277, 30.309636],
-    //           {},
-    //           {
-    //             iconLayout: 'default#image',
-    //             // iconImageHref: '/local/templates/main/assets/images/placemark.svg',
-    //             iconImageHref: window.config.path + 'assets/images/placemark.svg',
-    //             iconImageSize: [45.71, 64],
-    //             iconImageOffset: [-22, -64],
-    //           }
-    //         )
+    if (document.querySelector('#where-buy-map')) {
+      try {
+        ymaps.ready(function () {
+          const center = $('#where-buy-map').data('map-center').split(' ')
+          const zoom = Number($('#where-buy-map').data('map-zoom'))
 
-    //       myMap.geoObjects.add(myPlacemark)
-    //     })
-    //   } catch (err) {
-    //     console.error(err)
-    //   }
-    // }
+          var myMap = new ymaps.Map(
+            'where-buy-map',
+            {
+              center: center ? center : [58.050234, 53.099332],
+              zoom: zoom ? zoom : 5,
+            },
+            {
+              searchControlProvider: 'yandex#search',
+            }
+          )
+
+          // myPlacemark = new ymaps.Placemark(
+          //   [59.934277, 30.309636],
+          //   {},
+          //   {
+          //     iconLayout: 'default#image',
+          //     // iconImageHref: '/local/templates/main/assets/images/placemark.svg',
+          //     iconImageHref: window.config.path + 'assets/images/placemark.svg',
+          //     iconImageSize: [45.71, 64],
+          //     iconImageOffset: [-22, -64],
+          //   }
+          // )
+
+          // myMap.geoObjects.add(myPlacemark)
+        })
+      } catch (err) {
+        console.error(err)
+      }
+    }
   })
 }

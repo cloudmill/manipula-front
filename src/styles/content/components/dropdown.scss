@@ -99,6 +99,27 @@
       }
     }
   }
+  &.city-drop {
+    @media #{media('<')} {
+      .dropdown-button {
+        @include fsl(14px);
+        letter-spacing: -0.14px;
+        padding-left: rem(16px);
+      }
+      .dropdown-arrow {
+        padding: rem(14px);
+        margin-left: rem(14px);
+      }
+      .dropdown-list {
+        @include fsl(14px);
+        letter-spacing: -0.14px;
+
+        li {
+          padding: rem(16px) rem(16px);
+        }
+      }
+    }
+  }
 
   &-container {
     position: relative;

@@ -17,7 +17,7 @@ block content
         a.tabs__item(href) Беларусь
         a.tabs__item(href) Казахстан
 
-    .dropdown.dark.select.only-mobile(data-dropdown)
+    .dropdown.dark.select.only-mobile.city-drop(data-dropdown)
       button.dropdown-button(data-dropdown-button)
         span Выбрать город
         .dropdown-arrow
@@ -44,52 +44,56 @@ block content
               li Москва
               li Краснодар
 
-      #map(data-tab-content='2')
-        a(
-          href='https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps',
-          style='color: #eee; font-size: 12px; position: absolute; top: 0px'
-        ) Санкт‑Петербург
-        a(
-          href='https://yandex.ru/maps/2/saint-petersburg/?ll=30.302539%2C59.942265&utm_medium=mapframe&utm_source=maps&z=13.78',
-          style='color: #eee; font-size: 12px; position: absolute; top: 14px'
-        ) Яндекс Карты
-        iframe(
-          src='https://yandex.ru/map-widget/v1/?ll=30.302539%2C59.942265&z=13.78',
-          frameborder='1',
-          allowfullscreen,
-          style='position: relative'
+      .map-container(data-tab-content='2')
+        #where-buy-map(
+          data-map-center='58.050234 53.099332',
+          data-map-zoom='5'
         )
+        .map-filters-container
+          .map-filters(data-tabs-panel)
+            button.map-filters__item.active(data-tab) Все
+            button.map-filters__item(data-tab)
+              img(src='assets/images/svg/placemark-1.svg', alt='')
+              span Официальные дистрибьюторы
+            button.map-filters__item(data-tab)
+              img(src='assets/images/svg/placemark-2.svg', alt='')
+              span Партнеры
 
       .where-buy-list.show(data-tabs-panel, data-tab-content='1')
         -
           const cards = [
             {
               ttl: 'ПКФ Специалист',
-              txt: 'Красноярск, ул. Затонская, 32 стр.1'
+              txt: 'Красноярск, ул. Затонская, 32 стр.1',
+              store: 1
             },
             {
               ttl: 'Спецобъединение Юго-Запад',
-              txt: 'Москва, ул. Рябиновая, д. 26, стр. 2'
+              txt: 'Москва, ул. Рябиновая, д. 26, стр. 2',
+              store: 2
             },
             {
               ttl: 'ТД Спецперчатка',
-              txt: 'Красноярск, ул. Затонская, 32 стр.1'
+              txt: 'Красноярск, ул. Затонская, 32 стр.1',
+              store: 1
             },
             {
               ttl: 'ПКФ Специалист',
-              txt: 'Красноярск, ул. Затонская, 32 стр.1'
+              txt: 'Красноярск, ул. Затонская, 32 стр.1',
+              store: 2
             },
             {
               ttl: 'Спецобъединение Юго-Запад',
-              txt: 'Москва, ул. Рябиновая, д. 26, стр. 2'
-            },
-            {
-              ttl: 'ТД Спецперчатка',
-              txt: 'Красноярск, ул. Затонская, 32 стр.1'
+              txt: 'Москва, ул. Рябиновая, д. 38Д',
+              store: 1
             },
           ]
         each el in cards
-          .where-buy-item(data-tab)
+          .where-buy-item(
+            data-tab,
+            data-placemark=el.txt,
+            data-store-type=el.store
+          )
             .where-buy-item__title= el.ttl
             .where-buy-item__text= el.txt
             ul.list-red-dot
@@ -98,7 +102,7 @@ block content
               li
                 a(href='mailto:pkf.24@yandex.ru') pkf.24@yandex.ru
               li
-                a(href='ps-sib.ru') ps-sib.ru
+                a(href='ps-sib.ru', target='_blank') ps-sib.ru
 
 block scripts
   script(

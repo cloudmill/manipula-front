@@ -1,0 +1,193 @@
+.placemarks {
+  display: none;
+}
+
+.cluster {
+  width: rem(32px);
+  height: rem(32px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  background: #29475f;
+  color: #fff;
+  @include fsl(13px, 100%);
+  letter-spacing: -0.26px;
+}
+
+.balloon {
+  position: absolute;
+
+  width: rem(349px);
+  @media #{media("<")} {
+    display: none;
+  }
+
+  background: #fff;
+
+  &__content {
+    padding: rem(20px) rem(24px);
+    @media #{media("<")} {
+      padding: rem(12px);
+    }
+
+    font-family: $ff-primary;
+    color: var(--main-bg);
+
+    .buy-page__features {
+      border-color: #fff;
+    }
+    &_cluster {
+      max-height: rem(330px);
+      overflow-y: auto;
+      @include scrollbar-hidden;
+      // @include styled-scrollbar;
+      // .buy-page__row {
+      //   justify-content: space-between;
+      // }
+      // .buy-page__col {
+      //   &:nth-child(1) {
+      //     width: au;
+      //   }
+      // }
+      .buy-page__exposition-container {
+        // max-height: 4.5rem;
+        max-height: none;
+        overflow: visible;
+      }
+    }
+  }
+
+  &__close {
+    --pad: 5px;
+    --size: 28px;
+
+    position: absolute;
+    top: var(--pad);
+    right: var(--pad);
+
+    width: var(--size);
+    height: var(--size);
+
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.7299 10.4663L15.2464 12.9497M13.1424 15.0538L10.6589 17.5373M17.8677 17.6751L15.2874 15.0948M13.1014 12.9088L10.5211 10.3285' stroke='%2302343B' stroke-width='1.5' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+  }
+
+  &__arrow {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 17px 21px 0 21px;
+    border-color: #fff transparent transparent transparent;
+  }
+}
+
+.ymaps-2-1-79-balloon {
+  transform: translateX(-26%);
+  filter: drop-shadow(0px 12px 20px rgba(0, 0, 0, 0.08));
+
+  &__close-button {
+    --size: #{rem(30px)};
+
+    width: var(--size) !important;
+    height: var(--size) !important;
+
+    opacity: 1 !important;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.7299 10.4663L15.2464 12.9497M13.1424 15.0538L10.6589 17.5373M17.8677 17.6751L15.2874 15.0948M13.1014 12.9088L10.5211 10.3285' stroke='%2302343B' stroke-width='1.5' stroke-linecap='square'/%3E%3C/svg%3E%0A") !important;
+  }
+
+  &__content {
+    padding: 0 !important;
+  }
+
+  &__tail {
+    margin-left: 32%;
+  }
+}
+
+.ymaps-2-1-79-b-cluster-carousel {
+  margin: 0 !important;
+
+  width: auto !important;
+  height: auto !important;
+
+  border-bottom: none !important;
+
+  &__nav {
+    top: auto !important;
+    bottom: rem(14px) !important;
+
+    width: rem(24px) !important;
+    height: rem(22px) !important;
+
+    &_type_next {
+      right: rem(25px) !important;
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='22' viewBox='0 0 24 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M13.7059 0L23.5894 10.0894V11.4889L13.7059 21.5783L12.2772 20.1787L20.4956 11.7891H0V9.78914H20.4956L12.2772 1.39956L13.7059 0Z' fill='%23DCDCDC'/%3E%3C/svg%3E%0A") !important;
+    }
+    &_type_prev {
+      left: rem(25px) !important;
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='22' viewBox='0 0 24 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M9.88392 0L0.000484467 10.0894V11.4889L9.88392 21.5783L11.3126 20.1787L3.09429 11.7891H23.5898V9.78914H3.09429L11.3126 1.39956L9.88392 0Z' fill='%23DCDCDC'/%3E%3C/svg%3E%0A") !important;
+    }
+  }
+
+  &__pager {
+    position: static !important;
+    padding: rem(8px) 0 !important;
+
+    display: flex !important;
+    justify-content: center;
+    gap: 4px;
+    height: rem(48px) !important;
+
+    box-sizing: border-box !important;
+    border-top: 1px solid var(--white-bg);
+
+    &-item {
+      --size: #{rem(32px)};
+      padding: 0 !important;
+
+      width: var(--size);
+      height: var(--size);
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--color-white);
+      color: var(--color-dark-green) !important;
+
+      &:hover {
+        color: var(--color-dark-green) !important;
+      }
+
+      &_current_yes {
+        // background-color: var(--main-bg);
+        // border-color: var(--main-bg);
+        color: var(--red) !important;
+        // &:hover {
+        //   color: #fff !important;
+        // }
+
+        &::before {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  &__separator {
+    display: none !important;
+  }
+}
+
+.ymaps-2-1-79-b-cluster-carousel__content {
+  height: auto !important;
+}
