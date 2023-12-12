@@ -37,6 +37,9 @@
       @media #{media('<')} {
         @include fsl(10px);
       }
+      @media #{media('<', xs)} {
+        @include fsl(9px);
+      }
     }
 
     .form-placeholder {

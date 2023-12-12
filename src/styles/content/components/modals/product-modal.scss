@@ -469,6 +469,30 @@
       padding: rem(16px);
     }
 
+    &.lib-doc {
+      @media #{media('>')} {
+        padding: rem(20px) rem(20px) rem(20px) rem(24px);
+      }
+      @media #{media('<')} {
+        gap: rem(12px);
+      }
+      @media #{media('<', m)} {
+        align-items: flex-start;
+      }
+
+      .documents-title {
+        @include fsl(16px, 140%);
+        letter-spacing: -0.16px;
+        @media #{media('<')} {
+          @include fsl(13px);
+          letter-spacing: -0.13px;
+        }
+      }
+      svg {
+        width: rem(36px);
+      }
+    }
+
     &:hover {
       border-color: var(--red);
       background: var(--red);
@@ -478,12 +502,17 @@
         color: #fff;
       }
 
-      svg path {
-        &:nth-child(1) {
-          stroke: #fff;
+      svg {
+        path {
+          &:nth-child(1) {
+            stroke: #fff;
+          }
+          &:nth-child(2) {
+            fill: #fff;
+          }
         }
-        &:nth-child(2) {
-          fill: #fff;
+        rect {
+          stroke: #fff;
         }
       }
     }
@@ -491,13 +520,15 @@
     img,
     svg {
       width: rem(36px);
+      height: auto;
       flex-shrink: 0;
 
       @media #{media('<')} {
         width: rem(26px);
       }
 
-      path {
+      path,
+      rect {
         transition: $transition;
       }
     }

@@ -30,3 +30,13 @@
     grid-template-columns: 100%;
   }
 }
+
+.lib-docs {
+  display: flex;
+  flex-direction: column;
+  gap: rem(12px);
+  margin: rem(60px) 0 rem(36px);
+  @media #{media('<')} {
+    margin: rem(24px) 0;
+  }
+}
