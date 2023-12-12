@@ -9,6 +9,7 @@ import { dropdown } from './scripts/dropdown.js'
 import { tabs } from './scripts/tabs.js'
 import { tooltip } from './scripts/tippy.js'
 import { select } from './scripts/select.js'
+import { initMap } from './scripts/maps.js'
 
 window.addEventListener('DOMContentLoaded', () => {
   tooltip()
@@ -17,6 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
   dropdown()
   tabs()
   // select()
+  initMap()
 
   const searchReset = document.querySelectorAll('[data-search-reset]')
 

@@ -42,6 +42,7 @@
         left: rem(2px);
         padding-top: 18px;
         padding-left: rem(22px);
+        background: #fff;
       }
     }
   }
@@ -120,7 +121,7 @@
     right: rem(3px);
     left: rem(3px);
     padding: rem(36px) 0 0 rem(33px);
-    background: #fff;
+    background: var(--main-bg2);
 
     @media #{media('<')} {
       top: 0;

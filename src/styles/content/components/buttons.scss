@@ -149,6 +149,31 @@
       }
     }
   }
+  &.contacts-link {
+    @include fsl(20px, 110%);
+    letter-spacing: -0.4px;
+    padding-left: rem(20px);
+
+    @media #{media('<')} {
+      @include fsl(13px);
+      padding-left: rem(16px);
+    }
+
+    .button__ico {
+      padding: rem(16px);
+      margin-left: rem(16px);
+
+      @media #{media('<')} {
+        padding-top: rem(6px);
+        padding-bottom: rem(6px);
+      }
+
+      svg {
+        width: rem(20px);
+        height: rem(20px);
+      }
+    }
+  }
 }
 
 .controls {

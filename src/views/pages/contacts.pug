@@ -9,7 +9,7 @@ block content
 
     .contacts-top
       h1.h1 Контакты
-      a.button.button--small.fit-content(href='')
+      a.button.contacts-link.fit-content(href='')
         span Мы Вконтакте
         .button__ico
           +vk-blue
@@ -24,21 +24,7 @@ block content
           li
             a(href='mailto:info@manipulas.ru') info@manipulas.ru
 
-      #map(style='position: relative; overflow: hidden')
-        a(
-          href='https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps',
-          style='color: #eee; font-size: 12px; position: absolute; top: 0px'
-        ) Санкт‑Петербург
-        a(
-          href='https://yandex.ru/maps/2/saint-petersburg/?ll=30.302539%2C59.942265&utm_medium=mapframe&utm_source=maps&z=13.78',
-          style='color: #eee; font-size: 12px; position: absolute; top: 14px'
-        ) Яндекс Карты
-        iframe(
-          src='https://yandex.ru/map-widget/v1/?ll=30.302539%2C59.942265&z=13.78',
-          frameborder='1',
-          allowfullscreen,
-          style='position: relative'
-        )
+      #contacts-map
 
       .contacts-map-info.dark-blue
         .contacts-map-info__title Склад
@@ -85,7 +71,12 @@ block content
       h2.h2 Связаться с нами
       form.contacts-form(data-contacts-form)
         label.form-label
-          input.form-input(type='text', required, data-input)
+          input.form-input(
+            type='text',
+            required,
+            data-input,
+            data-parsley-string
+          )
           span.form-placeholder ФИО
         label.form-label
           input.form-input(
@@ -100,12 +91,17 @@ block content
           input.form-input(type='email', required, data-input)
           span.form-placeholder E-mail
         label.form-label
-          input.form-input(type='text', required, data-input)
+          input.form-input(
+            type='text',
+            required,
+            data-input,
+            data-parsley-string
+          )
           span.form-placeholder Страна, город
 
         label.form-label
           textarea.form-input.form-textarea(data-input)
-          span.form-placeholder Сообщение
+          span.form-placeholder.t-area Сообщение
 
         .contacts-form__bottom
           .form-note(data-fancy-button='policy') Нажимая на кнопку «Отправить», вы даете согласие на #[span.red Политику конфиденциальности]
@@ -114,3 +110,9 @@ block content
             span Отправить
             .button__ico
               +double-arrow-right
+
+block scripts
+  script(
+    src='https://api-maps.yandex.ru/2.1/?apikey=682f216b-3af8-4745-a945-d681997988c6&lang=ru_RU',
+    type='text/javascript'
+  )

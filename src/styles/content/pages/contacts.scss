@@ -37,7 +37,11 @@
     grid-template-rows: rem(140px) rem(140px) rem(195px);
   }
 
-  #map {
+  #contacts-map {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     border-radius: rem(8px);
     @media #{media('>')} {
       grid-column: 2/3;
@@ -52,10 +56,10 @@
       order: 1;
       border-radius: rem(4px);
     }
-    iframe {
-      width: 100%;
-      height: 100%;
-    }
+    // iframe {
+    //   width: 100%;
+    //   height: 100%;
+    // }
   }
 }
 
