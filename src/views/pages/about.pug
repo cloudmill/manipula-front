@@ -229,7 +229,7 @@ block content
               .model-drop-mark
               .model-drop-mark-line.bottom
 
-              .dropdown.dark.model-drop(data-dropdown)
+              .dropdown.dark.model-dropdown(data-dropdown)
                 button.dropdown-button(data-dropdown-button)
                   .dropdown-button__inner
                     +model1
@@ -262,8 +262,8 @@ block content
               .model-drop-mark-line.top
               .model-drop-mark
 
-              .dropdown.dark(data-dropdown)
-                button.dropdown-button.model-drop(data-dropdown-button)
+              .dropdown.dark.model-dropdown(data-dropdown)
+                button.dropdown-button(data-dropdown-button)
                   .dropdown-button__inner
                     +model2
                     span Производственный комплекс и бэк-офис
@@ -279,10 +279,11 @@ block content
               .model-drop-mark
               .model-drop-mark-line.bottom
 
-              .dropdown.dark(data-dropdown)
+              .dropdown.dark.model-dropdown(data-dropdown)
                 button.dropdown-button(data-dropdown-button)
-                  //- +model1
-                  span Подготовка
+                  .dropdown-button__inner
+                    +model3
+                    span Центральный логистический комплекс
                   .dropdown-arrow
                     +arrow-down
                 .dropdown-drop(data-dropdown-drop, style='display: none')
@@ -290,11 +291,27 @@ block content
             li
               .model-drop-mark-line.top
               .model-drop-mark
+              .model-drop-mark-line.bottom
 
-              .dropdown.dark(data-dropdown)
+              .dropdown.dark.model-dropdown(data-dropdown)
                 button.dropdown-button(data-dropdown-button)
-                  //- +model2
-                  span Производственный комплекс и бэк-офис
+                  .dropdown-button__inner
+                    +model4
+                    span Дистрибьютор
+                  .dropdown-arrow
+                    +arrow-down
+                .dropdown-drop(data-dropdown-drop, style='display: none')
+                  .dropdown-inner Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem atque exercitationem dolore, ullam voluptate nobis officia numquam neque dolor id voluptates unde nulla et ad obcaecati error reprehenderit tenetur ducimus?
+
+            li
+              .model-drop-mark-line.top
+              .model-drop-mark
+
+              .dropdown.dark.model-dropdown(data-dropdown)
+                button.dropdown-button(data-dropdown-button)
+                  .dropdown-button__inner
+                    +model5
+                    span Потребитель
                   .dropdown-arrow
                     +arrow-down
                 .dropdown-drop(data-dropdown-drop, style='display: none')
