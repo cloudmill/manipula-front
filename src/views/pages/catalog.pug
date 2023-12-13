@@ -61,9 +61,11 @@ block content
           button.catalog-top__button(data-fancy-button='filter-group')
             span Защитные группы
             +plus
-          button.catalog-top__button(data-fancy-button='filter1')
+            .is-filter-active
+          button.catalog-top__button.active(data-fancy-button='filter1')
             span Фильтры
             +plus
+            .is-filter-active
 
         .catalog-top__checks
           label.checkbox

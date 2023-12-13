@@ -180,6 +180,7 @@
   display: flex;
   align-items: center;
   gap: rem(8px);
+  user-select: none;
 }
 
 .slider-control {
@@ -196,6 +197,7 @@
 
   background: #f7f7f7;
   transition: $transition;
+  user-select: none;
 
   @media #{media('<')} {
     width: rem(40px);

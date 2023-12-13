@@ -18,8 +18,6 @@
     }
   }
   &.select {
-    // gap: rem(4px);
-
     .dropdown-button {
       border-radius: rem(6px);
     }
@@ -33,6 +31,8 @@
       max-height: rem(300px);
       overflow-y: auto;
       @include styled-scrollbar;
+      margin-top: 0;
+      transition: margin-top $transition;
     }
 
     &.active {

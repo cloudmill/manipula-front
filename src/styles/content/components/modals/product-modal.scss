@@ -202,7 +202,7 @@
 
   &__slide {
     width: rem(48px) !important;
-    height: rem(48px);
+    height: rem(48px) !important;
     object-fit: cover;
     border-radius: rem(6px);
     border: 1px solid #e3e3e3;
@@ -593,6 +593,7 @@
     display: flex;
     align-items: center;
     gap: rem(8px);
+    user-select: none;
   }
 
   .swiper-slide {

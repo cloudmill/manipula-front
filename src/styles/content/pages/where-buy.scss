@@ -99,15 +99,11 @@
   align-items: stretch;
   gap: rem(4px);
 
-  // @media #{media('<', m)} {
-  //   overflow-x: scroll;
-  //   @include scrollbar-hidden;
-  // }
-
   &__item {
     @include fsl(18px, 100%);
     letter-spacing: -0.36px;
     white-space: nowrap;
+    color: var(--main-bg);
 
     padding: rem(20px) rem(24px);
     border-radius: rem(6px);

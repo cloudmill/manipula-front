@@ -40,6 +40,22 @@
     align-items: center;
     gap: rem(24px);
     margin-top: rem(24px);
+
+    .checkbox {
+      @media #{media('<')} {
+        flex-wrap: nowrap;
+        align-items: center;
+      }
+
+      &__caption {
+        @media #{media('<')} {
+          white-space: nowrap;
+        }
+        @media #{media('<', xs)} {
+          @include fsl(12px);
+        }
+      }
+    }
   }
 
   &__reset {
@@ -101,9 +117,28 @@
     color: #fff;
     white-space: nowrap;
 
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     svg {
       width: rem(20px);
       height: rem(20px);
+    }
+
+    &.active .is-filter-active {
+      display: block;
+    }
+
+    .is-filter-active {
+      display: none;
+      width: rem(6px);
+      height: rem(6px);
+      background: var(--red);
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
     }
   }
 }
