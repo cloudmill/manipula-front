@@ -42,20 +42,25 @@ block content
         .catalog-top__drops.only-desktop
           each el in ['Отрасли промышленности', 'Условия применения', 'Основа', 'Покрытие']
             .dropdown-container
-              .dropdown.dark.select(data-dropdown, data-select)
-                button.dropdown-button(data-dropdown-button)
-                  span= el
+              .dropdown.dark.select(data-select, data-select-title=el)
+                button.dropdown-button(data-select-button)
+                  span(data-select-active)= el
                   .dropdown-arrow
                     +arrow-down
-                .dropdown-drop(data-dropdown-drop, style='display: none')
+                .dropdown-drop(data-select-drop, style='display: none')
                   .dropdown-inner
                     ul.dropdown-list
-                      li Нефть и нефтепереработка
-                      li Газовая промышленность
-                      li Электроэнергетика
-                      li Атомная энергетика
-                      li Пищевая промышленность
-                      li Химическая промышленность
+                      -
+                        const opts = [
+                          'Нефть и нефтепереработка',
+                          'Газовая промышленность',
+                          'Электроэнергетика',
+                          'Атомная энергетика',
+                          'Пищевая промышленность',
+                          'Химическая промышленность'
+                        ]
+                      each it in opts
+                        li(data-select-option)= it
 
         .catalog-top__buttons.only-mobile
           button.catalog-top__button(data-fancy-button='filter-group')
@@ -78,7 +83,7 @@ block content
               +checkbox.checkbox__ico
             .checkbox__caption Произведено в России
 
-          button.catalog-top__reset.only-desktop
+          button.catalog-top__reset.only-desktop(data-filter-reset-desktop)
             +reset
             span Сбросить
 

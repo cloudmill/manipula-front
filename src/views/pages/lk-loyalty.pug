@@ -23,30 +23,36 @@ block content
 
             .loyal-top__main-inner
               .loyal-top__main-col
-                .dropdown.dark.select(data-dropdown)
-                  button.dropdown-button(data-dropdown-button)
-                    span I квартал 1-ое полугодие
+                .dropdown.dark.select.loyal-select1(
+                  data-select,
+                  data-select-title='I квартал 1-ое полугодие'
+                )
+                  button.dropdown-button(data-select-button)
+                    span(data-select-active) I квартал 1-ое полугодие
                     .dropdown-arrow
                       +arrow-down
-                  .dropdown-drop(data-dropdown-drop, style='display: none')
+                  .dropdown-drop(data-select-drop, style='display: none')
                     .dropdown-inner
                       ul.dropdown-list
-                        li Вариант 1
-                        li Вариант 2
+                        li(data-select-option) Вариант 1
+                        li(data-select-option) Вариант 2
 
                 .loyal-top__main-num 112 500 ₽
 
               .loyal-top__main-col
-                .dropdown.dark.select(data-dropdown)
-                  button.dropdown-button(data-dropdown-button)
-                    span 2023
+                .dropdown.dark.select.loyal-select2(
+                  data-select,
+                  data-select-title='2023'
+                )
+                  button.dropdown-button(data-select-button)
+                    span(data-select-active) 2023
                     .dropdown-arrow
                       +arrow-down
-                  .dropdown-drop(data-dropdown-drop, style='display: none')
+                  .dropdown-drop(data-select-drop, style='display: none')
                     .dropdown-inner
                       ul.dropdown-list
-                        li Вариант 1
-                        li Вариант 2
+                        li(data-select-option) 2024
+                        li(data-select-option) 2025
 
                 .loyal-top__main-num 450 000 ₽
 

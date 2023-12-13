@@ -804,3 +804,14 @@
     }
   }
 }
+
+.loyal-select1 {
+  @media #{media('>')} {
+    width: rem(314px);
+  }
+}
+.loyal-select2 {
+  @media #{media('>')} {
+    width: rem(150px);
+  }
+}

@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
   fancyboxInit()
   dropdown()
   tabs()
-  // select()
+  select()
   initContactsMap()
   initBuyMap()
 

@@ -17,32 +17,32 @@ block content
         a.tabs__item(href) Беларусь
         a.tabs__item(href) Казахстан
 
-    .dropdown.dark.select.only-mobile.city-drop(data-dropdown)
-      button.dropdown-button(data-dropdown-button)
-        span Выбрать город
+    .dropdown.dark.select.only-mobile.city-drop(data-select)
+      button.dropdown-button(data-select-button)
+        span(data-select-active) Выбрать город
         .dropdown-arrow
           +arrow-down
-      .dropdown-drop(data-dropdown-drop, style='display: none')
+      .dropdown-drop(data-select-drop, style='display: none')
         .dropdown-inner
           ul.dropdown-list
-            li Москва
-            li Краснодар
+            li(data-select-option) Москва
+            li(data-select-option) Краснодар
 
     .tabs.where-buy-tabs.only-mobile(data-tabs-panel, data-tab-contents)
       .tabs__item.active(data-tab='1') Список
       .tabs__item(data-tab='2') На карте
 
     .where-buy-main
-      .dropdown.dark.select.only-desktop(data-dropdown)
-        button.dropdown-button(data-dropdown-button)
-          span Выбрать город
+      .dropdown.dark.select.only-desktop(data-select)
+        button.dropdown-button(data-select-button)
+          span(data-select-active) Выбрать город
           .dropdown-arrow
             +arrow-down
-        .dropdown-drop(data-dropdown-drop, style='display: none')
+        .dropdown-drop(data-select-drop, style='display: none')
           .dropdown-inner
             ul.dropdown-list
-              li Москва
-              li Краснодар
+              li(data-select-option) Москва
+              li(data-select-option) Краснодар
 
       .map-container(data-tab-content='2')
         #where-buy-map(
