@@ -1,9 +1,11 @@
 import tippy from 'tippy.js'
 import 'tippy.js/dist/tippy.css'
+import 'tippy.js/themes/light.css'
 
 export function tooltip() {
   const template1 = document.getElementById('solutions-search')
   const template2 = document.getElementById('search-grop')
+  const prodTootip = document.querySelector('[data-tippy-content]')
 
   const solutionsInput = document.querySelector('[data-solutions-input]')
 
@@ -37,6 +39,14 @@ export function tooltip() {
       allowHTML: true,
       interactive: true,
       trigger: 'click',
+    })
+  }
+
+  if (prodTootip) {
+    tippy('[data-tippy-content]', {
+      theme: 'light',
+      trigger: 'click',
+      interactive: true,
     })
   }
 }

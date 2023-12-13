@@ -221,6 +221,10 @@ block content
           span «Манипула Специалист» — вертикально интегрированная компания. Выбранная бизнес-модель позволяет нам эффективно управлять собственными ресурсами, контролировать все этапы зарождения и использования продукта, а также всегда оставаться в тесной связи с дистрибьюторами и конечными потребителями.
 
       .model-drop-cols
+        img.model-drop-cols-arrow.only-desktop(
+          src='assets/images/svg/model-arrow.svg',
+          alt=''
+        )
         div
           h3.model-drop-title От производства
 
@@ -316,6 +320,140 @@ block content
                     +arrow-down
                 .dropdown-drop(data-dropdown-drop, style='display: none')
                   .dropdown-inner Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem atque exercitationem dolore, ullam voluptate nobis officia numquam neque dolor id voluptates unde nulla et ad obcaecati error reprehenderit tenetur ducimus?
+
+    .about-block.production
+      picture
+        source(
+          srcset='assets/images/production-bg-mob.webp',
+          type='image/webp',
+          media='(max-width:767px)'
+        )
+        source(
+          srcset='assets/images/production-bg-mob.png',
+          type='image/png',
+          media='(max-width:767px)'
+        )
+        source(
+          srcset='assets/images/production-bg-tablet.webp',
+          type='image/webp',
+          media='(max-width:1023px)'
+        )
+        source(
+          srcset='assets/images/production-bg-tablet.png',
+          type='image/png',
+          media='(max-width:1023px)'
+        )
+        source(srcset='assets/images/production-bg.webp', type='image/webp')
+        img(src='assets/images/production-bg.png', alt='')
+      .production__desc
+        h2.about-title Производственные площадки
+        .responsibility__text
+          span Для создания полимерной и части спилковой группы перчаток мы сотрудничаем с производственными площадками и научными центрами Пакистана, Бангладеша, Шри-Ланки, Таиланда, Вьетнами и Китая.
+        .responsibility__text
+          span Выбранные международные локации узкоспециализированы и проверены годами сотрудничества. Их исторически удачное расположение идеально подходит для работы с природными и синтетическими материалами.
+
+      .prod-mark.ru
+        .prod-plus(data-fancy-button='prod')
+        div
+          .prod-title Россия
+          .prod-desc Собственное производство на фабрике в Барнауле #[br] Центральный офис в Москве
+          .prod-logos
+            - for (i=0;i<6;i++)
+              img(
+                src=`assets/images/svg/prod-logo-${i}.svg`,
+                alt='',
+                data-tippy-content='Полиуретан'
+              )
+      .prod-mark.emir
+        .prod-plus(data-fancy-button='prod')
+        div
+          .prod-title ОАЭ
+          .prod-desc Проектно-#[br]экспирементальный #[br] центр
+      .prod-mark.pakis
+        .prod-plus(data-fancy-button='prod')
+        div
+          .prod-title Пакистан
+          .prod-logos
+            img(
+              src='assets/images/svg/prod-logo-1.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
+            img(
+              src='assets/images/svg/prod-logo-3.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
+            img(
+              src='assets/images/svg/prod-logo-6.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
+      .prod-mark.shri
+        .prod-plus(data-fancy-button='prod')
+        div
+          .prod-title Шри-Ланка
+          .prod-logos
+            img(
+              src='assets/images/svg/prod-logo-6.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
+            img(
+              src='assets/images/svg/prod-logo-8.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
+            img(
+              src='assets/images/svg/prod-logo-9.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
+      .prod-mark.bang
+        .prod-plus(data-fancy-button='prod')
+        div
+          .prod-title Бангладеш
+          .prod-logos
+            img(
+              src='assets/images/svg/prod-logo-6.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
+            img(
+              src='assets/images/svg/prod-logo-7.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
+      .prod-mark.china
+        .prod-plus(data-fancy-button='prod')
+        div
+          .prod-title Китай
+          .prod-logos
+            img(
+              src='assets/images/svg/prod-logo-6.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
+            img(
+              src='assets/images/svg/prod-logo-8.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
+      .prod-mark.thai
+        .prod-plus(data-fancy-button='prod')
+        div
+          .prod-title Таиланд
+          .prod-logos
+            img(
+              src='assets/images/svg/prod-logo-6.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
+            img(
+              src='assets/images/svg/prod-logo-9.svg',
+              alt='',
+              data-tippy-content='Полиуретан'
+            )
 
   .main-bg2-section
     .container
@@ -420,3 +558,6 @@ block content
             )
             img(src='assets/images/responsibility-1.jpg', alt='')
           .responsibility__desc Поддержка спортсменам барнаульского клуба каратэ «Амара»
+
+block modals
+  include ../components/modals/prod-modal
