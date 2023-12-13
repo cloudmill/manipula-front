@@ -30,6 +30,12 @@
   }
 }
 
+.hide-on-320 {
+  @media #{media('<', xs)} {
+    display: none !important;
+  }
+}
+
 .disable-container {
   margin: 0 (-$col-pad-d);
   padding: 0 $col-pad-d;
