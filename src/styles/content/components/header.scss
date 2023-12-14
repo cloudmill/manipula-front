@@ -5,9 +5,19 @@
   color: #fff;
 
   background: var(--main-bg);
+  transition: $transition;
 
   @media #{media('<')} {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  &--short {
+    @media #{media('>')} {
+      transform: translateY(#{rem(-72px)});
+      .header__row:nth-child(1) {
+        transform: translateY(#{rem(-72px)});
+      }
+    }
   }
 
   &__container {
@@ -36,6 +46,7 @@
     &:nth-child(1) {
       padding-bottom: rem(17px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      transition: $transition;
 
       @media #{media('<')} {
         display: none;

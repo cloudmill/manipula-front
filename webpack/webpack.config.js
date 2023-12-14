@@ -114,28 +114,28 @@ module.exports = (env) => {
       ],
     },
     optimization: {
-      minimizer: [
-        new ImageMinimizerPlugin({
-          minimizer: {
-            implementation: ImageMinimizerPlugin.imageminMinify,
-            options: {
-              plugins: [
-                ['mozjpeg', { progressive: true }],
-                ['optipng', { optimizationLevel: 5 }],
-              ],
-            },
-          },
-          generator: [
-            {
-              preset: 'webp',
-              implementation: ImageMinimizerPlugin.imageminGenerate,
-              options: {
-                plugins: ['imagemin-webp'],
-              },
-            },
-          ],
-        }),
-      ],
+      // minimizer: [
+      //   new ImageMinimizerPlugin({
+      //     minimizer: {
+      //       implementation: ImageMinimizerPlugin.imageminMinify,
+      //       options: {
+      //         plugins: [
+      //           ['mozjpeg', { progressive: true }],
+      //           ['optipng', { optimizationLevel: 5 }],
+      //         ],
+      //       },
+      //     },
+      //     generator: [
+      //       {
+      //         preset: 'webp',
+      //         implementation: ImageMinimizerPlugin.imageminGenerate,
+      //         options: {
+      //           plugins: ['imagemin-webp'],
+      //         },
+      //       },
+      //     ],
+      //   }),
+      // ],
 
       splitChunks: {
         cacheGroups: {

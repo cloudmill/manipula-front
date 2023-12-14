@@ -11,6 +11,7 @@ import { tooltip } from './scripts/tippy.js'
 import { select } from './scripts/select.js'
 import { initContactsMap } from './scripts/contacts-map.js'
 import { initBuyMap } from './scripts/where-buy-map.js'
+import { headerOnScroll } from './scripts/header.js'
 
 window.addEventListener('DOMContentLoaded', () => {
   tooltip()
@@ -21,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
   select()
   initContactsMap()
   initBuyMap()
+  headerOnScroll()
 
   const searchReset = document.querySelectorAll('[data-search-reset]')
 
