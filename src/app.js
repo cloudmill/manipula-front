@@ -1,5 +1,5 @@
 import './styles/app.scss'
-// import AOS from 'aos'
+import AOS from 'aos'
 
 import './scripts/forms'
 
@@ -34,4 +34,12 @@ window.addEventListener('DOMContentLoaded', () => {
       })
     })
   }
+})
+
+window.addEventListener('load', () => {
+  AOS.init({
+    once: true,
+    offset: 0,
+    duration: 500,
+  })
 })

@@ -5,15 +5,15 @@ include ../components/breadcrumbs
 block content
   .container
     +breadcrumbs(page='Где купить')
-    h1.h1 Где купить
+    h1.h1(data-aos='fade-up') Где купить
 
-    .where-buy-top
+    .where-buy-top(data-aos='fade-up')
       .tabs.big
         a.tabs__item(href) Юридическим лицам и ИП
         .tabs__item.active Физическим лицам
 
     .where-buy-fiz
-      div
+      div(data-aos='fade-up')
         .where-buy-fiz__title Россия
         .where-buy-fiz__row
           - for (i=0;i<6;i++)
@@ -21,14 +21,14 @@ block content
               img(src=`assets/images/where-${i}.png`, alt='')
               +link
 
-      div
+      div(data-aos='fade-up')
         .where-buy-fiz__title Беларусь
         .where-buy-fiz__row
           a.where-buy-fiz__item(href, target='_blank')
             img(src='assets/images/where-3.png', alt='')
             +link
 
-      div
+      div(data-aos='fade-up')
         .where-buy-fiz__title Казахстан
         .where-buy-fiz__row
           a.where-buy-fiz__item(href, target='_blank')

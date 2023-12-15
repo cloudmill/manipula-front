@@ -6,9 +6,9 @@ include ../components/cards/news-card
 block content
   .container
     +breadcrumbs(page='Технологии')
-    h1.h1 Технологии
+    h1.h1(data-aos='fade-up') Технологии
 
-    .tabs.news-filters
+    .tabs.news-filters(data-aos='fade-up')
       .tabs__item.active Все
 
       each el in ['Натуральные материалы', 'Синтетические материалы', 'Натуральные каучуки', 'Синтетические каучуки', 'Полимеры']
@@ -28,7 +28,7 @@ block content
         ]
 
       each el, i in cards
-        .tech-card(data-fancy-button='tech')
+        .tech-card(data-fancy-button='tech', data-aos='fade-up')
           img.tech-card__img(src=`assets/images/tech-${i}.png`, alt='')
           .tech-card__title= el
           .tech-card__tag Синтетические материалы

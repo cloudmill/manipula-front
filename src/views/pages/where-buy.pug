@@ -5,9 +5,9 @@ include ../components/breadcrumbs
 block content
   .container
     +breadcrumbs(page='Где купить')
-    h1.h1 Где купить
+    h1.h1(data-aos='fade-up') Где купить
 
-    .where-buy-top
+    .where-buy-top(data-aos='fade-up')
       .tabs.big
         .tabs__item.active Юридическим лицам и ИП
         a.tabs__item(href) Физическим лицам
@@ -17,7 +17,10 @@ block content
         a.tabs__item(href) Беларусь
         a.tabs__item(href) Казахстан
 
-    .dropdown.dark.select.only-mobile.city-drop(data-select)
+    .dropdown.dark.select.only-mobile.city-drop(
+      data-select,
+      data-aos='fade-up'
+    )
       button.dropdown-button(data-select-button)
         span(data-select-active) Выбрать город
         .dropdown-arrow
@@ -28,11 +31,15 @@ block content
             li(data-select-option) Москва
             li(data-select-option) Краснодар
 
-    .tabs.where-buy-tabs.only-mobile(data-tabs-panel, data-tab-contents)
+    .tabs.where-buy-tabs.only-mobile(
+      data-tabs-panel,
+      data-tab-contents,
+      data-aos='fade-up'
+    )
       .tabs__item.active(data-tab='1') Список
       .tabs__item(data-tab='2') На карте
 
-    .where-buy-main
+    .where-buy-main(data-aos='fade-up')
       .dropdown.dark.select.only-desktop(data-select)
         button.dropdown-button(data-select-button)
           span(data-select-active) Выбрать город

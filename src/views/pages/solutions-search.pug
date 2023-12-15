@@ -5,16 +5,16 @@ include ../components/breadcrumbs
 block content
   .container.solutions-search
     +breadcrumbs(page='Подобрать защитное решение')
-    h1.h1 Подобрать защитное решение
+    h1.h1(data-aos='fade-up') Подобрать защитное решение
 
-    .solutions-title
+    .solutions-title(data-aos='fade-up')
       .slider-control.dark
         +arrow-left
       h3 Профессия
 
-    .solutions-note Наш каталог содержит средства индивидуальной защиты рук для более 5000 профессий. #[br] Воспользуйтесь умным поиском или выберите из самых популярных.
+    .solutions-note(data-aos='fade-up') Наш каталог содержит средства индивидуальной защиты рук для более 5000 профессий. #[br] Воспользуйтесь умным поиском или выберите из самых популярных.
 
-    .search-form(data-solutions-search)
+    .search-form(data-solutions-search, data-aos='fade-up')
       label.search(data-search-form)
         .search__ico
           +search
@@ -30,7 +30,7 @@ block content
         button.search__reset(data-search-reset)
           +white-cross
 
-    .solutions-queries
+    .solutions-queries(data-aos='fade-up')
       .solutions-queries__title Популярные запросы
       .solutions-queries__row
         -

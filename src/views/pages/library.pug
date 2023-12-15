@@ -1,17 +1,14 @@
 extends ../app
 
-block variables
-  //- - preloader = true
-
 include ../components/breadcrumbs
 include ../components/cards/news-card
 
 block content
   .container
     +breadcrumbs(page='Библиотека защиты')
-    h1.h1 Библиотека защиты
+    h1.h1(data-aos='fade-up') Библиотека защиты
 
-    .tabs.news-filters
+    .tabs.news-filters(data-aos='fade-up')
       .tabs__item.active Все
       button.tabs__item Инструкции
       button.tabs__item Регламенты

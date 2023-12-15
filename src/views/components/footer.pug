@@ -6,7 +6,7 @@ mixin footer
 
   footer.footer
     .container
-      .footer__main
+      .footer__main(data-aos='fade-up')
         a.header__logo(href='')
           img(src='assets/images/svg/logo.svg', alt='logo')
 
@@ -38,7 +38,7 @@ mixin footer
           a.footer__social(href)
             +vk
 
-      .footer__middle
+      .footer__middle(data-aos='fade-up')
         -
           const cols = ['Ассоциация разработчиков, изготовителей и поставщиков средств индивидуальной защиты', 'Лицензионный партнер по программе СИЗ рук из материала DuPont™ Kevlar® на территории РФ', 'Лицензионный партнер по программе СИЗ рукиз материала Dyneema® Diamond Technology на территории РФ', 'Лицензионный партнер по программе СИЗ рук из материала Thermolite® на территории ЕАС']
 
@@ -50,7 +50,7 @@ mixin footer
             )
             .footer__middle-txt!= el
 
-      .footer__corp
+      .footer__corp(data-aos='fade-up')
         .footer__rights © 2008-2023 ООО «Манипула Специалист»
         button.footer__policy(data-fancy-button='policy') Политика конфиденциальности
         .footer__author Сделано в #[a(href) Клаудмил]

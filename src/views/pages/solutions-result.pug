@@ -6,9 +6,9 @@ include ../components/cards/product-card
 block content
   .container
     +breadcrumbs(page='Подобрать защитное решение')
-    h1.h1 Подобрать защитное решение
+    h1.h1(data-aos='fade-up') Подобрать защитное решение
 
-    .solutions-steps
+    .solutions-steps(data-aos='fade-up')
       -
         const steps = [
           'Идентифицированные опасности',
@@ -34,13 +34,13 @@ block content
               .button__ico= i + 1
               span= el
 
-    .solutions-title
+    .solutions-title(data-aos='fade-up')
       .slider-control.dark
         +arrow-left
       h3 Удар работника или падение на работника предмета, тяжелого инструмента или груза, упавшего при перемещении или подъеме
 
   .search-result.solutions-result
-    .solutions-result__top
+    .solutions-result__top(data-aos='fade-up')
       .solutions-result__title СИЗ рук от механических воздействий
       .solutions-result__tag [ Нормы выдачи СИЗ: 12 пар ]
     .search-result__table
@@ -48,13 +48,13 @@ block content
         +card
 
     .solutions-result__extra
-      .solutions-result__top
+      .solutions-result__top(data-aos='fade-up')
         .solutions-result__title Дополнительно, при необходимости
       .search-result__table
         - for (i=0;i<2;i++)
           +card
 
-    button.button.button--blue.more-button
+    button.button.button--blue.more-button(data-aos='fade-up')
       span Показать еще
       .button__ico
         +arrow-down

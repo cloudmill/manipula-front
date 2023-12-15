@@ -5,9 +5,9 @@ include ../components/breadcrumbs
 block content
   .container
     +breadcrumbs(page='Подобрать защитное решение')
-    h1.h1 Подобрать защитное решение
+    h1.h1(data-aos='fade-up') Подобрать защитное решение
 
-    .solutions-steps
+    .solutions-steps(data-aos='fade-up')
       -
         const steps = [
           'Идентифицированные опасности',
@@ -33,12 +33,12 @@ block content
               .button__ico= i + 1
               span= el
 
-    .solutions-title
+    .solutions-title(data-aos='fade-up')
       .slider-control.dark
         +arrow-left
       h3 Груз, инструмент или предмет, перемещаемый или поднимаемый, в том числе на высоту
 
-    .solutions-choice
+    .solutions-choice(data-aos='fade-up')
       -
         const cards = [
           'Удар работника или падение на работника предмета, тяжелого инструмента или груза, упавшего при перемещении или подъеме',

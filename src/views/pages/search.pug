@@ -6,9 +6,9 @@ include ../components/cards/product-card
 block content
   .container
     +breadcrumbs(page='Результаты поиска')
-    h1.h1 Результаты поиска
+    h1.h1(data-aos='fade-up') Результаты поиска
 
-    .search-form
+    .search-form(data-aos='fade-up')
       label.search(data-search-form)
         .search__ico
           +search
@@ -31,7 +31,7 @@ block content
       - for (i=0;i<16;i++)
         +card
 
-    button.button.button--blue.more-button
+    button.button.button--blue.more-button(data-aos='fade-up')
       span Показать еще
       .button__ico
         +arrow-down

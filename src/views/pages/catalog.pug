@@ -21,9 +21,9 @@ block content
 
   .container
     +breadcrumbs(page='Каталог')
-    h1.h1 Каталог
+    h1.h1(data-aos='fade-up') Каталог
 
-    .catalog-top
+    .catalog-top(data-aos='fade-up')
       .only-desktop
         .catalog-top__title Защитные группы
         .catalog-top__row
@@ -92,7 +92,7 @@ block content
       - for (i=0;i<16;i++)
         +card
 
-    button.button.button--blue.more-button
+    button.button.button--blue.more-button(data-aos='fade-up')
       span Показать еще
       .button__ico
         +arrow-down

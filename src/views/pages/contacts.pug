@@ -7,14 +7,14 @@ block content
   .container.contacts-page
     +breadcrumbs(page='Контакты')
 
-    .contacts-top
+    .contacts-top(data-aos='fade-up')
       h1.h1 Контакты
       a.button.contacts-link.fit-content(href='')
         span Мы Вконтакте
         .button__ico
           +vk-blue
 
-    .contacts-map
+    .contacts-map(data-aos='fade-up')
       .contacts-map-info.light-blue
         .contacts-map-info__title Центральный офис
         .contacts-map-info__text 121471, Москва, ул. Рябиновая, 26/2, БЦ «West Plaza»
@@ -30,7 +30,7 @@ block content
         .contacts-map-info__title Склад
         .contacts-map-info__text 121471, Москва, ул. Рябиновая, 38Д
 
-    .contacts-cards
+    .contacts-cards(data-aos='fade-up')
       h2.h2 Региональные представители
       .contacts-cards-list
         -
@@ -67,7 +67,7 @@ block content
               li
                 a(href='mailto:mshcheglov@manipulas.ru') mshcheglov@manipulas.ru
 
-    .contacts-bottom
+    .contacts-bottom(data-aos='fade-up')
       h2.h2 Связаться с нами
       form.contacts-form(data-contacts-form)
         label.form-label

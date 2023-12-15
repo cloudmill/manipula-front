@@ -1,17 +1,14 @@
 extends ../app
 
-block variables
-  //- - preloader = true
-
 include ../components/breadcrumbs
 include ../components/cards/product-card
 
 block content
   .container
     +breadcrumbs(page='Результаты поиска')
-    h1.h1 Результаты поиска
+    h1.h1(data-aos='fade-up') Результаты поиска
 
-    .search-form.empty
+    .search-form.empty(data-aos='fade-up')
       label.search(data-search-form)
         .search__ico
           +search

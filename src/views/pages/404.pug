@@ -1,17 +1,14 @@
 extends ../app
 
-block variables
-  //- - preloader = true
-
 include ../components/breadcrumbs
 include ../components/cards/news-card
 
 block content
   .error-page
-    h1.error-page__title 404
-    .error-page__text Страница не найдена...
+    h1.error-page__title(data-aos='fade-up') 404
+    .error-page__text(data-aos='fade-up') Страница не найдена...
 
-    .error-page__links
+    .error-page__links(data-aos='fade-up')
       a.button.button--blue(href)
         span Главная
         .button__ico

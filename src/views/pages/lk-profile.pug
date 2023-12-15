@@ -7,12 +7,12 @@ include ../components/lk-sidebar
 block content
   .container
     +breadcrumbs(items=['личный кабинет'], page='Профиль')
-    h1.h1 Профиль
+    h1.h1(data-aos='fade-up') Профиль
 
     .lk-body
       +sidebar(active=1, ttl='Профиль')
 
-      .lk-main.profile
+      .lk-main.profile(data-aos='fade-up')
         -
           const items = [
             {

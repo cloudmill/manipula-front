@@ -4,7 +4,7 @@ mixin header
 
   header.header
     .header__container
-      .header__row
+      .header__row(data-aos='fade-up')
         ul.header__nav
           each el, i in nav
             li
@@ -21,7 +21,7 @@ mixin header
             .button__ico
               +msg
 
-      .header__row
+      .header__row(data-aos='fade-up')
         if isMain === true
           .header__logo
             img(src='assets/images/svg/logo.svg', alt='logo')

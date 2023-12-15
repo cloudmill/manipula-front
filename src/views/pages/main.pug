@@ -8,7 +8,7 @@ include ../components/cards/news-card
 block content
   .container
     .first-screen
-      .first-screen-slider
+      .first-screen-slider(data-aos='fade-up')
         .swiper(data-slider-id='main')
           .swiper-wrapper
             - for (i=0;i<3;i++)
@@ -51,7 +51,7 @@ block content
 
       each el, i in first
         if i === 3
-          .first-screen-cell.no-hover
+          .first-screen-cell(data-aos='fade-up')
             picture.first-screen-cell__bg
               source(
                 srcset='assets/images/first-screen-4.webp',
@@ -61,7 +61,7 @@ block content
             .first-screen-cell__title= el
 
         else
-          a.first-screen-cell(href)
+          a.first-screen-cell(href, data-aos='fade-up')
             picture.first-screen-cell__bg
               if i === 1 || i === 2
                 source(
@@ -81,7 +81,7 @@ block content
               img(src=`assets/images/first-screen-${i + 1}.jpg`, alt='')
             .first-screen-cell__title= el
 
-    .first-bottom
+    .first-bottom(data-aos='fade-up')
       h2.first-bottom__title Манипула Специалист — первый российский производитель профессиональных высококачественных СИЗ рук
       .first-bottom__text
         .first-bottom__col
@@ -91,7 +91,7 @@ block content
 
   section.solutions
     .container
-      h2.h2.main-title Отраслевые решения
+      h2.h2.main-title(data-aos='fade-up') Отраслевые решения
       .solutions-list
         -
           const list = [
@@ -103,7 +103,7 @@ block content
             'Химическая <br/> промышленность'
           ]
         each el, i in list
-          a.solutions-item(href)
+          a.solutions-item(href, data-aos='fade-up')
             picture.solutions-item__bg
               source(
                 srcset=`assets/images/solutions-${i}.webp`,
@@ -115,7 +115,7 @@ block content
 
   .container
     section.news
-      .news-top
+      .news-top(data-aos='fade-up')
         h2.h2 Последние новости
         .controls.only-desktop
           button.slider-control.dark(data-prev='news')
@@ -123,7 +123,7 @@ block content
           button.slider-control.dark(data-next='news')
             +arrow-right
 
-      .news-slider
+      .news-slider(data-aos='fade-up')
         .swiper(data-slider-id='news')
           .swiper-wrapper
             - for (i=0;i<5;i++)

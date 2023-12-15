@@ -7,12 +7,12 @@ include ../components/lk-sidebar
 block content
   .container
     +breadcrumbs(items=['личный кабинет'], page='POS-материалы')
-    h1.h1 POS-материалы
+    h1.h1(data-aos='fade-up') POS-материалы
 
     .lk-body
       +sidebar(active=4, ttl='POS-материалы')
 
-      .lk-main
+      .lk-main(data-aos='fade-up')
         h2.lk-main-title Материалы для оформления сайта
 
         .documents-list

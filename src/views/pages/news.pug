@@ -6,9 +6,9 @@ include ../components/cards/news-card
 block content
   .container
     +breadcrumbs(page='Новости')
-    h1.h1 Новости
+    h1.h1(data-aos='fade-up') Новости
 
-    .tabs.news-filters
+    .tabs.news-filters(data-aos='fade-up')
       .tabs__item.active Все
       button.tabs__item Новости компании
       button.tabs__item Отраслевые новости
