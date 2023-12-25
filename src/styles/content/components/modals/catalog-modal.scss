@@ -67,6 +67,9 @@
       width: rem(20px);
       height: rem(20px);
       background-image: url('assets/images/svg/double-red-arrow.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
       flex-shrink: 0;
     }
   }

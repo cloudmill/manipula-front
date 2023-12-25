@@ -5,6 +5,9 @@
   flex-direction: column;
   gap: rem(40px);
 
+  position: relative;
+  z-index: 1;
+
   @media #{media('<')} {
     margin: rem(24px) 0;
   }

@@ -108,6 +108,17 @@ export function swiperInit() {
           }
           break
 
+        case 'sol-steps':
+          function getInitSlide() {
+            return Number(slider.getAttribute('data-active-slide'))
+          }
+
+          slider_options = {
+            slidesPerView: 'auto',
+            initialSlide: getInitSlide(),
+          }
+          break
+
         default:
           break
       }

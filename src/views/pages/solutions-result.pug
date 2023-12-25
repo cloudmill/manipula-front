@@ -8,7 +8,7 @@ block content
     +breadcrumbs(page='Подобрать защитное решение')
     h1.h1(data-aos='fade-up') Подобрать защитное решение
 
-    .solutions-steps(data-aos='fade-up')
+    .solutions-steps.only-desktop(data-aos='fade-up')
       -
         const steps = [
           'Идентифицированные опасности',
@@ -20,7 +20,7 @@ block content
       each el, i in steps
         if i < active
           .solutions-steps__item
-            a.button.filter.old-active(href)
+            .button.filter.old-active.no-hover
               .button__ico= i + 1
               span= el
         else if i === active
@@ -33,6 +33,38 @@ block content
             .button.filter.no-hover
               .button__ico= i + 1
               span= el
+
+    .solutions-steps.only-mobile(data-aos='fade-up')
+      -
+        const steps1 = [
+          'Идентифицированные опасности',
+          'Вид опасности',
+          'Опасные события',
+          'Тип СИЗ рук, обязательных к выдаче'
+        ]
+        const active1 = 3
+
+      .swiper(data-slider-id='sol-steps', data-active-slide='3')
+        .swiper-wrapper
+          each el, i in steps1
+            if i < active1
+              .swiper-slide
+                .solutions-steps__item
+                  .button.filter.old-active.no-hover
+                    .button__ico= i + 1
+                    span= el
+            else if i === active1
+              .swiper-slide
+                .solutions-steps__item
+                  .button.filter.active.no-hover
+                    .button__ico= i + 1
+                    span= el
+            else
+              .swiper-slide
+                .solutions-steps__item
+                  .button.filter.no-hover
+                    .button__ico= i + 1
+                    span= el
 
     .solutions-title(data-aos='fade-up')
       .slider-control.dark

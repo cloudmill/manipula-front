@@ -1,11 +1,9 @@
 .solutions-text {
-  width: cols(5);
   margin: rem(60px) 0;
   @include fsl(20px, 140%);
   letter-spacing: -0.2px;
 
   @media #{media('<')} {
-    width: 100%;
     margin: rem(24px) 0;
     @include fsl(15px);
     letter-spacing: -0.15px;
@@ -105,9 +103,9 @@
     margin: rem(24px) (-$col-pad-m);
     padding: 0 $col-pad-m;
 
-    gap: rem(4px);
-    overflow-x: auto;
-    @include scrollbar-hidden;
+    // gap: rem(4px);
+    // overflow-x: auto;
+    // @include scrollbar-hidden;
   }
 
   &__item {
@@ -124,6 +122,16 @@
         background-size: cover;
       }
     }
+  }
+
+  .swiper {
+    margin: 0 (-$col-pad-m);
+    padding: 0 $col-pad-m;
+  }
+
+  .swiper-slide {
+    width: fit-content;
+    margin-right: rem(4px);
   }
 }
 

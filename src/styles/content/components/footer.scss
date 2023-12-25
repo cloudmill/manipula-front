@@ -235,6 +235,13 @@
       grid-template-columns: 1fr 1fr;
     }
 
+    &-col {
+      &:hover {
+        .footer__middle-txt {
+          color: var(--red);
+        }
+      }
+    }
     &-img {
       height: rem(60px);
       margin-bottom: rem(16px);
@@ -247,6 +254,7 @@
     &-txt {
       @include fsl(12px, 140%);
       letter-spacing: -0.12px;
+      transition: $transition;
 
       @media #{media('<')} {
         @include fsl(10px);

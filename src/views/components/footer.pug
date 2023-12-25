@@ -43,7 +43,7 @@ mixin footer
           const cols = ['Ассоциация разработчиков, изготовителей и поставщиков средств индивидуальной защиты', 'Лицензионный партнер по программе СИЗ рук из материала DuPont™ Kevlar® на территории РФ', 'Лицензионный партнер по программе СИЗ рукиз материала Dyneema® Diamond Technology на территории РФ', 'Лицензионный партнер по программе СИЗ рук из материала Thermolite® на территории ЕАС']
 
         each el, i in cols
-          .footer__middle-col
+          a.footer__middle-col(href)
             img.footer__middle-img(
               src=`assets/images/footer-mid-${i}.png`,
               alt=''
