@@ -93,6 +93,7 @@ export function swiperInit() {
           break
 
         case 'news':
+        case 'news-mob':
           slider_options = {
             ...slider_options,
 
