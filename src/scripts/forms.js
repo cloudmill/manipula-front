@@ -5,26 +5,11 @@ import { Fancybox } from '@fancyapps/ui'
 $(() => {
   // parsley
   $('form').parsley()
-  $('form').on('submit', (e) => {
+  $('form[data-html]').on('submit', (e) => {
     e.preventDefault()
-    e.target.closest('form').reset()
-    e.target
-      .closest('form')
-      .querySelectorAll('.form-input')
-      .forEach((it) => it.classList.remove('active'))
-
-    if (
-      e.target.closest('[data-write-form]') ||
-      e.target.closest('[data-contacts-form]')
-    ) {
-      Fancybox.close()
-      Fancybox.show([{ src: `#fancy-modal-success`, type: 'inline' }])
-    } else if (e.target.closest('[data-subscribe-form]')) {
-      Fancybox.show([{ src: `#fancy-subscribe-success`, type: 'inline' }])
-    }
-    if (e.target.closest('[data-login-form]')) {
-      Fancybox.close()
-    }
+    
+    formClear(e.target);
+    formSuccess(e.target);
   })
 
   Parsley.addMessages('ru', {
@@ -102,3 +87,23 @@ $(() => {
     })
   }
 })
+
+export function formSuccess(form) {
+  if (
+    form.closest('[data-write-form]') ||
+    form.closest('[data-contacts-form]')
+  ) {
+    Fancybox.close()
+    Fancybox.show([{ src: `#fancy-modal-success`, type: 'inline' }])
+  } else if (form.closest('[data-subscribe-form]')) {
+    Fancybox.show([{ src: `#fancy-subscribe-success`, type: 'inline' }])
+  }
+  if (form.closest('[data-login-form]')) {
+    Fancybox.close()
+  }
+}
+
+export function formClear(form) {
+  form.closest('form').reset();
+  form.closest('form').querySelectorAll('.form-input').forEach((it) => it.classList.remove('active'));
+}

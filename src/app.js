@@ -1,6 +1,7 @@
 import './styles/app.scss'
 import AOS from 'aos'
 
+import './scripts/backend';
 import './scripts/forms'
 
 import { swiperInit } from './scripts/sliders.ts'
