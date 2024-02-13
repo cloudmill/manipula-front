@@ -15,6 +15,8 @@ export function initContactsMap() {
             }
           )
 
+          const assetsPath = window.location.hostname && (window.location.hostname !== 'cloudmill.github.io') ? '/local/templates/main/assets' : 'assets';
+
           const coords1 = [55.695393, 37.421967]
           const coords2 = [55.681945, 37.424345]
           const markSize = 40
@@ -25,7 +27,7 @@ export function initContactsMap() {
             {
               iconLayout: 'default#image',
               // iconImageHref: `${window.CONFIG.path}assets/images/svg/office-placemark.svg`,
-              iconImageHref: `assets/images/svg/placemark-blue.svg`,
+              iconImageHref: `${assetsPath}/images/svg/placemark-blue.svg`,
               iconImageSize: [markSize, markSize],
               iconImageOffset: [-markSize / 2, -markSize / 2],
               balloonPanelMaxMapArea: 0,
@@ -38,7 +40,7 @@ export function initContactsMap() {
             {
               iconLayout: 'default#image',
               // iconImageHref: `${window.CONFIG.path}assets/images/svg/office-placemark.svg`,
-              iconImageHref: `assets/images/svg/placemark-dark.svg`,
+              iconImageHref: `${assetsPath}/images/svg/placemark-dark.svg`,
               iconImageSize: [markSize, markSize],
               iconImageOffset: [-markSize / 2, -markSize / 2],
               balloonPanelMaxMapArea: 0,
