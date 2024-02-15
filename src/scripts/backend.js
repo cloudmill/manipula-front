@@ -222,7 +222,10 @@ $(() => {
       alert(r.message);
     },
     view: (form, r) => {
-      form.find('[data-error]').html(r.message);
+      const error = form.find('[data-error]');
+
+      error.html(r.message);
+      error.removeAttr('data-display-none');
     },
   }
 
