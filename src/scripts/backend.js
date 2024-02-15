@@ -247,6 +247,9 @@ $(() => {
             response = $(r).find(containerSelector);
           }
 
+          thisObj.siblings().removeClass('active');
+          thisObj.addClass('active');
+
           container.empty();
           container.append(response.children());
         },
