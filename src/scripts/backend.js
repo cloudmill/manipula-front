@@ -19,6 +19,7 @@ $(() => {
     forms();
     modal();
     clickAjaxReplaceContent();
+    clickSwitchActive();
     // test();
     // filters();
     // selectChangeDisplayElem();
@@ -41,6 +42,37 @@ $(() => {
           fancyboxLogic(thisObj[0]);
         },
       });
+    });
+  }
+
+  function clickSwitchActive() {
+    $(document).on('click', '[data-click=switch-active]', function() {
+      const thisObj = $(this),
+        data = thisObj.data('switch-active');
+
+      let selector = '';
+
+      if (typeof data === 'object') {
+        $.each(data, (i, item) => {
+          if (Array.isArray(item)) {
+            $.each(item, (iArr, arrItem) => {
+              if (typeof arrItem === 'object' && arrItem.hasOwnProperty('select') && arrItem.hasOwnProperty('link')) {
+                let val = $(`[${arrItem.select}]`).attr(arrItem.select);
+
+                selector += `[${arrItem.link}=${val}]`;
+              } else {
+                selector += arrItem;
+              }
+            });
+          } else {
+            selector += ' ' + item;
+          }
+        });
+      } else {
+        selector += data;
+      }
+
+      console.log(selector);
     });
   }
 
