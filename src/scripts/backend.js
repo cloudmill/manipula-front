@@ -48,31 +48,46 @@ $(() => {
   function clickSwitchActive() {
     $(document).on('click', '[data-click=switch-active]', function() {
       const thisObj = $(this),
-        data = thisObj.data('switch-active');
-
-      let selector = '';
+        data = thisObj.data('switch-active'),
+        activeAttr = 'data-display-none',
+        findItems = {};
 
       if (typeof data === 'object') {
         $.each(data, (i, item) => {
+          if (!findItems[i]) {
+            findItems[i] = '';
+          }
+
           if (Array.isArray(item)) {
             $.each(item, (iArr, arrItem) => {
               if (typeof arrItem === 'object' && arrItem.hasOwnProperty('select') && arrItem.hasOwnProperty('link')) {
-                let val = $(`[${arrItem.select}]`).attr(arrItem.select);
+                let val = $(`[${arrItem.select}]`).text().trim();
 
-                selector += `[${arrItem.link}=${val}]`;
+                findItems[i] += `[${arrItem.link}="${val}"]`;
               } else {
-                selector += arrItem;
+                findItems[i] += arrItem;
               }
             });
           } else {
-            selector += ' ' + item;
+            findItems[i] += ' ' + item;
           }
         });
       } else {
-        selector += data;
+        findItems[0] = data;
       }
 
-      console.log(selector);
+      $.each(findItems, (i, item) => {
+        let itemSelector = '';
+
+        $.each($(item.trim())[0].attributes, (iSelector, selector) => {
+          if (selector.name !== activeAttr) {
+            itemSelector += `[${selector.name}]`;
+          }
+        });
+
+        $(itemSelector).attr(activeAttr, true);
+        $(item).removeAttr(activeAttr);
+      });
     });
   }
 
