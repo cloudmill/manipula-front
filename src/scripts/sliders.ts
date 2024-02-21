@@ -92,22 +92,22 @@ export function swiperInit() {
           }
           break
 
-        case 'news':
-        case 'news-mob':
-          slider_options = {
-            ...slider_options,
+        // case 'news':
+        // case 'news-mob':
+        //   slider_options = {
+        //     ...slider_options,
 
-            modules: [Navigation],
+        //     modules: [Navigation],
 
-            slidesPerView: 'auto',
+        //     slidesPerView: 'auto',
 
-            breakpoints: {
-              [1024]: {
-                slidesPerView: 1,
-              },
-            },
-          }
-          break
+        //     breakpoints: {
+        //       [1024]: {
+        //         slidesPerView: 1,
+        //       },
+        //     },
+        //   }
+        //   break
 
         case 'sol-steps':
           function getInitSlide() {
@@ -128,34 +128,6 @@ export function swiperInit() {
         `[data-slider-id="${slider_id}"]`,
         slider_options
       )
-
-      if (
-        slider_id === 'main' &&
-        window.matchMedia('(min-width: 1024px)').matches
-      ) {
-        const controlPrev = document.querySelector('[data-prev=main]')
-        const controlNext = document.querySelector('[data-next=main]')
-
-        function getSlideBg(selector: string) {
-          return document
-            .querySelector(`.main-slider-slide.swiper-slide-${selector}`)
-            ?.querySelector('[data-for-parallax]')
-        }
-
-        // controlPrev?.addEventListener('click', () => {
-        //   getSlideBg('active')?.setAttribute('data-swiper-parallax', '')
-        //   getSlideBg('prev')?.setAttribute('data-swiper-parallax', '-30%')
-
-        //   slider_el.slidePrev()
-        // })
-
-        // controlNext?.addEventListener('click', () => {
-        //   getSlideBg('active')?.setAttribute('data-swiper-parallax', '30%')
-        //   getSlideBg('next')?.setAttribute('data-swiper-parallax', '')
-
-        //   slider_el.slideNext()
-        // })
-      }
     })
   }
 
@@ -218,5 +190,21 @@ export function swiperInit() {
       prevEl: `#product-bottom-prev`,
       nextEl: `#product-bottom-next`,
     },
+  })
+
+  const newsThumbs = new Swiper('#news', {
+    slidesPerView: 'auto',
+    initialSlide: 1,
+  })
+
+  const newsMain = new Swiper('#news-main', {})
+
+  document.getElementById('news-prev')?.addEventListener('click', () => {
+    newsThumbs.slidePrev()
+    newsMain.slidePrev()
+  })
+  document.getElementById('news-next')?.addEventListener('click', () => {
+    newsThumbs.slideNext()
+    newsMain.slideNext()
   })
 }

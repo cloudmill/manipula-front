@@ -118,40 +118,25 @@ block content
       .news-top(data-aos='fade-up')
         h2.h2 Последние новости
         .controls.only-desktop
-          button.slider-control.dark(data-prev='news')
+          button#news-prev.slider-control.dark
             +arrow-left
-          button.slider-control.dark(data-next='news')
+          button#news-next.slider-control.dark
             +arrow-right
 
       .news-slider(data-aos='fade-up')
-        .swiper.only-desktop(data-slider-id='news')
+        #news-main.swiper.only-desktop
           .swiper-wrapper
             - for (i=0;i<5;i++)
-              .swiper-slide.news-slide
-                .news-list
-                  +news-card(
-                    img='news-0',
-                    date='6 марта 2023',
-                    tag='Новости компании',
-                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая',
-                    modal='news'
-                  )
-                  +news-card(
-                    img='news-0',
-                    date='6 марта 2023',
-                    tag='Новости компании',
-                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая',
-                    modal='news'
-                  )
-                  +news-card(
-                    img='news-0',
-                    date='6 марта 2023',
-                    tag='Новости компании',
-                    title='Выставка KIOSH-2023 в Казахстане 24-26 мая',
-                    modal='news'
-                  )
+              .swiper-slide.big-news
+                +news-card(
+                  img='news-0',
+                  date='6 марта 2023',
+                  tag='Новости компании',
+                  title=`SLIDE ${i}`,
+                  modal='news'
+                )
 
-        .swiper.only-mobile(data-slider-id='news-mob')
+        #news.swiper
           .swiper-wrapper
             - for (i=0;i<5;i++)
               .swiper-slide.news-slide
@@ -159,7 +144,7 @@ block content
                   img='news-0',
                   date='6 марта 2023',
                   tag='Новости компании',
-                  title='Выставка KIOSH-2023 в Казахстане 24-26 мая',
+                  title=`SLIDE ${i}`,
                   modal='news'
                 )
 

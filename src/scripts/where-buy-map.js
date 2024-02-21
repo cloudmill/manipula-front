@@ -133,6 +133,7 @@ export function initPlacemarks(map, isClearCurrent) {
   const placemarksNodes = $('[data-placemark]')
 
   $('[data-placemark]').each(function () {
+    console.log('GEO', $(this).data('placemark').trim())
     requests.push(ymaps.geocode($(this).data('placemark').trim()))
   })
 
@@ -171,26 +172,6 @@ export function initPlacemarks(map, isClearCurrent) {
           hideIconOnBalloonOpen: false,
         }
       )
-
-      // events
-      // placemark.events.add(['click'], () => {
-      //   if (mediaQuery.matches) {
-      //     const offsetTop = placemarksNodes.eq(i)[0].offsetTop
-
-      //     placemarksParent.scrollTop(offsetTop + 1)
-      //   } else {
-      //     const modal = document.querySelector('[data-placemark-modal]')
-      //     const container = modal.querySelector('[data-placemark-container]')
-
-      //     container.innerHTML = balloon
-      //     const options = {
-      //       ...defaults,
-      //       animationEffect: 'right',
-      //     }
-      //     $.fancybox.defaults = { ...$.fancybox.defaults, ...options }
-      //     $.fancybox.open($(modal))
-      //   }
-      // })
 
       placemark.events.add(['balloonopen'], () => {
         placemarksNodes.eq(i).addClass('active')
@@ -254,33 +235,6 @@ function findCluster(placemark, clusterer) {
 
   return result
 }
-
-// function createExposition(items) {
-//   const parent = $(document.createElement('div'))
-//   let expositionItmes = []
-
-//   items.forEach((item) => {
-//     const str = `<a href="${item.link}" target="_blank" class="buy-page__exposition-item">${item.name}</a>`
-//     expositionItmes.push(str)
-//   })
-
-//   const container = [
-//     '<div class="buy-page__exposition">',
-//     '<div class="buy-page__exposition-container">',
-//     '<div class="buy-page__exposition-title">',
-//     'Экспозиция',
-//     '</div>',
-//     '<div class="buy-page__exposition-list">',
-//     `${expositionItmes.join('')}`,
-//     '</div>',
-//     '</div>',
-//     '</div>',
-//   ].join('')
-
-//   parent.html(container)
-
-//   return parent.html()
-// }
 
 export function initBuyMap() {
   if ($('#where-buy-map').length) {
