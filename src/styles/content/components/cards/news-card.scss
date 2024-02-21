@@ -53,7 +53,7 @@
     @include fsl(22px, 120%);
     letter-spacing: -0.44px;
     margin-top: rem(12px);
-    @include cropText(3);
+    @include cropText(2);
     transition: $transition;
 
     @media #{media('<')} {

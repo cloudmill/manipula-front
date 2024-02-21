@@ -17,10 +17,10 @@ block content
     .tech-table
       -
         const cards = [
-          'Волокно Thermolite® EcoMade',
+          'Волокно Thermolite® EcoMade Волокно Thermolite® EcoMade',
           'Защита INPAX™',
           'Shelter Micro™',
-          'Многофункциональная ткань ARMORTEX®',
+          'Многофункциональная ткань ARMORTEX® Многофункциональная ткань ARMORTEX®',
           'Водонепроницаемая мембрана HIPORA®',
           '3M™ Thinsulate™',
           'Хлопок',
@@ -28,7 +28,7 @@ block content
         ]
 
       each el, i in cards
-        .tech-card(data-fancy-button='tech', data-aos='fade-up')
+        .tech-card(data-fancy-button='tech', data-aos='fade-up', data-client)
           img.tech-card__img(src=`assets/images/tech-${i}.png`, alt='')
           .tech-card__title= el
           .tech-card__tag Синтетические материалы

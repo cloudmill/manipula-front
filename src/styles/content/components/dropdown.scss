@@ -10,6 +10,8 @@
     }
   }
   &.active {
+    z-index: 10;
+
     &:not(.select) {
       border-color: var(--blue3);
     }

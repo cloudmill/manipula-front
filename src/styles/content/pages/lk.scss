@@ -24,6 +24,7 @@
 
 .lk-sidebar {
   position: sticky;
+  top: rem(180px);
 
   display: flex;
   flex-direction: column;
@@ -582,6 +583,8 @@
 
 .loyal-top {
   display: flex;
+  position: relative;
+  z-index: 1;
 
   @media #{media('<')} {
     flex-direction: column;

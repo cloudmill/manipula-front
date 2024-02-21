@@ -62,6 +62,8 @@
     @include fsl(28px);
     letter-spacing: -0.56px;
 
+    @include cropText(2);
+
     @media #{media('<')} {
       @include fsl(13px);
       letter-spacing: -0.13px;

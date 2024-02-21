@@ -104,6 +104,7 @@
     background: #f7f7f7;
 
     color: var(--main-bg);
+    transition: $transition;
 
     @media #{media('<')} {
       width: rem(32px);
@@ -118,6 +119,19 @@
       @media #{media('<')} {
         width: rem(18px);
         height: rem(18px);
+      }
+
+      path {
+        transition: $transition;
+      }
+    }
+
+    &:hover {
+      background: var(--red);
+      border-color: var(--red);
+
+      svg path {
+        stroke: #fff;
       }
     }
   }
@@ -193,6 +207,9 @@
       @include fsl(20px);
       letter-spacing: -0.56px;
       margin-bottom: rem(16px);
+    }
+    @media #{media('<', xs)} {
+      @include fsl(16px);
     }
   }
   &__txt {

@@ -1,10 +1,15 @@
 .subscribe(data-aos='fade-up')
   .subscribe__title Подпишитесь на нас,&nbsp; #[br.only-mobile-no-tab] чтобы быть&nbsp; #[br.only-tablet] в курсе!
 
-  form.subscribe__form(data-subscribe-form)
+  form.subscribe__form(data-subscribe-form, data-html)
     label.form-label
-      input.form-input(type='email', required, data-input)
-      span.form-placeholder E-mail
+      input.form-input(
+        type='email',
+        required,
+        data-input,
+        autocomplete='email'
+      )
+      span.form-placeholder Ваш E-mail
 
     button.subscribe__submit
       +send

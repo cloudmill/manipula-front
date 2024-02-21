@@ -1,5 +1,9 @@
 mixin news-card
-  .news-item(data-fancy-button=attributes.modal, data-aos='fade-up')
+  .news-item(
+    data-fancy-button=attributes.modal,
+    data-aos='fade-up',
+    data-client
+  )
     picture.news-item__img
       source(srcset=`assets/images/${attributes.img}.webp`, type='image/webp')
       img(src=`assets/images/${attributes.img}.jpg`, alt='')

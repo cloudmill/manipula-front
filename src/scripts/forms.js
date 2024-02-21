@@ -7,9 +7,9 @@ $(() => {
   $('form').parsley()
   $('form[data-html]').on('submit', (e) => {
     e.preventDefault()
-    
-    formClear(e.target);
-    formSuccess(e.target);
+
+    formClear(e.target)
+    formSuccess(e.target)
   })
 
   Parsley.addMessages('ru', {
@@ -104,6 +104,9 @@ export function formSuccess(form) {
 }
 
 export function formClear(form) {
-  form.closest('form').reset();
-  form.closest('form').querySelectorAll('.form-input').forEach((it) => it.classList.remove('active'));
+  form.closest('form').reset()
+  form
+    .closest('form')
+    .querySelectorAll('.form-input')
+    .forEach((it) => it.classList.remove('active'))
 }
