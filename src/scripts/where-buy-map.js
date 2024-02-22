@@ -236,7 +236,7 @@ function findCluster(placemark, clusterer) {
   return result
 }
 
-export function initBuyMap() {
+export function initBuyMap(filter) {
   if ($('#where-buy-map').length) {
     try {
       ymaps.ready(() => {
@@ -260,7 +260,7 @@ export function initBuyMap() {
           map.behaviors.disable('drag')
         }
 
-        initPlacemarks(map)
+        initPlacemarks(map, filter)
 
         // balloon close
         map.events.add('click', () => {
