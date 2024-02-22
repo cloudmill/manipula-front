@@ -1,3 +1,4 @@
+import { log } from 'console'
 import Swiper from 'swiper'
 import {
   Navigation,
@@ -199,12 +200,45 @@ export function swiperInit() {
 
   const newsMain = new Swiper('#news-main', {})
 
-  document.getElementById('news-prev')?.addEventListener('click', () => {
+  const newsPrev = document.getElementById('news-prev')
+  const newsNext = document.getElementById('news-next')
+
+  if (newsMain.activeIndex === 0) {
+    newsPrev?.setAttribute('disabled', 'true')
+  }
+
+  newsPrev?.addEventListener('click', () => {
     newsThumbs.slidePrev()
     newsMain.slidePrev()
+
+    const slidesCount = newsThumbs.slides.length
+
+    if (newsMain.activeIndex === 0) {
+      newsPrev?.setAttribute('disabled', 'true')
+    } else {
+      newsPrev?.removeAttribute('disabled')
+    }
+    if (newsThumbs.activeIndex === slidesCount - 2) {
+      newsNext?.setAttribute('disabled', 'true')
+    } else {
+      newsNext?.removeAttribute('disabled')
+    }
   })
-  document.getElementById('news-next')?.addEventListener('click', () => {
+  newsNext?.addEventListener('click', () => {
     newsThumbs.slideNext()
     newsMain.slideNext()
+
+    const slidesCount = newsThumbs.slides.length
+
+    if (newsThumbs.activeIndex === slidesCount - 2) {
+      newsNext?.setAttribute('disabled', 'true')
+    } else {
+      newsNext?.removeAttribute('disabled')
+    }
+    if (newsMain.activeIndex === 0) {
+      newsPrev?.setAttribute('disabled', 'true')
+    } else {
+      newsPrev?.removeAttribute('disabled')
+    }
   })
 }
