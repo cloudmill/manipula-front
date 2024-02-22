@@ -4,14 +4,14 @@
 const BREAKPOINT = 1024
 const mediaQuery = window.matchMedia(`(min-width: ${BREAKPOINT}px)`)
 
-export function initPlacemarks(map, isClearCurrent) {
+function clearMap(map) {
+  map.geoObjects.removeAll()
+}
+
+export function initPlacemarks(map, filter) {
   // vars
   const markWidth = 32
   const markHeight = 32
-
-  if (isClearCurrent) {
-    map.geoObjects.removeAll()
-  }
 
   var customItemContentLayout = ymaps.templateLayoutFactory.createClass(
     '<div class="balloon__content balloon__content_cluster">' +
@@ -129,13 +129,22 @@ export function initPlacemarks(map, isClearCurrent) {
   // добавление точек
   const placemarks = []
   let requests = []
-  const placemarksParent = $('[data-placemarks]')
-  const placemarksNodes = $('[data-placemark]')
+  // const placemarksParent = $('[data-placemarks]')
+  let placemarksNodes = $('[data-placemark]')
 
-  $('[data-placemark]').each(function () {
-    console.log('GEO', $(this).data('placemark').trim())
-    requests.push(ymaps.geocode($(this).data('placemark').trim()))
-  })
+  if (filter === 'all') {
+    placemarksNodes = $('[data-placemark]')
+
+    $('[data-placemark]').each(function () {
+      requests.push(ymaps.geocode($(this).data('placemark').trim()))
+    })
+  } else {
+    placemarksNodes = $(`[data-store-type="${filter}"]`)
+
+    $(`[data-store-type="${filter}"]`).each(function () {
+      requests.push(ymaps.geocode($(this).data('placemark').trim()))
+    })
+  }
 
   Promise.all(requests).then(function (res) {
     res.forEach((item, i) => {
@@ -238,6 +247,7 @@ function findCluster(placemark, clusterer) {
 
 export function initBuyMap(filter) {
   if ($('#where-buy-map').length) {
+    $('#where-buy-map').innerHTML = ''
     try {
       ymaps.ready(() => {
         const center = $('#where-buy-map').data('map-center').split(' ')
@@ -260,7 +270,7 @@ export function initBuyMap(filter) {
           map.behaviors.disable('drag')
         }
 
-        initPlacemarks(map, filter)
+        initPlacemarks(map, 'all')
 
         // balloon close
         map.events.add('click', () => {
@@ -270,6 +280,13 @@ export function initBuyMap(filter) {
         })
 
         $('#where-buy-map')[0].YMap = map
+
+        $('[data-map-filter]').on('click', function () {
+          const filter = $(this).attr('data-map-filter')
+
+          clearMap(map)
+          initPlacemarks(map, filter)
+        })
       })
     } catch (err) {
       console.error(err)

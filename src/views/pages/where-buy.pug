@@ -58,11 +58,11 @@ block content
         )
         .map-filters-container
           .map-filters(data-tabs-panel)
-            button.map-filters__item.active(data-tab) Все
-            button.map-filters__item(data-tab)
+            button.map-filters__item.active(data-tab, data-map-filter='all') Все
+            button.map-filters__item(data-tab, data-map-filter='1')
               img(src='assets/images/svg/placemark-1.svg', alt='')
               span Официальные дистрибьюторы
-            button.map-filters__item(data-tab)
+            button.map-filters__item(data-tab, data-map-filter='2')
               img(src='assets/images/svg/placemark-2.svg', alt='')
               span Партнеры
 
