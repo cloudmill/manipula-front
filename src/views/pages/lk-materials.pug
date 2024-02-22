@@ -16,9 +16,8 @@ block content
         h2.lk-main-title Материалы для оформления сайта
 
         .documents-list
-          +document
-          +document
-          +document
+          - for (i=0;i<3;i++)
+            +document(i)
 
         h2.lk-main-title Рекламные материалы
 

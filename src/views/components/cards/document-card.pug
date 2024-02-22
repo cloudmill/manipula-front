@@ -1,6 +1,11 @@
-mixin document
+mixin document(i)
   a.document(href, download)
-    +pdf
+    if i === 1
+      +doc
+    else if i === 2
+      +xls
+    else
+      +pdf
     div
       .document__title Дистрибьюторское соглашение
       .document__size 188 Кб
