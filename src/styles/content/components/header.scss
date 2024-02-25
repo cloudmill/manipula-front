@@ -125,6 +125,8 @@
   &__logo {
     display: flex;
     flex: none;
+    width: fit-content;
+    height: fit-content;
     img {
       @media #{media('>')} {
         height: rem(60px);
